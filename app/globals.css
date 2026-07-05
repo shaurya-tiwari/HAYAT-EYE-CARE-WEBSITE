@@ -1,0 +1,319 @@
+@import "tailwindcss";
+
+/* ============================================================
+   HAYAT EYE CARE — Premium Design System v2
+   Aesthetic: Apple × Linear × Vercel — Light glassmorphism
+   Palette: Sky Blue + Emerald + Near-white
+   ============================================================ */
+
+@layer base {
+  :root {
+    /* --- Primary — Sky Blue --- */
+    --primary: #0ea5e9;
+    --primary-dark: #0284c7;
+    --primary-light: #38bdf8;
+    --primary-muted: #e0f2fe;
+
+    /* --- Accent — Emerald --- */
+    --accent: #10b981;
+    --accent-dark: #059669;
+    --accent-light: #34d399;
+    --accent-muted: #d1fae5;
+
+    /* --- Neutral palette --- */
+    --bg-base: #f8fafc;
+    --bg-soft: #f1f5f9;
+    --bg-card: rgba(255, 255, 255, 0.72);
+
+    /* --- Text --- */
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
+    --text-on-dark: #ffffff;
+
+    /* --- Light Glass Effect Tokens --- */
+    --glass-bg: rgba(255, 255, 255, 0.70);
+    --glass-bg-hover: rgba(255, 255, 255, 0.88);
+    --glass-border: rgba(148, 163, 184, 0.20);
+    --glass-border-hover: rgba(14, 165, 233, 0.35);
+    --glass-shadow: 0 4px 24px rgba(15, 23, 42, 0.06), 0 1px 4px rgba(15, 23, 42, 0.04);
+    --glass-shadow-hover: 0 16px 48px rgba(14, 165, 233, 0.15), 0 4px 12px rgba(15, 23, 42, 0.08);
+    --glass-blur: blur(16px);
+
+    /* --- Dark section glass (for contrast sections) --- */
+    --dark-glass-bg: rgba(15, 23, 42, 0.80);
+    --dark-glass-border: rgba(255, 255, 255, 0.10);
+    --dark-section-from: #0f172a;
+    --dark-section-to: #0284c7;
+
+    /* --- Radius --- */
+    --radius-card: 1.5rem;     /* 24px */
+    --radius-card-lg: 1.75rem; /* 28px */
+    --radius-btn: 0.75rem;     /* 12px */
+    --radius-full: 9999px;
+
+    /* --- Transitions --- */
+    --transition-base: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background: var(--bg-base);
+    color: var(--text-primary);
+    font-family: var(--font-plus-jakarta), var(--font-inter), 'Inter', system-ui, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sora), var(--font-plus-jakarta), system-ui, sans-serif;
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; height: auto; }
+
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: var(--bg-soft); }
+  ::-webkit-scrollbar-thumb { background: var(--primary-light); border-radius: var(--radius-full); }
+}
+
+/* ============================================================
+   GLASS UTILITIES — Light style
+   ============================================================ */
+@layer utilities {
+  /* Light frosted glass card */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-card);
+    box-shadow: var(--glass-shadow);
+    transition: var(--transition-base);
+  }
+
+  .glass:hover {
+    background: var(--glass-bg-hover);
+    border-color: var(--glass-border-hover);
+    box-shadow: var(--glass-shadow-hover);
+    transform: translateY(-4px);
+  }
+
+  /* Non-hoverable flat glass */
+  .glass-flat {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-card);
+    box-shadow: var(--glass-shadow);
+  }
+
+  /* Dark glass (for dark sections) */
+  .glass-dark {
+    background: var(--dark-glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--dark-glass-border);
+    border-radius: var(--radius-card);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    transition: var(--transition-base);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-blue {
+    background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Layout */
+  .section-padding { padding: 6rem 1.5rem; }
+  .section-padding-sm { padding: 4rem 1.5rem; }
+  .container-custom { max-width: 1200px; margin: 0 auto; width: 100%; }
+
+  /* Background variants */
+  .section-light { background: var(--bg-base); }
+  .section-soft { background: var(--bg-soft); }
+  .section-primary-muted { background: var(--primary-muted); }
+
+  /* Glow effects */
+  .glow-blue {
+    box-shadow: 0 0 40px rgba(14, 165, 233, 0.25), 0 0 80px rgba(14, 165, 233, 0.10);
+  }
+  .glow-emerald {
+    box-shadow: 0 0 40px rgba(16, 185, 129, 0.25), 0 0 80px rgba(16, 185, 129, 0.10);
+  }
+
+  /* Shimmer skeleton */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(148, 163, 184, 0.08) 25%,
+      rgba(148, 163, 184, 0.18) 50%,
+      rgba(148, 163, 184, 0.08) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.6s ease-in-out infinite;
+  }
+
+  /* WhatsApp pulse */
+  .pulse-ring { animation: pulse-ring-green 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+
+  /* Floating animation for hero elements */
+  .float { animation: float 4s ease-in-out infinite; }
+  .float-delay { animation: float 4s ease-in-out 1.5s infinite; }
+}
+
+/* ============================================================
+   KEYFRAMES
+   ============================================================ */
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes pulse-ring-green {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45); }
+  50% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+.animate-fade-in-up { animation: fade-in-up 0.65s cubic-bezier(0.4, 0, 0.2, 1) both; }
+.animate-fade-in { animation: fade-in 0.45s ease both; }
+.animate-spin-slow { animation: spin-slow 3s linear infinite; }
+.animate-marquee { animation: marquee 30s linear infinite; }
+.animate-glow { animation: glow-pulse 3s ease-in-out infinite; }
+
+/* ============================================================
+   SECTION BACKGROUND VARIANTS
+   ============================================================ */
+.section-teal-bg {
+  background: linear-gradient(160deg, #f0f9ff 0%, #e0f2fe 50%, #f0fdf4 100%);
+}
+
+.section-dark-bg {
+  background: linear-gradient(135deg, #0f172a 0%, #0c4a6e 100%);
+}
+
+.section-hero-bg {
+  background: linear-gradient(160deg, #f0f9ff 0%, #f8fafc 40%, #f0fdf4 100%);
+}
+
+/* Ambient glow blobs (used in hero) */
+.hero-glow-1 {
+  background: radial-gradient(circle, rgba(14,165,233,0.18) 0%, transparent 70%);
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+.hero-glow-2 {
+  background: radial-gradient(circle, rgba(16,185,129,0.15) 0%, transparent 70%);
+  animation: glow-pulse 4s ease-in-out 2s infinite;
+}
+
+/* ============================================================
+   DOCTOR CARD HOVER
+   ============================================================ */
+.doctor-card:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 24px 64px rgba(14, 165, 233, 0.18), 0 0 0 1.5px rgba(14, 165, 233, 0.30) !important;
+}
+
+/* ============================================================
+   NAVBAR GLASS (scrolled state)
+   ============================================================ */
+.navbar-scrolled {
+  background: rgba(248, 250, 252, 0.88) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.15) !important;
+  box-shadow: 0 1px 20px rgba(15, 23, 42, 0.06) !important;
+}
+
+/* ============================================================
+   FAQ ACCORDION
+   ============================================================ */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.faq-answer.open {
+  max-height: 500px;
+}
+
+/* ============================================================
+   BRAND MARQUEE STRIP
+   ============================================================ */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 3rem;
+}
+.marquee-track { animation-play-state: paused; }
+
+/* ============================================================
+   SCROLLBAR HIDE (for horizontal scroll rows)
+   ============================================================ */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+

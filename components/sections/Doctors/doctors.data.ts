@@ -1,0 +1,43 @@
+import type { Doctor } from "@/types/doctor";
+
+export const DOCTORS: Doctor[] = [
+  {
+    id: "dr_jishan_wppqkq",
+    name: "Dr. Jishan",
+    qualification: "B.Optom, PGDCR",
+    specialization: "Chief Optometrist",
+    department: "Vision Testing & Refraction",
+    experienceYears: 8,
+    languages: ["Hindi", "English", "Urdu"],
+    timing: "Mon–Sat | 10:00 AM – 7:00 PM",
+    rating: 4.9,
+    bio: "Specializes in comprehensive eye examinations, advanced refraction, and pediatric vision care. Known for precision and patient-first approach.",
+    image: "/doctors/dr-jishan.png",
+  },
+  {
+    id: "dr_manan_hrztqz",
+    name: "Dr. Manan",
+    qualification: "B.Optom, Dip. CL",
+    specialization: "Contact Lens Specialist",
+    department: "Contact Lens & Low Vision",
+    experienceYears: 6,
+    languages: ["Hindi", "English"],
+    timing: "Mon–Sat | 11:00 AM – 8:00 PM",
+    rating: 4.8,
+    bio: "Expert in contact lens fitting, orthokeratology, and low vision rehabilitation. Passionate about making clear vision accessible to every patient.",
+    image: "/doctors/dr-manan.png",
+  },
+  {
+    id: "dr_owaish_uypje0",
+    name: "Dr. Owaish",
+    qualification: "B.Optom, M.Sc (Optometry)",
+    specialization: "Senior Optometrist",
+    department: "Frame Fitting & Dispensing",
+    experienceYears: 5,
+    languages: ["Hindi", "English", "Urdu"],
+    timing: "Mon–Sun | 10:00 AM – 6:00 PM",
+    rating: 4.9,
+    bio: "Skilled in frame dispensing, lens prescription optimization, and children's eye health. Dedicated to helping patients find the perfect fit.",
+    image: "/doctors/dr-owaish.png",
+  },
+];
