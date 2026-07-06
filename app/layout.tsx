@@ -40,14 +40,43 @@ export const metadata: Metadata = {
   openGraph: {
     title: SITE_NAME,
     description: SITE_DESCRIPTION,
+    siteName: SITE_NAME,
     type: "website",
     locale: "en_IN",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+  },
+  appleWebApp: {
+    title: SITE_NAME,
+    statusBarStyle: "default",
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "name": SITE_NAME,
+    "description": SITE_DESCRIPTION,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kanpur",
+      "addressRegion": "UP",
+      "addressCountry": "IN"
+    }
+  };
+
   return (
     <html lang="en" className={`${inter.variable} ${plusJakarta.variable} ${sora.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body>
         <Navbar />
         <main>{children}</main>

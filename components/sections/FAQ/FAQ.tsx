@@ -37,25 +37,25 @@ function FaqItem({ q, a, isOpen, onClick }: { q: string; a: string; isOpen: bool
   return (
     <div
       className={cn(
-        "glass rounded-2xl overflow-hidden transition-all duration-300",
-        isOpen && "border-[--primary]/30 shadow-lg shadow-[--primary]/5"
+        "glass rounded-xl overflow-hidden transition-all duration-300",
+        isOpen && "border-[--primary]/20 shadow-md shadow-[--primary]/5"
       )}
-      style={{ borderColor: isOpen ? "rgba(14,165,233,0.25)" : undefined }}
+      style={{ borderColor: isOpen ? "rgba(0,113,227,0.18)" : undefined }}
     >
       <button
         onClick={onClick}
-        className="w-full flex items-center justify-between gap-4 p-6 text-left"
+        className="w-full flex items-center justify-between gap-4 p-5 text-left"
       >
-        <span className="font-semibold text-[--text-primary] text-base pr-4">{q}</span>
+        <span className="font-semibold text-[--text-primary] text-[15px] pr-4">{q}</span>
         <span className={cn(
-          "shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300",
-          isOpen ? "bg-[--primary] text-white rotate-0" : "bg-[--bg-soft] text-[--text-secondary]"
+          "shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300",
+          isOpen ? "bg-[--primary] text-white" : "bg-[--bg-soft] text-[--text-muted]"
         )}>
-          {isOpen ? <Minus size={15} /> : <Plus size={15} />}
+          {isOpen ? <Minus size={14} /> : <Plus size={14} />}
         </span>
       </button>
       <div className={cn("faq-answer", isOpen && "open")}>
-        <p className="px-6 pb-6 text-[--text-secondary] leading-relaxed text-sm">{a}</p>
+        <p className="px-5 pb-5 text-[--text-secondary] leading-relaxed text-sm">{a}</p>
       </div>
     </div>
   );
@@ -67,11 +67,11 @@ export default function FAQ() {
   return (
     <SectionWrapper id="faq" bgVariant="soft">
       <SectionHeading
-        title="Common Questions"
+        title="Frequently Asked Questions"
         subtitle="Everything you need to know before your visit."
       />
 
-      <div className="max-w-2xl mx-auto mt-12 flex flex-col gap-3">
+      <div className="max-w-3xl mx-auto flex flex-col gap-2.5">
         {FAQS.map((faq, i) => (
           <FaqItem
             key={i}

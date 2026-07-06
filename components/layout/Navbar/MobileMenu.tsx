@@ -10,57 +10,60 @@ interface MobileMenuProps {
   onClose: () => void;
 }
 
-/** Slide-in glass panel for mobile navigation */
+/** Full-screen glass panel for mobile navigation */
 export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
-  // Close on resize to desktop
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) onClose();
     };
+    
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isOpen) {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", handleKeyDown);
+    } else {
+      document.body.style.overflow = "";
+    }
+
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [onClose]);
+    
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [isOpen, onClose]);
 
   return (
     <>
-      {/* Backdrop */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 z-30 bg-black/40 backdrop-blur-sm md:hidden"
-          onClick={onClose}
-          aria-hidden="true"
-        />
-      )}
-
-      {/* Slide-in panel */}
+      {/* Full Screen Glass Overlay */}
       <div
         className={cn(
-          "fixed top-0 right-0 z-40 h-full w-72 glass-flat shadow-2xl md:hidden",
-          "transition-transform duration-300 ease-in-out",
-          isOpen ? "translate-x-0" : "translate-x-full"
+          "fixed inset-0 z-40 md:hidden",
+          "bg-[--dark-section-from]/95 backdrop-blur-2xl",
+          "transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
+          isOpen ? "opacity-100 visible" : "opacity-0 invisible"
         )}
         role="dialog"
         aria-modal="true"
         aria-label="Mobile navigation"
       >
-        <div className="flex flex-col h-full p-6">
-          {/* Close button */}
-          <button
-            onClick={onClose}
-            className="self-end p-2 rounded-lg hover:bg-white/10 transition-colors mb-6"
-            aria-label="Close menu"
-          >
-            <span className="block w-5 h-0.5 bg-[--text-primary] rotate-45 translate-y-0.5" />
-            <span className="block w-5 h-0.5 bg-[--text-primary] -rotate-45" />
-          </button>
+        <div className="flex flex-col h-full p-8 pt-28">
+          {/* Nav links — vertical, premium typography */}
+          <div className={cn("transition-all duration-500 delay-100", isOpen ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0")}>
+            <NavLinks
+              className="flex-col items-center gap-5"
+              onLinkClick={onClose}
+              dark={true}
+            />
+          </div>
 
-          {/* Nav links — vertical on mobile */}
-          <NavLinks
-            className="flex-col items-start gap-1"
-            onLinkClick={onClose}
-          />
-
-          <div className="mt-auto">
+          <div className={cn("mt-auto flex justify-center pb-10 transition-all duration-500 delay-200", isOpen ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0")}>
             <NavCtaButton />
           </div>
         </div>

@@ -9,19 +9,19 @@ export const SITE_DESCRIPTION =
   "Hayat Eye Care — a premium optical center offering eye testing, frame fitting, contact lens fitting, and more. Serving happy customers for over 10 years.";
 
 /** WhatsApp Business number — include country code, no + or spaces */
-export const WHATSAPP_NUMBER = "919876543210"; // ← replace with real number
+export const WHATSAPP_NUMBER = "919368305007"; // Real number from env
 
 export const ADDRESS = {
-  line1: "123, Main Market Road",
-  line2: "Near City Hospital",
-  city: "Your City",
-  state: "State",
-  pincode: "000000",
-  full: "123, Main Market Road, Near City Hospital, Your City - 000000",
+  line1: "Dharmtara Complex",
+  line2: "Near State Bank",
+  city: "Noorpur",
+  state: "Uttar Pradesh",
+  pincode: "246734",
+  full: "Dharmtara Complex, near State Bank, Noorpur, Uttar Pradesh 246734",
 };
 
 export const CONTACT = {
-  phone: "+91 98765 43210",
+  phone: "+91 93683 05007",
   email: "info@hayateyecare.com",
 };
 
@@ -36,16 +36,16 @@ export const SOCIAL_LINKS = {
 };
 
 export const GOOGLE_MAPS_EMBED_URL =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0!2d77.0!3d28.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sHayat+Eye+Care!5e0!3m2!1sen!2sin!4v1234567890";
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d111246.3312959666!2d78.36839352726756!3d29.15545248882069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390bbfcb2c510a7f%3A0xe67597bc5b2c7e1d!2sDharmtara%20Complex%2C%20near%20State%20Bank%2C%20Noorpur%2C%20Uttar%20Pradesh%20246734!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin";
 
 export const NAV_LINKS = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Products", href: "#products" },
-  { label: "Brands", href: "#brands" },
-  { label: "Doctors", href: "#doctors" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/#about" },
+  { label: "Services", href: "/#services" },
+  { label: "Products", href: "/products" },
+  { label: "Brands", href: "/#brands" },
+  { label: "Doctors", href: "/#doctors" },
+  { label: "Gallery", href: "/#gallery" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export const STATS = [

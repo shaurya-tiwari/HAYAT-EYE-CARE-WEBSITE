@@ -7,23 +7,24 @@ import { SITE_NAME } from "@/constants/site";
 export default function Loading() {
   return (
     <div
-      className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-6"
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-5"
       style={{
-        background: "linear-gradient(135deg, #0a5c60 0%, #0d7377 50%, #1a1a2e 100%)",
+        background: "linear-gradient(160deg, #0f172a 0%, #020617 100%)",
       }}
       role="status"
       aria-label="Loading Hayat Eye Care"
     >
-      {/* Logo monogram */}
-      <div className="w-16 h-16 rounded-full bg-[--accent] flex items-center justify-center text-white font-bold text-2xl shadow-2xl">
-        H
+      {/* Lens-inspired logo */}
+      <div className="relative w-14 h-14 rounded-full bg-white/10 flex items-center justify-center">
+        <div className="absolute inset-[4px] rounded-full border-2 border-white/20" />
+        <div className="w-4 h-4 rounded-full bg-[--primary]" />
       </div>
 
-      <p className="text-white font-semibold text-lg tracking-wide">{SITE_NAME}</p>
+      <p className="text-white/80 font-semibold text-base tracking-wide">{SITE_NAME}</p>
 
       {/* CSS spinner */}
       <div
-        className="w-8 h-8 rounded-full border-2 border-white/20 border-t-[--accent] animate-spin-slow"
+        className="w-7 h-7 rounded-full border-2 border-white/10 border-t-[--primary] animate-spin-slow"
         aria-hidden="true"
       />
     </div>

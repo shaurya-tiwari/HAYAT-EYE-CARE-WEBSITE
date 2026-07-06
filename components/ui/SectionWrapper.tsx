@@ -4,7 +4,7 @@ interface SectionWrapperProps {
   children: React.ReactNode;
   id?: string;
   className?: string;
-  bgVariant?: "default" | "teal" | "dark";
+  bgVariant?: "default" | "teal" | "dark" | "soft" | "light";
 }
 
 /**
@@ -21,11 +21,13 @@ export default function SectionWrapper({
     default: "",
     teal: "section-teal-bg",
     dark: "section-dark-bg",
+    soft: "bg-[--bg-soft]",
+    light: "bg-white",
   }[bgVariant];
 
   return (
     <section id={id} className={cn("section-padding", bgClass, className)}>
-      <div className="container-custom">{children}</div>
+      <div className="container-custom px-5 md:px-8">{children}</div>
     </section>
   );
 }

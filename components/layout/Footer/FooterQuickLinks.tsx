@@ -3,13 +3,13 @@ import { NAV_LINKS } from "@/constants/site";
 export default function FooterQuickLinks() {
   return (
     <div>
-      <h4 className="font-semibold text-white mb-4">Quick Links</h4>
-      <ul className="space-y-2 text-sm">
+      <h4 className="font-bold text-white text-sm mb-5 tracking-tight uppercase">Navigation</h4>
+      <ul className="space-y-3 text-sm">
         {NAV_LINKS.map((link) => (
           <li key={link.href}>
             <a
               href={link.href}
-              className="text-white/70 hover:text-[--accent] transition-colors"
+              className="text-white/50 hover:text-white transition-colors duration-200"
             >
               {link.label}
             </a>

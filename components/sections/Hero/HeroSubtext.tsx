@@ -1,11 +1,10 @@
 export default function HeroSubtext() {
   return (
     <p
-      className="text-[--text-secondary] text-lg leading-relaxed max-w-xl animate-fade-in-up"
+      className="text-white/60 text-[11px] sm:text-xs md:text-lg font-normal leading-relaxed max-w-lg animate-fade-in-up mt-2 md:mt-0"
       style={{ animationDelay: "0.15s" }}
     >
-      Premium eye testing, frame fitting &amp; contact lens services — 
-      all under one roof. Trusted by families across the city for over 10 years.
+      Experience unparalleled eye care and an exclusive collection of luxury eyewear. Precision diagnostics, sophisticated frames, and world-class vision correction.
     </p>
   );
 }

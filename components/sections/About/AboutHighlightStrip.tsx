@@ -9,15 +9,15 @@ const ITEMS = [
 
 export default function AboutHighlightStrip() {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-10">
       {ITEMS.map(({ icon: Icon, label, sub }) => (
-        <div key={label} className="glass p-5 flex flex-col items-center text-center gap-3">
-          <div className="w-12 h-12 rounded-2xl bg-[--primary-muted] flex items-center justify-center">
-            <Icon size={22} className="text-[--primary]" />
+        <div key={label} className="glass p-4 md:p-5 flex flex-col items-center text-center gap-2.5">
+          <div className="w-11 h-11 rounded-xl bg-[--primary-muted] flex items-center justify-center">
+            <Icon size={20} className="text-[--primary]" />
           </div>
           <div>
-            <p className="font-semibold text-[--text-primary] text-sm">{label}</p>
-            <p className="text-[--text-muted] text-xs mt-0.5">{sub}</p>
+            <p className="font-bold text-[--text-primary] text-sm">{label}</p>
+            <p className="text-[--text-muted] text-xs mt-0.5 leading-snug">{sub}</p>
           </div>
         </div>
       ))}

@@ -1,4 +1,4 @@
-import { CalendarCheck, Eye } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { buildGeneralWhatsAppLink } from "@/lib/whatsapp";
 
@@ -12,23 +12,12 @@ export default function HeroCtaButtons() {
         href={buildGeneralWhatsAppLink()}
         target="_blank"
         rel="noopener noreferrer"
-        variant="primary"
+        variant="outline-dark"
         size="lg"
-        id="hero-book-eye-test"
-        className="shadow-lg shadow-[--primary]/25"
+        id="hero-enquiry"
       >
-        <CalendarCheck size={20} />
-        Book Eye Test
-      </Button>
-
-      <Button
-        href="#gallery"
-        variant="outline"
-        size="lg"
-        id="hero-browse-frames"
-      >
-        <Eye size={20} />
-        Browse Frames
+        <MessageCircle size={18} />
+        Enquiry
       </Button>
     </div>
   );

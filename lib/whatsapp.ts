@@ -20,3 +20,11 @@ export function buildFrameWhatsAppLink(frame: Frame): string {
   const message = `Hi, I'm interested in this frame: ${frame.name}\nPhoto: ${frame.imageUrl}`;
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
+
+/**
+ * Builds a WhatsApp link pre-filled with a specific product's name + image URL.
+ */
+export function buildProductWhatsAppLink(name: string, url: string): string {
+  const message = `Hi, I'm interested in this product: ${name}\nPhoto: ${url}`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}

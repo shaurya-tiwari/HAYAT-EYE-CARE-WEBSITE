@@ -1,33 +1,36 @@
 import { DOCTORS } from "./doctors.data";
 import DoctorCard from "./DoctorCard";
-import { listFolderImages } from "@/lib/cloudinary";
+import type { CloudinaryImageDirect } from "@/lib/cloudinaryDirect";
+
+interface DoctorsGridProps {
+  initialImages: CloudinaryImageDirect[];
+}
 
 /**
- * True auto-fetch: lists ALL images in the "doctors" Cloudinary folder.
- * Maps them to doctors by filename match (e.g. "dr jishan" ↔ doctor.id).
- * Upload/replace a photo in Cloudinary → site updates automatically.
+ * DoctorsGrid — Server Component.
+ * Receives images from parent and maps them to doctors.
  */
-export default async function DoctorsGrid() {
-  // Fetch all images from the DOCTORS folder
-  const folderImages = await listFolderImages("DOCTORS");
-
-  // Build a lookup map: public_id → public_id (for easy matching)
-  const imageMap = new Map(
-    folderImages.map((img) => [img.public_id.toLowerCase(), img.public_id])
-  );
+export default function DoctorsGrid({ initialImages = [] }: DoctorsGridProps) {
+  // Build a lookup map for faster matching
+  const imageMap = new Map<string, { id: string; url: string }>();
+  initialImages.forEach((img) => {
+    imageMap.set(img.public_id.toLowerCase(), { id: img.public_id, url: img.secure_url });
+  });
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5 max-w-5xl mx-auto px-1 sm:px-0">
       {DOCTORS.map((doctor) => {
         // Try to match this doctor's ID to a Cloudinary image
-        // Checks both "doctors/dr jishan" and the hardcoded doctor.id
-        const matchedId =
+        const matched =
           imageMap.get(`doctors/${doctor.id}`.toLowerCase()) ??
-          imageMap.get(doctor.id.toLowerCase()) ??
-          doctor.id; // fallback to whatever is in data file
+          imageMap.get(doctor.id.toLowerCase());
 
         return (
-          <DoctorCard key={doctor.id} doctor={{ ...doctor, id: matchedId }} />
+          <DoctorCard
+            key={doctor.id}
+            doctor={{ ...doctor, id: matched?.id ?? doctor.id }}
+            imageUrl={matched?.url}
+          />
         );
       })}
     </div>

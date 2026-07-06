@@ -1,39 +1,144 @@
-import HeroBackground from "./HeroBackground";
+"use client";
+
+import { useEffect, useState, useCallback } from "react";
 import HeroHeading from "./HeroHeading";
 import HeroSubtext from "./HeroSubtext";
 import HeroCtaButtons from "./HeroCtaButtons";
-import HeroStatsStrip from "./HeroStatsStrip";
-import HeroImage from "./HeroImage";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
 
-export default function Hero() {
+interface CloudinaryImage {
+  public_id: string;
+  secure_url: string;
+}
+
+export default function Hero({ initialImages = [] }: { initialImages?: CloudinaryImage[] }) {
+  const [images, setImages] = useState<CloudinaryImage[]>(initialImages);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Sync images if prop changes (mostly for dev hot-reloads)
+  useEffect(() => {
+    setImages(initialImages.slice(0, 6)); // Limited to 6 for performance
+  }, [initialImages]);
+
+  const nextSlide = useCallback(() => {
+    if (images.length === 0) return;
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  }, [images.length]);
+
+  const prevSlide = useCallback(() => {
+    if (images.length === 0) return;
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  }, [images.length]);
+
+  // Autoplay
+  useEffect(() => {
+    if (images.length <= 1) return;
+    const timer = setInterval(nextSlide, 6000); // Slow, elegant 6s interval
+    return () => clearInterval(timer);
+  }, [images.length, nextSlide]);
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") prevSlide();
+      if (e.key === "ArrowRight") nextSlide();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [nextSlide, prevSlide]);
+
   return (
-    <section
-      id="home"
-      className="relative min-h-screen flex items-center overflow-hidden section-hero-bg"
+    <section 
+      id="home" 
+      className="relative h-[50vh] min-h-[400px] md:min-h-[500px] md:h-[75vh] lg:h-[85vh] max-h-[900px] w-full flex items-center overflow-hidden bg-[--dark-section-from]"
+      aria-roledescription="carousel"
+      aria-label="Hero Images"
     >
-      <HeroBackground />
-
-      <div className="relative z-10 container-custom px-6 pt-28 pb-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left — Text content */}
-          <div className="flex flex-col gap-7">
-            {/* Trust badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium w-fit"
-              style={{ background: "rgba(16,185,129,0.10)", border: "1px solid rgba(16,185,129,0.25)", color: "var(--accent-dark)" }}>
-              <span className="w-2 h-2 rounded-full bg-[--accent] animate-pulse" />
-              Trusted by 5,000+ Happy Patients
-            </div>
-
-            <HeroHeading />
-            <HeroSubtext />
-            <HeroCtaButtons />
-            <HeroStatsStrip />
+      
+      {/* Carousel Background */}
+      {images.length > 0 ? (
+        images.map((img, idx) => (
+          <div
+            key={img.public_id}
+            className={cn(
+              "absolute inset-0 transition-opacity duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)]",
+              idx === currentIndex ? "opacity-100 z-0" : "opacity-0 -z-10"
+            )}
+          >
+            <Image
+              src={img.secure_url}
+              alt={img.public_id.split("/").pop()?.replace(/[-_]/g, " ") || "Premium Optical View"}
+              fill
+              priority={idx === 0}
+              placeholder="blur"
+              blurDataURL={img.secure_url.replace("/upload/", "/upload/w_10,e_blur:1000,f_auto,q_1/")}
+              className="object-cover"
+              style={{ transform: idx === currentIndex ? "scale(1.03)" : "scale(1)", transition: "transform 8s ease-out" }}
+              sizes="100vw"
+            />
           </div>
+        ))
+      ) : (
+        /* Fallback / Loading */
+        <div className="absolute inset-0 bg-[--dark-section-from] animate-pulse" />
+      )}
 
-          {/* Right — Hospital image */}
-          <HeroImage />
+      {/* Screen reader announcement for slide changes */}
+      <div className="sr-only" aria-live="polite" aria-atomic="true">
+        {images.length > 0 ? `Showing slide ${currentIndex + 1} of ${images.length}` : "Loading images"}
+      </div>
+
+      {/* 
+        Soft bottom transition to next section
+      */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[--bg-base] via-[--bg-base]/40 to-transparent z-10" />
+
+      {/* Dark cinematic overlay — left-heavy gradient */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-black/10 z-10" />
+
+      {/* Content Overlay */}
+      <div className="relative z-20 w-full px-5 md:px-10 lg:px-16 h-full flex flex-col justify-center">
+        <div className="max-w-2xl flex flex-col gap-7 animate-fade-in-up mt-12">
+          <HeroHeading />
+          <HeroSubtext />
+          <HeroCtaButtons />
         </div>
       </div>
+
+      {/* Carousel Controls */}
+      {images.length > 1 && (
+        <div className="absolute bottom-14 right-5 md:right-10 z-30 flex items-center gap-3">
+          <button 
+            onClick={prevSlide}
+            className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/15 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300"
+            aria-label="Previous Slide"
+          >
+            <ChevronLeft size={18} />
+          </button>
+          <div className="flex gap-1.5">
+            {images.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={cn(
+                  "h-1 rounded-full transition-all duration-500",
+                  idx === currentIndex ? "w-7 bg-white" : "w-2.5 bg-white/30 hover:bg-white/50"
+                )}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
+          </div>
+          <button 
+            onClick={nextSlide}
+            className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/15 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300"
+            aria-label="Next Slide"
+          >
+            <ChevronRight size={18} />
+          </button>
+        </div>
+      )}
     </section>
   );
 }

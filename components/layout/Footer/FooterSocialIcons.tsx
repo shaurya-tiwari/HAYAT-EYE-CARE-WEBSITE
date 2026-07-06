@@ -23,14 +23,14 @@ function FacebookIcon({ size = 18 }: { size?: number }) {
 export default function FooterSocialIcons() {
   return (
     <div>
-      <h4 className="font-semibold text-white mb-4">Follow Us</h4>
+      <h4 className="font-bold text-white text-sm mb-5 tracking-tight uppercase">Socials</h4>
       <div className="flex gap-3">
         <a
           href={SOCIAL_LINKS.instagram}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
-          className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:bg-[--accent] hover:text-white transition-all duration-200"
+          className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white/50 hover:bg-white hover:text-[--dark-section-from] hover:scale-105 transition-all duration-300"
         >
           <InstagramIcon size={18} />
         </a>
@@ -39,12 +39,12 @@ export default function FooterSocialIcons() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Facebook"
-          className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:bg-[--accent] hover:text-white transition-all duration-200"
+          className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white/50 hover:bg-white hover:text-[--dark-section-from] hover:scale-105 transition-all duration-300"
         >
           <FacebookIcon size={18} />
         </a>
       </div>
-      <p className="text-white/50 text-xs mt-4">
+      <p className="text-white/30 text-xs mt-5 leading-relaxed">
         Share your new look with us!<br />Tag us on Instagram.
       </p>
     </div>

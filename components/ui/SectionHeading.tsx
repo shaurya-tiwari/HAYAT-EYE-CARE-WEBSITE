@@ -10,7 +10,7 @@ interface SectionHeadingProps {
 
 /**
  * Consistent section title + optional subtitle used by every content section.
- * Includes a decorative gold accent underline.
+ * Includes an optional pill badge above titles.
  */
 export default function SectionHeading({
   title,
@@ -20,29 +20,21 @@ export default function SectionHeading({
   className,
 }: SectionHeadingProps) {
   return (
-    <div className={cn("mb-12", centered && "text-center", className)}>
+    <div className={cn("mb-8 md:mb-12", centered && "text-center flex flex-col items-center", className)}>
       <h2
         className={cn(
-          "text-3xl md:text-4xl font-bold mb-3",
+          "text-[1.75rem] sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.1] max-w-4xl",
           light ? "text-white" : "text-[--text-primary]"
         )}
       >
         {title}
       </h2>
 
-      {/* Gold accent underline */}
-      <div
-        className={cn(
-          "h-1 w-16 rounded-full bg-[--accent] mb-4",
-          centered && "mx-auto"
-        )}
-      />
-
       {subtitle && (
         <p
           className={cn(
-            "text-lg max-w-2xl",
-            light ? "text-white/80" : "text-[--text-secondary]",
+            "text-base md:text-lg font-medium max-w-2xl leading-relaxed mt-4",
+            light ? "text-white/60" : "text-[--text-muted]",
             centered && "mx-auto"
           )}
         >

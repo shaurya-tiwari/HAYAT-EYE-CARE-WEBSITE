@@ -9,18 +9,18 @@ const TRUST_LOGOS = [
 
 export default function TrustStrip() {
   return (
-    <section className="border-y border-[--glass-border] bg-white py-8">
-      <div className="container-custom px-6 flex flex-col md:flex-row items-center justify-between gap-8">
+    <section className="border-y border-[--glass-border] bg-white py-6 md:py-8">
+      <div className="container-custom px-5 md:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex-shrink-0">
-          <p className="text-sm font-semibold text-[--text-secondary] uppercase tracking-wider">
+          <p className="text-xs font-semibold text-[--text-muted] uppercase tracking-wider">
             Trusted by top platforms
           </p>
         </div>
         
         <div className="flex-1 overflow-hidden">
-          <div className="flex items-center gap-12 md:gap-20 justify-center md:justify-start opacity-50 grayscale hover:grayscale-0 transition-all duration-300">
+          <div className="flex items-center gap-10 md:gap-16 justify-center md:justify-start opacity-40 grayscale hover:grayscale-0 hover:opacity-80 transition-all duration-500">
             {TRUST_LOGOS.map((logo, i) => (
-              <div key={i} className="relative h-8 w-24">
+              <div key={i} className="relative h-7 w-20">
                 <Image
                   src={logo.src}
                   alt={logo.name}
@@ -29,8 +29,8 @@ export default function TrustStrip() {
                 />
               </div>
             ))}
-            <div className="font-bold text-xl text-[--text-secondary] tracking-tight">
-              4.9/5 <span className="text-sm font-normal">Average Rating</span>
+            <div className="font-bold text-lg text-[--text-primary] tracking-tight">
+              4.9/5 <span className="text-xs font-medium text-[--text-muted]">Average Rating</span>
             </div>
           </div>
         </div>

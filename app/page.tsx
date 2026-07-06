@@ -1,39 +1,44 @@
 import { Hero } from "@/components/sections/Hero";
+import { Brands } from "@/components/sections/Brands";
 import { TrustStrip } from "@/components/sections/TrustStrip";
 import { About } from "@/components/sections/About";
-import { Services } from "@/components/sections/Services";
-import { Products } from "@/components/sections/Products";
-import { Brands } from "@/components/sections/Brands";
 import { Doctors } from "@/components/sections/Doctors";
+import { Services } from "@/components/sections/Services";
 import { VisionMission } from "@/components/sections/VisionMission";
-import { Achievements } from "@/components/sections/Achievements";
-import { Testimonials } from "@/components/sections/Testimonials";
-import { FAQ } from "@/components/sections/FAQ";
 import { Gallery } from "@/components/sections/Gallery";
+import { Achievements } from "@/components/sections/Achievements";
+import { FAQ } from "@/components/sections/FAQ";
 import { Contact } from "@/components/sections/Contact";
+import { Products } from "@/components/sections/Products";
+
+import { fetchCloudinaryImages } from "@/lib/cloudinaryDirect";
 
 /**
  * Homepage — Full site composition.
- * Section order: Hero → Trust → About → Services → Products →
- *                Brands → Doctors → Vision/Mission → Achievements →
- *                Testimonials → FAQ → Contact
+ * Section order:
+ *   Hero → Brands → TrustStrip → About → Doctors → Services →
+ *   VisionMission → Gallery → Achievements → Products → FAQ → Contact
+ *
+ * Removed: Testimonials
  */
-export default function HomePage() {
+export default async function HomePage() {
+  const heroImages = await fetchCloudinaryImages("HERO SECTION");
+  const galleryImages = await fetchCloudinaryImages("GALLERY");
+
   return (
     <>
-      <Hero />
-      <TrustStrip />
+      <Hero initialImages={heroImages} />
       <About />
+      <Doctors />
       <Services />
+      <VisionMission />
+      <Gallery initialImages={galleryImages} />
+      <Achievements />
       <Products />
       <Brands />
-      <Doctors />
-      <VisionMission />
-      <Achievements />
-      <Testimonials />
       <FAQ />
-      <Gallery />
       <Contact />
+      <TrustStrip />
     </>
   );
 }

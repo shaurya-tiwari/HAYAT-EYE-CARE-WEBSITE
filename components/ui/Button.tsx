@@ -2,32 +2,32 @@ import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 font-semibold rounded-[--radius-btn] transition-all duration-250 cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[--primary] disabled:opacity-50 disabled:pointer-events-none",
+  "inline-flex items-center justify-center gap-2 font-semibold rounded-full transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[--primary] focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none active:scale-[0.97]",
   {
     variants: {
       variant: {
         primary:
-          "bg-[--primary] text-white hover:bg-[--primary-dark] shadow-md hover:shadow-lg hover:-translate-y-0.5",
+          "bg-[--primary] text-white hover:bg-[--primary-dark] shadow-[0_2px_8px_rgba(0,113,227,0.20)] hover:shadow-[0_8px_24px_rgba(0,113,227,0.30)] hover:-translate-y-0.5 border border-transparent",
         accent:
-          "bg-[--accent] text-white hover:bg-[--accent-dark] shadow-md hover:shadow-lg hover:-translate-y-0.5",
+          "bg-[--accent] text-white hover:bg-[--accent-dark] shadow-[0_2px_8px_rgba(5,150,105,0.20)] hover:shadow-[0_8px_24px_rgba(5,150,105,0.30)] hover:-translate-y-0.5 border border-transparent",
         outline:
-          "border-2 border-[--primary] text-[--primary] bg-transparent hover:bg-[--primary] hover:text-white",
+          "border border-slate-200 text-slate-600 bg-white hover:bg-slate-50 hover:text-[--primary] hover:border-[--primary]/25 shadow-sm",
         "outline-dark":
-          "border-2 border-white/40 text-white bg-transparent hover:bg-white/10 hover:border-white/70",
+          "border border-white/20 text-white bg-white/5 hover:bg-white/10 hover:border-white/40 backdrop-blur-md",
         ghost:
-          "text-[--primary] bg-transparent hover:bg-[--primary-muted]",
+          "text-slate-600 bg-transparent hover:bg-slate-100/80 hover:text-[--text-primary]",
         whatsapp:
-          "bg-[#25D366] text-white hover:bg-[#1ebe5d] shadow-md hover:shadow-lg hover:-translate-y-0.5",
+          "bg-[#25D366] text-white hover:bg-[#1ebe5d] shadow-[0_2px_8px_rgba(37,211,102,0.20)] hover:shadow-[0_8px_24px_rgba(37,211,102,0.30)] hover:-translate-y-0.5 border border-transparent",
         glass:
-          "glass text-[--text-primary] hover:bg-white/90",
+          "glass text-[--text-primary] hover:bg-white/90 hover:shadow-md",
         "glass-dark":
           "glass-dark text-white hover:bg-white/15",
       },
       size: {
         sm: "px-4 py-2 text-sm",
-        md: "px-6 py-3 text-base",
-        lg: "px-8 py-4 text-lg",
-        xl: "px-10 py-5 text-xl",
+        md: "px-5 py-2.5 md:px-6 md:py-2.5 text-sm md:text-[15px]",
+        lg: "px-6 py-3 md:px-7 md:py-3.5 text-[15px] md:text-base",
+        xl: "px-8 py-4 md:px-10 md:py-5 text-base md:text-lg",
         icon: "p-2.5",
       },
     },

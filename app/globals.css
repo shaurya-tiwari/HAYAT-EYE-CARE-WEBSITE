@@ -1,55 +1,55 @@
 @import "tailwindcss";
 
 /* ============================================================
-   HAYAT EYE CARE — Premium Design System v2
-   Aesthetic: Apple × Linear × Vercel — Light glassmorphism
-   Palette: Sky Blue + Emerald + Near-white
+   HAYAT EYE CARE — Premium Design System v3
+   Aesthetic: Apple × Zeiss × Gentle Monster — Premium Optical
+   Palette: Deep Navy + Emerald + Refined Neutrals
    ============================================================ */
 
 @layer base {
   :root {
-    /* --- Primary — Sky Blue --- */
-    --primary: #0ea5e9;
-    --primary-dark: #0284c7;
-    --primary-light: #38bdf8;
-    --primary-muted: #e0f2fe;
+    /* --- Primary — Deep Medical Navy (Apple-inspired) --- */
+    --primary: #0071e3;
+    --primary-dark: #0058b9;
+    --primary-light: #4da3ff;
+    --primary-muted: #eef6ff;
 
-    /* --- Accent — Emerald --- */
-    --accent: #10b981;
-    --accent-dark: #059669;
+    /* --- Accent — Refined Emerald --- */
+    --accent: #059669;
+    --accent-dark: #047857;
     --accent-light: #34d399;
-    --accent-muted: #d1fae5;
+    --accent-muted: #ecfdf5;
 
-    /* --- Neutral palette --- */
-    --bg-base: #f8fafc;
-    --bg-soft: #f1f5f9;
-    --bg-card: rgba(255, 255, 255, 0.72);
+    /* --- Neutral palette — Warmer, more refined --- */
+    --bg-base: #fafbfc;
+    --bg-soft: #f4f5f7;
+    --bg-card: rgba(255, 255, 255, 0.88);
 
-    /* --- Text --- */
+    /* --- Text — Richer contrast --- */
     --text-primary: #0f172a;
     --text-secondary: #475569;
     --text-muted: #94a3b8;
     --text-on-dark: #ffffff;
 
-    /* --- Light Glass Effect Tokens --- */
-    --glass-bg: rgba(255, 255, 255, 0.70);
-    --glass-bg-hover: rgba(255, 255, 255, 0.88);
-    --glass-border: rgba(148, 163, 184, 0.20);
-    --glass-border-hover: rgba(14, 165, 233, 0.35);
-    --glass-shadow: 0 4px 24px rgba(15, 23, 42, 0.06), 0 1px 4px rgba(15, 23, 42, 0.04);
-    --glass-shadow-hover: 0 16px 48px rgba(14, 165, 233, 0.15), 0 4px 12px rgba(15, 23, 42, 0.08);
-    --glass-blur: blur(16px);
+    /* --- Glass Effect Tokens — Refined subtle --- */
+    --glass-bg: rgba(255, 255, 255, 0.72);
+    --glass-bg-hover: rgba(255, 255, 255, 0.92);
+    --glass-border: rgba(0, 0, 0, 0.04);
+    --glass-border-hover: rgba(0, 113, 227, 0.20);
+    --glass-shadow: 0 8px 32px -8px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.02);
+    --glass-shadow-hover: 0 20px 48px -12px rgba(0, 113, 227, 0.12), 0 4px 12px rgba(0,0,0,0.04);
+    --glass-blur: blur(20px);
 
-    /* --- Dark section glass (for contrast sections) --- */
-    --dark-glass-bg: rgba(15, 23, 42, 0.80);
-    --dark-glass-border: rgba(255, 255, 255, 0.10);
+    /* --- Dark section glass --- */
+    --dark-glass-bg: rgba(15, 23, 42, 0.85);
+    --dark-glass-border: rgba(255, 255, 255, 0.08);
     --dark-section-from: #0f172a;
-    --dark-section-to: #0284c7;
+    --dark-section-to: #020617;
 
-    /* --- Radius --- */
-    --radius-card: 1.5rem;     /* 24px */
-    --radius-card-lg: 1.75rem; /* 28px */
-    --radius-btn: 0.75rem;     /* 12px */
+    /* --- Radius — Softer curves --- */
+    --radius-card: 1.25rem;     /* 20px */
+    --radius-card-lg: 1.5rem;   /* 24px */
+    --radius-btn: 0.75rem;      /* 12px */
     --radius-full: 9999px;
 
     /* --- Transitions --- */
@@ -72,7 +72,7 @@
     background: var(--bg-base);
     color: var(--text-primary);
     font-family: var(--font-plus-jakarta), var(--font-inter), 'Inter', system-ui, sans-serif;
-    line-height: 1.6;
+    line-height: 1.65;
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -82,21 +82,27 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-sora), var(--font-plus-jakarta), system-ui, sans-serif;
     font-weight: 700;
-    line-height: 1.15;
+    line-height: 1.12;
     color: var(--text-primary);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
   }
 
   a { color: inherit; text-decoration: none; }
   img { max-width: 100%; height: auto; }
 
-  ::-webkit-scrollbar { width: 5px; }
-  ::-webkit-scrollbar-track { background: var(--bg-soft); }
-  ::-webkit-scrollbar-thumb { background: var(--primary-light); border-radius: var(--radius-full); }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.35);
+    border-radius: var(--radius-full);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(148, 163, 184, 0.55);
+  }
 }
 
 /* ============================================================
-   GLASS UTILITIES — Light style
+   GLASS UTILITIES
    ============================================================ */
 @layer utilities {
   /* Light frosted glass card */
@@ -114,7 +120,7 @@
     background: var(--glass-bg-hover);
     border-color: var(--glass-border-hover);
     box-shadow: var(--glass-shadow-hover);
-    transform: translateY(-4px);
+    transform: translateY(-3px);
   }
 
   /* Non-hoverable flat glass */
@@ -127,14 +133,14 @@
     box-shadow: var(--glass-shadow);
   }
 
-  /* Dark glass (for dark sections) */
+  /* Dark glass */
   .glass-dark {
     background: var(--dark-glass-bg);
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
     border: 1px solid var(--dark-glass-border);
     border-radius: var(--radius-card);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
     transition: var(--transition-base);
   }
 
@@ -147,16 +153,30 @@
   }
 
   .gradient-text-blue {
-    background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+    background: linear-gradient(135deg, #0071e3 0%, #4da3ff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   /* Layout */
-  .section-padding { padding: 6rem 1.5rem; }
-  .section-padding-sm { padding: 4rem 1.5rem; }
-  .container-custom { max-width: 1200px; margin: 0 auto; width: 100%; }
+  .section-padding {
+    padding: 1.5rem 1rem;
+  }
+  @media (min-width: 640px) {
+    .section-padding { padding: 2.5rem 1.25rem; }
+  }
+  @media (min-width: 768px) {
+    .section-padding { padding: 4.5rem 2rem; }
+  }
+  @media (min-width: 1024px) {
+    .section-padding { padding: 6rem 2rem; }
+  }
+  .section-padding-sm { padding: 1.5rem 1rem; }
+  @media (min-width: 640px) {
+    .section-padding-sm { padding: 2rem 1.25rem; }
+  }
+  .container-custom { max-width: 1280px; margin: 0 auto; width: 100%; }
 
   /* Background variants */
   .section-light { background: var(--bg-base); }
@@ -165,19 +185,19 @@
 
   /* Glow effects */
   .glow-blue {
-    box-shadow: 0 0 40px rgba(14, 165, 233, 0.25), 0 0 80px rgba(14, 165, 233, 0.10);
+    box-shadow: 0 0 40px rgba(0, 113, 227, 0.20), 0 0 80px rgba(0, 113, 227, 0.08);
   }
   .glow-emerald {
-    box-shadow: 0 0 40px rgba(16, 185, 129, 0.25), 0 0 80px rgba(16, 185, 129, 0.10);
+    box-shadow: 0 0 40px rgba(5, 150, 105, 0.20), 0 0 80px rgba(5, 150, 105, 0.08);
   }
 
   /* Shimmer skeleton */
   .shimmer {
     background: linear-gradient(
       90deg,
-      rgba(148, 163, 184, 0.08) 25%,
-      rgba(148, 163, 184, 0.18) 50%,
-      rgba(148, 163, 184, 0.08) 75%
+      rgba(148, 163, 184, 0.06) 25%,
+      rgba(148, 163, 184, 0.14) 50%,
+      rgba(148, 163, 184, 0.06) 75%
     );
     background-size: 200% 100%;
     animation: shimmer 1.6s ease-in-out infinite;
@@ -186,9 +206,9 @@
   /* WhatsApp pulse */
   .pulse-ring { animation: pulse-ring-green 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
 
-  /* Floating animation for hero elements */
-  .float { animation: float 4s ease-in-out infinite; }
-  .float-delay { animation: float 4s ease-in-out 1.5s infinite; }
+  /* Floating animation */
+  .float { animation: float 5s ease-in-out infinite; }
+  .float-delay { animation: float 5s ease-in-out 2s infinite; }
 }
 
 /* ============================================================
@@ -205,7 +225,7 @@
 }
 
 @keyframes fade-in-up {
-  from { opacity: 0; transform: translateY(24px); }
+  from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -221,67 +241,73 @@
 
 @keyframes marquee {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(-100%); }
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-8px); }
 }
 
 @keyframes glow-pulse {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.8; }
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
 }
 
-.animate-fade-in-up { animation: fade-in-up 0.65s cubic-bezier(0.4, 0, 0.2, 1) both; }
-.animate-fade-in { animation: fade-in 0.45s ease both; }
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in-up { animation: fade-in-up 0.6s cubic-bezier(0.4, 0, 0.2, 1) both; }
+.animate-fade-in { animation: fade-in 0.4s ease both; }
 .animate-spin-slow { animation: spin-slow 3s linear infinite; }
-.animate-marquee { animation: marquee 30s linear infinite; }
+.animate-marquee { animation: marquee 20s linear infinite; }
 .animate-glow { animation: glow-pulse 3s ease-in-out infinite; }
+.animate-scale-in { animation: scale-in 0.5s cubic-bezier(0.4, 0, 0.2, 1) both; }
 
 /* ============================================================
-   SECTION BACKGROUND VARIANTS
+   SECTION BACKGROUNDS
    ============================================================ */
 .section-teal-bg {
-  background: linear-gradient(160deg, #f0f9ff 0%, #e0f2fe 50%, #f0fdf4 100%);
+  background: linear-gradient(180deg, var(--bg-base) 0%, var(--primary-muted) 100%);
 }
 
 .section-dark-bg {
-  background: linear-gradient(135deg, #0f172a 0%, #0c4a6e 100%);
+  background: linear-gradient(160deg, var(--dark-section-from) 0%, var(--dark-section-to) 100%);
 }
 
 .section-hero-bg {
-  background: linear-gradient(160deg, #f0f9ff 0%, #f8fafc 40%, #f0fdf4 100%);
+  background: linear-gradient(180deg, var(--primary-muted) 0%, var(--bg-base) 100%);
 }
 
-/* Ambient glow blobs (used in hero) */
+/* Ambient glow blobs */
 .hero-glow-1 {
-  background: radial-gradient(circle, rgba(14,165,233,0.18) 0%, transparent 70%);
-  animation: glow-pulse 4s ease-in-out infinite;
+  background: radial-gradient(circle, rgba(0,113,227,0.12) 0%, transparent 70%);
+  animation: glow-pulse 5s ease-in-out infinite;
 }
 .hero-glow-2 {
-  background: radial-gradient(circle, rgba(16,185,129,0.15) 0%, transparent 70%);
-  animation: glow-pulse 4s ease-in-out 2s infinite;
+  background: radial-gradient(circle, rgba(5,150,105,0.10) 0%, transparent 70%);
+  animation: glow-pulse 5s ease-in-out 2.5s infinite;
 }
 
 /* ============================================================
    DOCTOR CARD HOVER
    ============================================================ */
 .doctor-card:hover {
-  transform: translateY(-6px) scale(1.015);
-  box-shadow: 0 24px 64px rgba(14, 165, 233, 0.18), 0 0 0 1.5px rgba(14, 165, 233, 0.30) !important;
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 24px 64px rgba(0, 113, 227, 0.15), 0 0 0 1px rgba(0, 113, 227, 0.20) !important;
 }
 
 /* ============================================================
    NAVBAR GLASS (scrolled state)
    ============================================================ */
 .navbar-scrolled {
-  background: rgba(248, 250, 252, 0.88) !important;
-  backdrop-filter: blur(20px) !important;
-  -webkit-backdrop-filter: blur(20px) !important;
-  border-bottom: 1px solid rgba(148, 163, 184, 0.15) !important;
-  box-shadow: 0 1px 20px rgba(15, 23, 42, 0.06) !important;
+  background: rgba(250, 251, 252, 0.82) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1px solid rgba(0, 0, 0, 0.04) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0,0,0,0.02) !important;
 }
 
 /* ============================================================
@@ -304,10 +330,9 @@
   width: max-content;
   gap: 3rem;
 }
-.marquee-track { animation-play-state: paused; }
 
 /* ============================================================
-   SCROLLBAR HIDE (for horizontal scroll rows)
+   SCROLLBAR HIDE
    ============================================================ */
 .scrollbar-hide {
   -ms-overflow-style: none;
@@ -317,3 +342,22 @@
   display: none;
 }
 
+/* ============================================================
+   CUSTOM MODERN SCROLLBAR (Gallery)
+   ============================================================ */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 8px;
+  margin-bottom: 2rem; /* Avoids overlapping the bottom fade */
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.15); /* Premium dark slate with transparency */
+  border-radius: 8px;
+  border: 2px solid rgba(250, 251, 252, 1); /* Matches bg-base for inner padding effect */
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(15, 23, 42, 0.3);
+}

@@ -1,5 +1,4 @@
 import FooterContactInfo from "./FooterContactInfo";
-import FooterMapEmbed from "./FooterMapEmbed";
 import FooterQuickLinks from "./FooterQuickLinks";
 import FooterSocialIcons from "./FooterSocialIcons";
 import FooterCopyright from "./FooterCopyright";
@@ -10,14 +9,14 @@ import { buildGeneralWhatsAppLink } from "@/lib/whatsapp";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="section-dark-bg text-white">
-      <div className="container-custom px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+    <footer className="bg-slate-900 text-white border-t border-white/5">
+      <div className="container-custom px-5 md:px-8 py-10 md:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 mb-8 md:mb-12">
           {/* Brand + WhatsApp CTA */}
           <div className="lg:col-span-1">
-            <h3 className="text-xl font-bold text-[--accent] mb-3">{SITE_NAME}</h3>
-            <p className="text-white/70 text-sm mb-6 leading-relaxed">
-              Your trusted optical center for comprehensive eye care and premium eyewear.
+            <h3 className="text-xl font-extrabold tracking-tight text-white mb-3">{SITE_NAME}</h3>
+            <p className="text-white/45 text-sm mb-6 leading-relaxed">
+              Curated luxury eyewear and world-class vision correction diagnostics.
             </p>
             <Button
               href={buildGeneralWhatsAppLink()}
@@ -27,7 +26,7 @@ export default function Footer() {
               size="md"
               id="footer-whatsapp-cta"
             >
-              <MessageCircle size={18} />
+              <MessageCircle size={16} />
               WhatsApp Us
             </Button>
           </div>
@@ -37,7 +36,6 @@ export default function Footer() {
           <FooterSocialIcons />
         </div>
 
-        <FooterMapEmbed />
         <FooterCopyright />
       </div>
     </footer>

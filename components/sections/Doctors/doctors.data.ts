@@ -2,7 +2,7 @@ import type { Doctor } from "@/types/doctor";
 
 export const DOCTORS: Doctor[] = [
   {
-    id: "dr_jishan_wppqkq",
+    id: "dr_jishan",
     name: "Dr. Jishan",
     qualification: "B.Optom, PGDCR",
     specialization: "Chief Optometrist",
@@ -15,7 +15,7 @@ export const DOCTORS: Doctor[] = [
     image: "/doctors/dr-jishan.png",
   },
   {
-    id: "dr_manan_hrztqz",
+    id: "dr_manan",
     name: "Dr. Manan",
     qualification: "B.Optom, Dip. CL",
     specialization: "Contact Lens Specialist",
@@ -28,7 +28,7 @@ export const DOCTORS: Doctor[] = [
     image: "/doctors/dr-manan.png",
   },
   {
-    id: "dr_owaish_uypje0",
+    id: "dr_owaish",
     name: "Dr. Owaish",
     qualification: "B.Optom, M.Sc (Optometry)",
     specialization: "Senior Optometrist",
