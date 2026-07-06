@@ -1,17 +1,24 @@
+import Image from "next/image";
 import { SITE_NAME, SITE_TAGLINE } from "@/constants/site";
 
 interface LogoProps {
   scrolled?: boolean;
 }
 
-/** Brand logo with eye/lens-inspired icon */
+/** Brand logo with custom SVG icon */
 export default function Logo({ scrolled = true }: LogoProps) {
   return (
     <a href="/#home" className="flex items-center gap-2.5 group" aria-label="Hayat Eye Care home">
-      {/* Lens-inspired concentric circle icon */}
-      <div className="relative w-7 h-7 md:w-9 md:h-9 shrink-0 rounded-full bg-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
-        <div className="absolute inset-[2px] md:inset-[3px] rounded-full border-2 border-[--primary]/30" />
-        <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-[--primary]" />
+      {/* Brand Logo Image */}
+      <div className="relative w-8 h-8 md:w-10 md:h-10 shrink-0 rounded-full bg-white flex items-center justify-center shadow-md overflow-hidden group-hover:scale-105 transition-transform duration-300">
+        <Image
+          src="/HAYAT LOGO.svg"
+          alt="HAYAT EYE CARE Logo"
+          width={40}
+          height={40}
+          className="w-full h-full object-cover"
+          priority
+        />
       </div>
       <div>
         <span className={`block font-extrabold text-sm md:text-[17px] leading-none tracking-tight transition-colors duration-300 ${scrolled ? "text-[--text-primary]" : "text-white"}`}>
