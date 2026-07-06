@@ -18,7 +18,7 @@ export default function DoctorsGrid({ initialImages = [] }: DoctorsGridProps) {
   });
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5 max-w-5xl mx-auto px-1 sm:px-0">
+    <div className="grid grid-cols-3 gap-1 sm:gap-3 md:gap-5 max-w-5xl mx-auto px-1 sm:px-0">
       {DOCTORS.map((doctor) => {
         // Try to match this doctor's ID to a Cloudinary image
         const matched =

@@ -10,6 +10,7 @@ import { Achievements } from "@/components/sections/Achievements";
 import { FAQ } from "@/components/sections/FAQ";
 import { Contact } from "@/components/sections/Contact";
 import { Products } from "@/components/sections/Products";
+import Image from "next/image";
 
 import { fetchCloudinaryImages } from "@/lib/cloudinaryDirect";
 
@@ -34,6 +35,16 @@ export default async function HomePage() {
       <VisionMission />
       <Gallery initialImages={galleryImages} />
       <Achievements />
+      <div className="w-full flex relative z-[50] -mt-2 sm:-mt-4 md:-mt-8 lg:-mt-12 -mb-6 sm:-mb-8 md:-mb-16 pointer-events-none">
+        <Image
+          src="/spcsss_v3.png"
+          alt="Premium Eyewear Display"
+          width={1901}
+          height={492}
+          className="w-full h-auto object-cover drop-shadow-2xl"
+          priority
+        />
+      </div>
       <Products />
       <Brands />
       <FAQ />

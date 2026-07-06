@@ -16,11 +16,11 @@ export default function TrustStrip() {
             Trusted by top platforms
           </p>
         </div>
-        
+
         <div className="flex-1 overflow-hidden">
-          <div className="flex items-center gap-10 md:gap-16 justify-center md:justify-start opacity-40 grayscale hover:grayscale-0 hover:opacity-80 transition-all duration-500">
+          <div className="flex items-center gap-6 md:gap-16 justify-center md:justify-start opacity-40 grayscale hover:grayscale-0 hover:opacity-80 transition-all duration-500">
             {TRUST_LOGOS.map((logo, i) => (
-              <div key={i} className="relative h-7 w-20">
+              <div key={i} className="relative h-5 w-14 md:h-7 md:w-20">
                 <Image
                   src={logo.src}
                   alt={logo.name}
@@ -29,8 +29,8 @@ export default function TrustStrip() {
                 />
               </div>
             ))}
-            <div className="font-bold text-lg text-[--text-primary] tracking-tight">
-              4.9/5 <span className="text-xs font-medium text-[--text-muted]">Average Rating</span>
+            <div className="font-bold text-sm md:text-lg text-[--text-primary] tracking-tight">
+              4.9/5 <span className="text-[10px] md:text-xs font-medium text-[--text-muted]">Average Rating</span>
             </div>
           </div>
         </div>

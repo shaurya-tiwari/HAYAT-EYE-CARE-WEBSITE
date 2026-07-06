@@ -44,9 +44,9 @@ function FaqItem({ q, a, isOpen, onClick }: { q: string; a: string; isOpen: bool
     >
       <button
         onClick={onClick}
-        className="w-full flex items-center justify-between gap-4 p-5 text-left"
+        className="w-full flex items-center justify-between gap-4 p-3.5 md:p-5 text-left"
       >
-        <span className="font-semibold text-[--text-primary] text-[15px] pr-4">{q}</span>
+        <span className="font-semibold text-[--text-primary] text-[13px] md:text-[15px] pr-2 md:pr-4">{q}</span>
         <span className={cn(
           "shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300",
           isOpen ? "bg-[--primary] text-white" : "bg-[--bg-soft] text-[--text-muted]"
@@ -55,7 +55,7 @@ function FaqItem({ q, a, isOpen, onClick }: { q: string; a: string; isOpen: bool
         </span>
       </button>
       <div className={cn("faq-answer", isOpen && "open")}>
-        <p className="px-5 pb-5 text-[--text-secondary] leading-relaxed text-sm">{a}</p>
+        <p className="px-3.5 pb-3.5 md:px-5 md:pb-5 text-[--text-secondary] leading-relaxed text-xs md:text-sm">{a}</p>
       </div>
     </div>
   );

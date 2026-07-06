@@ -13,9 +13,9 @@ export default function Contact() {
         subtitle="We'd love to hear from you. Walk in or book via WhatsApp."
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+      <div className="grid grid-cols-2 gap-2 md:gap-8 items-start max-w-5xl mx-auto">
         {/* Info Cards */}
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-1 md:gap-3">
           {[
             {
               icon: Phone,
@@ -46,20 +46,20 @@ export default function Contact() {
               color: "--accent",
             },
           ].map(({ icon: Icon, label, value, href, color }) => (
-            <div key={label} className="glass p-4 flex items-start gap-3.5">
-              <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
+            <div key={label} className="glass p-1.5 md:p-4 flex items-start gap-1.5 md:gap-3.5">
+              <div className="w-5 h-5 md:w-10 md:h-10 rounded-md md:rounded-lg flex items-center justify-center shrink-0"
                 style={{ backgroundColor: `color-mix(in srgb, var(${color}) 10%, transparent)` }}>
-                <Icon size={18} style={{ color: `var(${color})` }} />
+                <Icon className="w-3 h-3 md:w-[18px] md:h-[18px]" style={{ color: `var(${color})` }} />
               </div>
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-wider text-[--text-muted]">{label}</p>
+                <p className="text-[5px] md:text-[10px] font-bold uppercase tracking-wider text-[--text-muted] leading-none">{label}</p>
                 {href ? (
                   <a href={href} target="_blank" rel="noopener noreferrer"
-                    className="text-[--text-primary] font-medium hover:text-[--primary] transition-colors text-sm mt-0.5 block">
+                    className="text-[--text-primary] font-medium hover:text-[--primary] transition-colors text-[6px] md:text-sm mt-0.5 block leading-[1.1]">
                     {value}
                   </a>
                 ) : (
-                  <p className="text-[--text-primary] font-medium text-sm mt-0.5">{value}</p>
+                  <p className="text-[--text-primary] font-medium text-[6px] md:text-sm mt-0.5 leading-[1.1]">{value}</p>
                 )}
               </div>
             </div>
@@ -80,12 +80,12 @@ export default function Contact() {
         </div>
 
         {/* Google Map Embed */}
-        <div className="glass p-1.5 rounded-2xl overflow-hidden h-72 md:h-full min-h-[320px]">
+        <div className="glass p-1.5 rounded-2xl overflow-hidden h-64 md:h-full min-h-[250px] md:min-h-[320px]">
           <iframe
             src={SITE_MAPS_URL}
             width="100%"
             height="100%"
-            style={{ border: 0, borderRadius: "14px", minHeight: "310px" }}
+            style={{ border: 0, borderRadius: "14px", minHeight: "240px" }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

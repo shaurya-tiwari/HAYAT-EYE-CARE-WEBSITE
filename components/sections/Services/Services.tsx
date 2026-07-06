@@ -11,8 +11,8 @@ export default function Services() {
         subtitle="Comprehensive vision care using the latest technology and highest clinical standards."
       />
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-2.5 md:gap-5 px-1 sm:px-0">
-        {SERVICES.map((service) => (
+      <div className="grid grid-cols-3 gap-1.5 md:gap-5 px-1 sm:px-0">
+        {SERVICES.map((service, index) => (
           <ServiceCard
             key={service.id}
             title={service.title}

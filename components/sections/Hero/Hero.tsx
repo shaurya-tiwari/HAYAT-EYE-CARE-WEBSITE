@@ -50,13 +50,13 @@ export default function Hero({ initialImages = [] }: { initialImages?: Cloudinar
   }, [nextSlide, prevSlide]);
 
   return (
-    <section 
-      id="home" 
-      className="relative h-[50vh] min-h-[400px] md:min-h-[500px] md:h-[75vh] lg:h-[85vh] max-h-[900px] w-full flex items-center overflow-hidden bg-[--dark-section-from]"
+    <section
+      id="home"
+      className="relative z-10 -mb-[1px] h-[50vh] min-h-[400px] md:min-h-[500px] md:h-[75vh] lg:h-[85vh] max-h-[900px] w-full flex items-center overflow-hidden bg-[--dark-section-from]"
       aria-roledescription="carousel"
       aria-label="Hero Images"
     >
-      
+
       {/* Carousel Background */}
       {images.length > 0 ? (
         images.map((img, idx) => (
@@ -90,13 +90,14 @@ export default function Hero({ initialImages = [] }: { initialImages?: Cloudinar
         {images.length > 0 ? `Showing slide ${currentIndex + 1} of ${images.length}` : "Loading images"}
       </div>
 
-      {/* 
-        Soft bottom transition to next section
-      */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[--bg-base] via-[--bg-base]/40 to-transparent z-10" />
-
       {/* Dark cinematic overlay — left-heavy gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-black/10 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-black/10 z-10 pointer-events-none" />
+
+      {/* 
+        Soft bottom transition to perfectly blend into the site background
+        MUST be z-20 to sit above the cinematic dark overlay so it doesn't get tinted gray!
+      */}
+      <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-32 md:h-56 bg-gradient-to-t from-white via-white/80 to-transparent z-20 pointer-events-none" />
 
       {/* Content Overlay */}
       <div className="relative z-20 w-full px-5 md:px-10 lg:px-16 h-full flex flex-col justify-center">
@@ -109,15 +110,27 @@ export default function Hero({ initialImages = [] }: { initialImages?: Cloudinar
 
       {/* Carousel Controls */}
       {images.length > 1 && (
-        <div className="absolute bottom-14 right-5 md:right-10 z-30 flex items-center gap-3">
-          <button 
+        <>
+          {/* Previous Button (Left) */}
+          <button
             onClick={prevSlide}
-            className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/15 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300"
+            className="hidden md:flex absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/15 items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300"
             aria-label="Previous Slide"
           >
             <ChevronLeft size={18} />
           </button>
-          <div className="flex gap-1.5">
+
+          {/* Next Button (Right) */}
+          <button
+            onClick={nextSlide}
+            className="hidden md:flex absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/15 items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300"
+            aria-label="Next Slide"
+          >
+            <ChevronRight size={18} />
+          </button>
+
+          {/* Dot Indicators (Bottom Center) */}
+          <div className="absolute bottom-3 md:bottom-8 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5">
             {images.map((_, idx) => (
               <button
                 key={idx}
@@ -130,14 +143,7 @@ export default function Hero({ initialImages = [] }: { initialImages?: Cloudinar
               />
             ))}
           </div>
-          <button 
-            onClick={nextSlide}
-            className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/15 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300"
-            aria-label="Next Slide"
-          >
-            <ChevronRight size={18} />
-          </button>
-        </div>
+        </>
       )}
     </section>
   );

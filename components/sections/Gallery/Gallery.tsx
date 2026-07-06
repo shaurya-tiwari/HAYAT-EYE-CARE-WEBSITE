@@ -21,7 +21,7 @@ export default function Gallery({ initialImages = [] }: { initialImages?: Galler
   }, [initialImages]);
 
   return (
-    <SectionWrapper id="gallery" bgVariant="default">
+    <SectionWrapper id="gallery" bgVariant="default" className="!pb-0">
       <SectionHeading
         title="Our Gallery"
         subtitle="A glimpse into Hayat Eye Care — our facility, events, and happy smiles."

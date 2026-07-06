@@ -28,8 +28,8 @@ export default function VisionMission() {
             {/* Vision */}
             <div className="flex flex-col gap-2 md:gap-5">
               <div>
-                <h3 className="text-[12px] sm:text-sm md:text-2xl lg:text-3xl font-light text-white tracking-widest mb-1.5 md:mb-4 uppercase text-[--primary-light]">Our Vision</h3>
-                <p className="text-white/75 leading-relaxed text-[9px] sm:text-[11px] md:text-lg font-light">
+                <h3 className="text-[11px] sm:text-sm md:text-2xl lg:text-3xl font-light text-white tracking-widest mb-1.5 md:mb-4 uppercase text-[--primary-light]">Our Vision</h3>
+                <p className="text-white/75 leading-relaxed text-[10px] sm:text-xs md:text-base lg:text-lg font-light">
                   To be the most trusted name in eye care — a center where every patient feels heard, 
                   valued, and leaves seeing the world more beautifully. We envision a future where 
                   quality eye care is accessible to every family, regardless of budget.
@@ -37,7 +37,7 @@ export default function VisionMission() {
               </div>
               <ul className="space-y-1.5 md:space-y-3 mt-1 md:mt-2">
                 {["Accessible premium eye care", "Community eye health programs", "Technology-first diagnostics"].map(item => (
-                  <li key={item} className="flex items-center gap-1.5 md:gap-3 text-[8px] sm:text-[10px] md:text-base text-white/50 font-light tracking-wide">
+                  <li key={item} className="flex items-center gap-1.5 md:gap-3 text-[9px] sm:text-[11px] md:text-sm lg:text-base text-white/50 font-light tracking-wide">
                     <span className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-[--primary-light] shrink-0" />
                     {item}
                   </li>
@@ -51,8 +51,8 @@ export default function VisionMission() {
             {/* Mission */}
             <div className="flex flex-col gap-2 md:gap-5">
               <div>
-                <h3 className="text-[12px] sm:text-sm md:text-2xl lg:text-3xl font-light text-white tracking-widest mb-1.5 md:mb-4 uppercase text-[--accent-light]">Our Mission</h3>
-                <p className="text-white/75 leading-relaxed text-[9px] sm:text-[11px] md:text-lg font-light">
+                <h3 className="text-[11px] sm:text-sm md:text-2xl lg:text-3xl font-light text-white tracking-widest mb-1.5 md:mb-4 uppercase text-[--accent-light]">Our Mission</h3>
+                <p className="text-white/75 leading-relaxed text-[10px] sm:text-xs md:text-base lg:text-lg font-light">
                   To deliver comprehensive, compassionate, and clinically excellent eye care through 
                   state-of-the-art technology, a skilled team of certified optometrists, and a curated 
                   collection of premium eyewear that suits every lifestyle and budget.
@@ -60,7 +60,7 @@ export default function VisionMission() {
               </div>
               <ul className="space-y-1.5 md:space-y-3 mt-1 md:mt-2">
                 {["Certified & expert optometrists", "500+ premium frame brands", "Complete family eye health"].map(item => (
-                  <li key={item} className="flex items-center gap-1.5 md:gap-3 text-[8px] sm:text-[10px] md:text-base text-white/50 font-light tracking-wide">
+                  <li key={item} className="flex items-center gap-1.5 md:gap-3 text-[9px] sm:text-[11px] md:text-sm lg:text-base text-white/50 font-light tracking-wide">
                     <span className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-[--accent-light] shrink-0" />
                     {item}
                   </li>

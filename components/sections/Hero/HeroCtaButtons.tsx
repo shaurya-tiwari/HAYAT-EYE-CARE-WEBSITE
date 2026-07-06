@@ -5,7 +5,7 @@ import { buildGeneralWhatsAppLink } from "@/lib/whatsapp";
 export default function HeroCtaButtons() {
   return (
     <div
-      className="flex flex-col sm:flex-row gap-3 animate-fade-in-up"
+      className="flex flex-row gap-3 animate-fade-in-up"
       style={{ animationDelay: "0.3s" }}
     >
       <Button

@@ -17,23 +17,16 @@ export default async function AboutContent() {
   const hospitalImage = images.length > 0 ? images[0].secure_url : null;
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+    <div className="grid grid-cols-2 gap-3 sm:gap-6 md:gap-10 lg:gap-16 items-center md:items-stretch">
       {/* Text */}
-      <div className="space-y-5">
-        <p className="text-[--text-secondary] leading-relaxed text-[15px]">
-          Hayat Eye Care was founded with a simple mission: bring premium eye care to every family, 
-          regardless of budget. Over the past decade, we have served thousands of patients with 
-          comprehensive vision testing, expert frame fitting, and advanced contact lens solutions.
+      <div className="space-y-2 md:space-y-5 flex flex-col justify-center">
+        <p className="text-[--text-secondary] leading-relaxed text-[8px] sm:text-[10px] md:text-[13px] lg:text-[15px]">
+          Hayat Eye Care brings premium, comprehensive eye care to every family. For over a decade, our certified optometrists have combined advanced diagnostic technology with expert care, serving thousands of patients while offering a curated collection of over 20 premium frame brands.
         </p>
-        <p className="text-[--text-secondary] leading-relaxed text-[15px]">
-          Our team of certified optometrists uses the latest diagnostic technology to ensure 
-          the most accurate prescriptions, while our curated collection of frames from over 
-          20 premium brands ensures you always find the perfect style.
-        </p>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3">
+        <ul className="grid grid-cols-2 gap-1 md:gap-3 pt-1 md:pt-3">
           {HIGHLIGHTS.map((h) => (
-            <li key={h} className="flex items-start gap-2.5 text-sm text-[--text-secondary]">
-              <CheckCircle2 size={16} className="text-[--accent] shrink-0 mt-0.5" />
+            <li key={h} className="flex items-start gap-0.5 md:gap-2.5 text-[5px] sm:text-[7px] md:text-xs lg:text-sm text-[--text-secondary]">
+              <CheckCircle2 className="w-1.5 h-1.5 md:w-4 md:h-4 text-[--accent] shrink-0 mt-0.5 md:mt-0" />
               {h}
             </li>
           ))}
@@ -41,7 +34,7 @@ export default async function AboutContent() {
       </div>
 
       {/* Visual Image Card */}
-      <div className="relative w-full aspect-[4/3] lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-xl group">
+      <div className="relative w-full h-[220px] sm:h-[300px] md:h-full md:min-h-[400px] lg:min-h-[500px] rounded-2xl overflow-hidden shadow-xl group">
         {hospitalImage ? (
             <Image 
               src={hospitalImage} 
@@ -58,13 +51,24 @@ export default async function AboutContent() {
           </div>
         )}
         
-        {/* Glass Overlay at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 p-5 pt-14 bg-gradient-to-t from-[--dark-section-from]/90 via-[--dark-section-from]/50 to-transparent">
-          <div className="relative z-10 backdrop-blur-sm border border-white/10 bg-white/10 p-4 rounded-xl">
-            <h3 className="text-white font-bold text-lg">
+        {/* Seamless Bottom Gradient Blur */}
+        <div 
+          className="absolute bottom-0 left-0 right-0 h-1/2 md:h-[40%] pointer-events-none transition-opacity duration-500"
+          style={{
+            backdropFilter: "blur(4px)",
+            WebkitBackdropFilter: "blur(4px)",
+            maskImage: "linear-gradient(to top, black 20%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to top, black 20%, transparent 100%)",
+          }}
+        />
+
+        {/* Text over gradient */}
+        <div className="absolute bottom-0 left-0 right-0 p-3 md:p-5 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end">
+          <div className="relative z-10">
+            <h3 className="text-white font-bold text-[10px] sm:text-xs md:text-sm leading-tight">
               Hayat Eye Care
             </h3>
-            <p className="text-white/60 text-sm mt-0.5">
+            <p className="text-white/80 text-[7px] sm:text-[9px] md:text-[11px] mt-0.5 leading-tight">
               True vision, trusted care in Noorpur
             </p>
           </div>
