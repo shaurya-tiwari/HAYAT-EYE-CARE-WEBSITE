@@ -3,7 +3,6 @@ import Image from "next/image";
 import { fetchCloudinaryImages } from "@/lib/cloudinaryDirect";
 
 const HIGHLIGHTS = [
-  "State-of-the-art diagnostic equipment",
   "Certified optometrists with 5+ years experience",
   "Complete family eye care — kids to seniors",
   "Same-day prescription service available",
@@ -16,16 +15,16 @@ export default async function AboutContent() {
   const hospitalImage = images.length > 0 ? images[0].secure_url : null;
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-16 items-center md:items-stretch">
+    <div className="grid grid-cols-2 gap-3 sm:gap-6 md:gap-10 lg:gap-16 items-start md:items-start">
       {/* Text */}
-      <div className="space-y-4 md:space-y-5 flex flex-col justify-center">
-        <p className="text-[--text-secondary] leading-relaxed text-[11px] sm:text-[12px] md:text-[13px] lg:text-[15px]">
+      <div className="space-y-3 md:space-y-5 flex flex-col justify-start pt-2 md:pt-4">
+        <p className="text-[--text-secondary] leading-relaxed text-[8px] sm:text-[11px] md:text-[13px] lg:text-[15px] font-medium">
           For over a decade, Hayat Eye Care has been Noorpur's most trusted optical center. We combine advanced technology with expert doctors to bring premium, comprehensive vision care to your entire family.
         </p>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 md:gap-3 pt-2 md:pt-3">
+        <ul className="grid grid-cols-1 gap-1.5 md:gap-3 pt-1 md:pt-3">
           {HIGHLIGHTS.map((h) => (
-            <li key={h} className="flex items-start gap-2 md:gap-2.5 text-[10px] sm:text-[11px] md:text-[12px] lg:text-sm text-[--text-secondary]">
-              <CheckCircle2 className="w-3.5 h-3.5 md:w-4 md:h-4 text-[--accent] shrink-0 mt-0.5 md:mt-0" />
+            <li key={h} className="flex items-start gap-1.5 md:gap-2.5 text-[7.5px] sm:text-[10px] md:text-[12px] lg:text-sm text-[--text-secondary]">
+              <CheckCircle2 className="w-2.5 h-2.5 md:w-4 md:h-4 text-[--accent] shrink-0 mt-0.5 md:mt-0" />
               {h}
             </li>
           ))}
@@ -33,25 +32,25 @@ export default async function AboutContent() {
       </div>
 
       {/* Visual Image Card */}
-      <div className="relative w-full h-[220px] sm:h-[300px] md:h-full md:min-h-[400px] lg:min-h-[500px] rounded-2xl overflow-hidden shadow-xl group">
+      <div className="relative w-full h-[180px] sm:h-[250px] md:h-[290px] lg:h-[365px] rounded-2xl overflow-hidden shadow-xl group">
         {hospitalImage ? (
-            <Image 
-              src={hospitalImage} 
-              alt="Hayat Eye Care Main Hospital"
-              fill
-              placeholder="blur"
-              blurDataURL={hospitalImage.replace("/upload/", "/upload/w_10,e_blur:1000,f_auto,q_1/")}
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-            />
+          <Image
+            src={hospitalImage}
+            alt="Hayat Eye Care Main Hospital"
+            fill
+            placeholder="blur"
+            blurDataURL={hospitalImage.replace("/upload/", "/upload/w_10,e_blur:1000,f_auto,q_1/")}
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+          />
         ) : (
           <div className="w-full h-full bg-slate-100 flex items-center justify-center text-slate-400">
             No hospital image found
           </div>
         )}
-        
+
         {/* Seamless Bottom Gradient Blur */}
-        <div 
+        <div
           className="absolute bottom-0 left-0 right-0 h-1/2 md:h-[40%] pointer-events-none transition-opacity duration-500"
           style={{
             backdropFilter: "blur(4px)",

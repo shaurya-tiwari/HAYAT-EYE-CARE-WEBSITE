@@ -8,7 +8,6 @@ export default function About() {
     <SectionWrapper id="about" bgVariant="soft">
       <SectionHeading
         title="About Hayat Eye Care"
-        subtitle="A decade of trusted eye care, combining modern technology with compassionate service."
         centered={false}
       />
       <AboutContent />
