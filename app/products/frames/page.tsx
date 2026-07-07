@@ -50,7 +50,7 @@ export default async function FramesPage() {
       <main className="flex-1 pt-28 pb-20">
         <div className="container-custom px-5 md:px-8">
 
-          <Link href="/#products"
+          <Link href="/"
             className="inline-flex items-center gap-2 text-sm font-semibold text-[--primary] hover:opacity-70 transition-opacity mb-8">
             <ArrowLeft size={15} /> Back to Home
           </Link>
