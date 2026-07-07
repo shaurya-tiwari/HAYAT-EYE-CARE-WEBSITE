@@ -8,17 +8,25 @@ export default function Preloader() {
   const [isFading, setIsFading] = useState(false);
 
   useEffect(() => {
+    let innerTimer: NodeJS.Timeout;
+    
     const hideLoader = () => {
       setIsFading(true);
-      setTimeout(() => setIsLoading(false), 500);
+      innerTimer = setTimeout(() => setIsLoading(false), 500);
     };
 
     if (document.readyState === "complete") {
       const timer = setTimeout(hideLoader, 300);
-      return () => clearTimeout(timer);
+      return () => {
+        clearTimeout(timer);
+        if (innerTimer) clearTimeout(innerTimer);
+      };
     } else {
       window.addEventListener("load", hideLoader);
-      return () => window.removeEventListener("load", hideLoader);
+      return () => {
+        window.removeEventListener("load", hideLoader);
+        if (innerTimer) clearTimeout(innerTimer);
+      };
     }
   }, []);
 

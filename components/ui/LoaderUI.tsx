@@ -3,12 +3,12 @@ import Image from "next/image";
 export default function LoaderUI() {
   return (
     <>
-      <div className="relative w-80 h-32 md:w-[500px] md:h-[180px] animate-pulse">
+      <div className="relative w-[100vw] h-[250px] md:w-[800px] md:h-[300px] animate-pulse px-4">
         <Image 
           src="/HAYAT LOGO.svg" 
           alt="Hayat Eye Care" 
           fill 
-          className="object-contain"
+          className="object-contain scale-110 md:scale-100"
           priority
         />
       </div>
