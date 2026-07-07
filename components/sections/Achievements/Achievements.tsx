@@ -12,7 +12,7 @@ const ACHIEVEMENTS = [
 export default function Achievements() {
   return (
     <section id="achievements" className="section-padding bg-[--primary-muted] !pb-0 md:!pb-0 lg:!pb-0">
-      <div className="container-custom px-5 md:px-8">
+      <div className="container-custom px-0 md:px-8">
         <div className="text-center mb-12">
           <span className="inline-flex items-center px-4 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-[0.15em] mb-5 bg-white text-[--primary] border border-[--primary]/10">
             Our Numbers

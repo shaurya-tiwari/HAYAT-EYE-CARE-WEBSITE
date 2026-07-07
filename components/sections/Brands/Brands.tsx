@@ -3,7 +3,7 @@ import { BRANDS } from "./brands.data";
 export default function Brands() {
   return (
     <section id="brands" className="py-10 md:py-14 bg-[--bg-base] border-b border-[--glass-border] overflow-hidden">
-      <div className="container-custom px-5 md:px-8 text-center mb-8">
+      <div className="container-custom px-4 md:px-8 text-center mb-8">
         <p className="text-[10px] md:text-[11px] font-bold text-[--text-muted] uppercase tracking-[0.25em]">
           Curated Global Partners
         </p>

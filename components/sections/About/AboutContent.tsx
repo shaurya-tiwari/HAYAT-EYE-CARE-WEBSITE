@@ -17,16 +17,16 @@ export default async function AboutContent() {
   const hospitalImage = images.length > 0 ? images[0].secure_url : null;
 
   return (
-    <div className="grid grid-cols-2 gap-3 sm:gap-6 md:gap-10 lg:gap-16 items-center md:items-stretch">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-16 items-center md:items-stretch">
       {/* Text */}
-      <div className="space-y-2 md:space-y-5 flex flex-col justify-center">
-        <p className="text-[--text-secondary] leading-relaxed text-[8px] sm:text-[10px] md:text-[13px] lg:text-[15px]">
+      <div className="space-y-4 md:space-y-5 flex flex-col justify-center">
+        <p className="text-[--text-secondary] leading-relaxed text-[12px] sm:text-sm md:text-[13px] lg:text-[15px]">
           Hayat Eye Care brings premium, comprehensive eye care to every family. For over a decade, our certified optometrists have combined advanced diagnostic technology with expert care, serving thousands of patients while offering a curated collection of over 20 premium frame brands.
         </p>
-        <ul className="grid grid-cols-2 gap-1 md:gap-3 pt-1 md:pt-3">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 md:gap-3 pt-2 md:pt-3">
           {HIGHLIGHTS.map((h) => (
-            <li key={h} className="flex items-start gap-0.5 md:gap-2.5 text-[5px] sm:text-[7px] md:text-xs lg:text-sm text-[--text-secondary]">
-              <CheckCircle2 className="w-1.5 h-1.5 md:w-4 md:h-4 text-[--accent] shrink-0 mt-0.5 md:mt-0" />
+            <li key={h} className="flex items-start gap-2 md:gap-2.5 text-[11px] sm:text-xs md:text-xs lg:text-sm text-[--text-secondary]">
+              <CheckCircle2 className="w-3.5 h-3.5 md:w-4 md:h-4 text-[--accent] shrink-0 mt-0.5 md:mt-0" />
               {h}
             </li>
           ))}
