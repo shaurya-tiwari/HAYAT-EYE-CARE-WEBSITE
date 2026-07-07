@@ -11,14 +11,7 @@ export default function VisionMission() {
       />
 
       <div className="max-w-5xl mx-auto px-2 sm:px-0">
-        <div className="relative group rounded-2xl md:rounded-3xl p-3.5 sm:p-6 md:p-12 lg:p-16 overflow-hidden"
-          style={{
-            background: "transparent",
-            border: "1px solid rgba(255,255,255,0.08)",
-            backdropFilter: "blur(24px)",
-            WebkitBackdropFilter: "blur(24px)",
-            boxShadow: "0 25px 50px -12px rgba(0,0,0,0.5)"
-          }}>
+        <div className="relative group rounded-2xl md:rounded-3xl p-3.5 sm:p-6 md:p-12 lg:p-16 overflow-hidden bg-white border border-slate-200">
           <div className="relative z-10 grid grid-cols-2 gap-3 sm:gap-6 md:gap-16">
             
             {/* Vision */}
