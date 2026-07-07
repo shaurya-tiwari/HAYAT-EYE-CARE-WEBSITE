@@ -13,9 +13,9 @@ export default function Contact() {
         subtitle="We'd love to hear from you. Walk in or book via WhatsApp."
       />
 
-      <div className="grid grid-cols-2 gap-2 md:gap-8 items-start max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-start max-w-5xl mx-auto">
         {/* Info Cards */}
-        <div className="flex flex-col gap-1 md:gap-3">
+        <div className="flex flex-col gap-2.5 md:gap-3">
           {[
             {
               icon: Phone,
@@ -46,20 +46,20 @@ export default function Contact() {
               color: "--accent",
             },
           ].map(({ icon: Icon, label, value, href, color }) => (
-            <div key={label} className="glass p-1.5 md:p-4 flex items-start gap-1.5 md:gap-3.5">
-              <div className="w-5 h-5 md:w-10 md:h-10 rounded-md md:rounded-lg flex items-center justify-center shrink-0"
+            <div key={label} className="glass p-2 md:p-4 flex items-start gap-2 md:gap-3.5">
+              <div className="w-6 h-6 md:w-10 md:h-10 rounded-md md:rounded-lg flex items-center justify-center shrink-0"
                 style={{ backgroundColor: `color-mix(in srgb, var(${color}) 10%, transparent)` }}>
-                <Icon className="w-3 h-3 md:w-[18px] md:h-[18px]" style={{ color: `var(${color})` }} />
+                <Icon className="w-[12px] h-[12px] md:w-[18px] md:h-[18px]" style={{ color: `var(${color})` }} />
               </div>
-              <div>
-                <p className="text-[5px] md:text-[10px] font-bold uppercase tracking-wider text-[--text-muted] leading-none">{label}</p>
+              <div className="flex-1">
+                <p className="text-[7px] md:text-[10px] font-bold uppercase tracking-wider text-[--text-muted] leading-none">{label}</p>
                 {href ? (
                   <a href={href} target="_blank" rel="noopener noreferrer"
-                    className="text-[--text-primary] font-medium hover:text-[--primary] transition-colors text-[6px] md:text-sm mt-0.5 block leading-[1.1]">
+                    className="text-[--text-primary] font-semibold hover:text-[--primary] transition-colors text-[10px] md:text-sm mt-0.5 md:mt-1.5 block leading-tight">
                     {value}
                   </a>
                 ) : (
-                  <p className="text-[--text-primary] font-medium text-[6px] md:text-sm mt-0.5 leading-[1.1]">{value}</p>
+                  <p className="text-[--text-primary] font-semibold text-[10px] md:text-sm mt-0.5 md:mt-1.5 leading-tight">{value}</p>
                 )}
               </div>
             </div>
@@ -70,12 +70,12 @@ export default function Contact() {
             target="_blank"
             rel="noopener noreferrer"
             variant="whatsapp"
-            size="lg"
+            size="md"
             id="contact-whatsapp-cta"
-            className="mt-1 w-full"
+            className="mt-2 w-full text-xs md:text-sm py-2.5"
           >
-            <MessageCircle size={18} />
-            Book Appointment on WhatsApp
+            <MessageCircle size={16} />
+            Book Appointment
           </Button>
         </div>
 

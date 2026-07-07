@@ -7,12 +7,11 @@ import Image from "next/image";
 export default function Loading() {
   return (
     <div
-      className="fixed inset-0 z-[9999] flex flex-col items-center justify-center gap-6 bg-white"
+      className="fixed inset-0 z-[99999] flex flex-col items-center justify-center gap-8 bg-white"
       role="status"
       aria-label="Loading Hayat Eye Care"
     >
-      {/* Main Logo with subtle pulse animation to indicate loading */}
-      <div className="relative w-48 h-20 animate-pulse">
+      <div className="relative w-80 h-32 md:w-[500px] md:h-[180px] animate-pulse">
         <Image 
           src="/HAYAT LOGO.svg" 
           alt="Hayat Eye Care" 
@@ -22,9 +21,8 @@ export default function Loading() {
         />
       </div>
 
-      {/* Modern, subtle CSS spinner */}
       <div
-        className="w-8 h-8 rounded-full border-4 border-gray-100 border-t-[--primary] animate-spin"
+        className="w-10 h-10 rounded-full border-4 border-gray-100 border-t-[--primary] animate-spin"
         aria-hidden="true"
       />
     </div>

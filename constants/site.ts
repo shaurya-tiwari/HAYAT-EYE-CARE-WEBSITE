@@ -9,7 +9,7 @@ export const SITE_DESCRIPTION =
   "HAYAT EYE CARE — a premium optical center offering eye testing, frame fitting, contact lens fitting, and more. Serving happy customers for over 10 years.";
 
 /** WhatsApp Business number — include country code, no + or spaces */
-export const WHATSAPP_NUMBER = "919368305007"; // Real number from env
+export const WHATSAPP_NUMBER = "917037930930"; // Real number from env
 
 export const ADDRESS = {
   line1: "Dharmtara Complex",
@@ -21,7 +21,7 @@ export const ADDRESS = {
 };
 
 export const CONTACT = {
-  phone: "+91 93683 05007",
+  phone: "+91 70379 30930",
   email: "info@hayateyecare.com",
 };
 

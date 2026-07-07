@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
 import { SITE_NAME, SITE_DESCRIPTION, SITE_TAGLINE } from "@/constants/site";
+import Preloader from "@/components/ui/Preloader";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -78,6 +79,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="overflow-x-hidden">
+        <Preloader />
         <Navbar />
         <main className="overflow-x-hidden">{children}</main>
         <Footer />
