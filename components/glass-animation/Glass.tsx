@@ -33,7 +33,7 @@ export default function Glass() {
   }, []);
 
   return (
-    <div ref={containerRef} className="w-full flex relative z-[50] -mt-8 sm:-mt-12 md:-mt-20 lg:-mt-32 mb-4 sm:-mb-8 md:-mb-16 pointer-events-none justify-center">
+    <div ref={containerRef} className="w-full flex relative z-[50] -mt-32 sm:-mt-28 md:-mt-[140px] lg:-mt-[204px] mb-4 sm:-mb-8 md:-mb-16 pointer-events-none justify-center">
       <style dangerouslySetInnerHTML={{
         __html: `
         .glass-svg-container svg {

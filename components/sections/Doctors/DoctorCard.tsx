@@ -24,7 +24,7 @@ export default function DoctorCard({ doctor, imageUrl }: DoctorCardProps) {
 
   return (
     <article
-      className="relative rounded-xl md:rounded-2xl overflow-hidden h-[200px] sm:h-[320px] md:h-[460px] w-full bg-slate-100 cursor-pointer transition-all duration-500 outline-none"
+      className="relative rounded-xl md:rounded-2xl overflow-hidden h-[170px] sm:h-[320px] md:h-[460px] w-full bg-slate-100 cursor-pointer transition-all duration-500 outline-none"
       style={{
         boxShadow: isExpanded ? "0 20px 40px -10px rgba(0,0,0,0.3)" : "0 4px 12px rgba(0,0,0,0.1)",
         transform: isExpanded ? "translateY(-8px)" : "translateY(0)",
@@ -69,8 +69,8 @@ export default function DoctorCard({ doctor, imageUrl }: DoctorCardProps) {
       {/* Details Container */}
       <div
         className={`absolute flex flex-col transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-10
-          ${isExpanded 
-            ? "bottom-1 md:bottom-3 left-1 md:left-3 right-1 md:right-3 p-1.5 md:p-4 rounded-md md:rounded-xl bg-white/70 backdrop-blur-xl border border-white/60 shadow-xl gap-1 md:gap-3" 
+          ${isExpanded
+            ? "bottom-1 md:bottom-3 left-1 md:left-3 right-1 md:right-3 p-1.5 md:p-4 rounded-md md:rounded-xl bg-white/70 backdrop-blur-xl border border-white/60 shadow-xl gap-1 md:gap-3"
             : "bottom-0 left-0 right-0 p-1.5 md:p-4 gap-0.5 md:gap-1"
           }
         `}
@@ -85,7 +85,7 @@ export default function DoctorCard({ doctor, imageUrl }: DoctorCardProps) {
         </div>
 
         {/* Short Bio - ONLY visible when expanded */}
-        <div 
+        <div
           className={`overflow-hidden transition-all duration-500 ${isExpanded ? "opacity-100 max-h-[100px]" : "opacity-0 max-h-0"}`}
         >
           <p className="text-slate-600 text-[5.5px] sm:text-[8.5px] md:text-xs leading-snug">

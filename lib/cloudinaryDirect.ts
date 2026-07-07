@@ -28,7 +28,7 @@ const FILENAME_PREFIX_MAP: Record<string, string[]> = {
   "HERO SECTION": ["hero_", "hero-"],
   FRAMES:         ["frame_", "frame-", "frames_"],
   LENSES:         ["lens_", "lens-", "lense_", "contact_"],
-  DOCTORS:        ["dr_", "dr-", "doctor_"],
+  DOCTORS:        ["dr_", "dr-", "doctor_", "mr_shakeel", "abdul_mannan", "abdul_manan", "jishan_ahmad", "tabinda_akhtar", "owais_hayat", "shakeel_ahmad", "mr_"],
   GALLERY:        ["gallery_", "gallery-", "gallry_", "gallry-"],
   "MAIN HOSPITAL":["hospital_", "hospital-", "main_"],
 };
@@ -44,7 +44,7 @@ async function fetchFromFolder(folderPath: string): Promise<CloudinaryImageDirec
     .expression(`folder:"${safePath}"`)
     .sort_by('created_at', 'desc')
     .max_results(80)
-    .execute({ timeout: 10000 });
+    .execute();
   return result.resources ?? [];
 }
 
@@ -84,7 +84,7 @@ export const fetchCloudinaryImages = unstable_cache(
 
     try {
       // 1. Discover available folders
-      const rootFoldersResult = await cloudinary.api.root_folders({ timeout: 10000 });
+      const rootFoldersResult = await cloudinary.api.root_folders();
       const availableFolders = (rootFoldersResult.folders ?? []).map((f: { name: string }) => f.name);
       
       const exactFolder = availableFolders.find(
