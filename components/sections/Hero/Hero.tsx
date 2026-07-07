@@ -101,7 +101,7 @@ export default function Hero({ initialImages = [] }: { initialImages?: Cloudinar
 
       {/* Content Overlay */}
       <div className="relative z-20 w-full px-4 md:px-10 lg:px-16 h-full flex flex-col justify-center">
-        <div className="max-w-2xl flex flex-col gap-7 animate-fade-in-up mt-12">
+        <div className="max-w-2xl flex flex-col gap-6 animate-fade-in-up mt-2">
           <HeroHeading />
           <HeroSubtext />
           <HeroCtaButtons />

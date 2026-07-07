@@ -9,7 +9,7 @@ export const SITE_DESCRIPTION =
   "HAYAT EYE CARE — a premium optical center offering eye testing, frame fitting, contact lens fitting, and more. Serving happy customers for over 10 years.";
 
 /** WhatsApp Business number — include country code, no + or spaces */
-export const WHATSAPP_NUMBER = "917037930930"; // Real number from env
+export const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "917037930930";
 
 export const ADDRESS = {
   line1: "Dharmtara Complex",

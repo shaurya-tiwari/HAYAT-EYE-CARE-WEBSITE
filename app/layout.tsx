@@ -86,7 +86,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="overflow-x-hidden">{children}</main>
         <Footer />
         <FloatingWhatsApp />
-        <GoogleAnalytics gaId="G-T9M4P3CH5F" />
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        )}
       </body>
     </html>
   );

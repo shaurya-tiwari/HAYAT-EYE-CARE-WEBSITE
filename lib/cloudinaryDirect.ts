@@ -72,8 +72,9 @@ async function fetchFromFolder(folderPath: string): Promise<CloudinaryImageDirec
   // Use the advanced Search API to support Cloudinary's new "Dynamic Asset Folders" feature.
   // This ensures that even if public_id doesn't include the folder path, it still finds images 
   // visually placed inside the folder using the UI's drag-and-drop.
+  const safePath = folderPath.replace(/[^a-zA-Z0-9_ -]/g, '');
   const result = await cloudinary.search
-    .expression(`folder:"${folderPath}"`)
+    .expression(`folder:"${safePath}"`)
     .sort_by('created_at', 'desc')
     .max_results(80)
     .execute();

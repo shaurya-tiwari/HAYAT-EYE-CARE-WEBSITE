@@ -5,7 +5,6 @@ import { fetchCloudinaryImages } from "@/lib/cloudinaryDirect";
 const HIGHLIGHTS = [
   "State-of-the-art diagnostic equipment",
   "Certified optometrists with 5+ years experience",
-  "500+ premium frame brands in stock",
   "Complete family eye care — kids to seniors",
   "Same-day prescription service available",
   "Trusted by 5,000+ satisfied patients",
@@ -20,12 +19,12 @@ export default async function AboutContent() {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-16 items-center md:items-stretch">
       {/* Text */}
       <div className="space-y-4 md:space-y-5 flex flex-col justify-center">
-        <p className="text-[--text-secondary] leading-relaxed text-[12px] sm:text-sm md:text-[13px] lg:text-[15px]">
-          Hayat Eye Care brings premium, comprehensive eye care to every family. For over a decade, our certified optometrists have combined advanced diagnostic technology with expert care, serving thousands of patients while offering a curated collection of over 20 premium frame brands.
+        <p className="text-[--text-secondary] leading-relaxed text-[11px] sm:text-[12px] md:text-[13px] lg:text-[15px]">
+          For over a decade, Hayat Eye Care has been Noorpur's most trusted optical center. We combine advanced technology with expert doctors to bring premium, comprehensive vision care to your entire family.
         </p>
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 md:gap-3 pt-2 md:pt-3">
           {HIGHLIGHTS.map((h) => (
-            <li key={h} className="flex items-start gap-2 md:gap-2.5 text-[11px] sm:text-xs md:text-xs lg:text-sm text-[--text-secondary]">
+            <li key={h} className="flex items-start gap-2 md:gap-2.5 text-[10px] sm:text-[11px] md:text-[12px] lg:text-sm text-[--text-secondary]">
               <CheckCircle2 className="w-3.5 h-3.5 md:w-4 md:h-4 text-[--accent] shrink-0 mt-0.5 md:mt-0" />
               {h}
             </li>
