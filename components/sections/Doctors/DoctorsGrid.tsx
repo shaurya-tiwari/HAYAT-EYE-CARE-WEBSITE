@@ -46,7 +46,7 @@ export default function DoctorsGrid({ initialImages = [] }: DoctorsGridProps) {
             key={doctor.id}
             className={`col-span-1 ${waveClass} transition-transform duration-700 hover:z-10`}
             style={{
-              animation: `fade-in-up 0.8s ease-out forwards ${index * 0.15}s`,
+              animation: `fade-in-up 0.8s ease-out forwards ${index * 0.05}s`,
               opacity: 0, // Starts hidden for the animation
             }}
           >
