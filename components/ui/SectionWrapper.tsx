@@ -27,7 +27,7 @@ export default function SectionWrapper({
 
   return (
     <section id={id} className={cn("section-padding", bgClass, className)}>
-      <div className="container-custom px-5 md:px-8">{children}</div>
+      <div className="container-custom px-0 md:px-8">{children}</div>
     </section>
   );
 }
