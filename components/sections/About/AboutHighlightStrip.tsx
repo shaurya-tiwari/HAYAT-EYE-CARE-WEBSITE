@@ -11,13 +11,13 @@ export default function AboutHighlightStrip() {
   return (
     <div className="grid grid-cols-4 gap-1 sm:gap-2 md:gap-4 mt-10">
       {ITEMS.map(({ icon: Icon, label, sub }) => (
-        <div key={label} className="glass p-1 sm:p-2 md:p-5 flex flex-col items-center text-center gap-1 md:gap-2.5">
-          <div className="w-5 h-5 md:w-11 md:h-11 rounded-md md:rounded-xl bg-[--primary-muted] flex items-center justify-center">
-            <Icon className="w-3 h-3 md:w-5 md:h-5 text-[--primary]" />
+        <div key={label} className="glass p-1.5 sm:p-3 md:p-5 flex flex-col items-center text-center gap-1.5 md:gap-2.5">
+          <div className="w-7 h-7 md:w-11 md:h-11 rounded-md md:rounded-xl bg-[--primary-muted] flex items-center justify-center">
+            <Icon className="w-4 h-4 md:w-5 md:h-5 text-[--primary]" />
           </div>
           <div>
-            <p className="font-bold text-[--text-primary] text-[6px] md:text-sm leading-[1.1]">{label}</p>
-            <p className="text-[--text-muted] text-[5px] md:text-xs mt-0.5 leading-[1.1]">{sub}</p>
+            <p className="font-bold text-[--text-primary] text-[8.5px] sm:text-[10px] md:text-sm leading-[1.1]">{label}</p>
+            <p className="text-[--text-muted] text-[7px] sm:text-[8px] md:text-xs mt-1 leading-[1.15]">{sub}</p>
           </div>
         </div>
       ))}
