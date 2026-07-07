@@ -1,7 +1,7 @@
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { Phone, MapPin, Clock, MessageCircle } from "lucide-react";
-import { SITE_PHONE, SITE_ADDRESS, SITE_MAPS_URL } from "@/constants/site";
+import { SITE_PHONE, SITE_ADDRESS, SITE_MAPS_URL, SITE_MAPS_SHARE_URL } from "@/constants/site";
 import Button from "@/components/ui/Button";
 import { buildGeneralWhatsAppLink } from "@/lib/whatsapp";
 
@@ -35,7 +35,7 @@ export default function Contact() {
               icon: MapPin,
               label: "Address",
               value: SITE_ADDRESS,
-              href: "https://maps.google.com",
+              href: SITE_MAPS_SHARE_URL,
               color: "--primary",
             },
             {

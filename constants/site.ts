@@ -36,7 +36,10 @@ export const SOCIAL_LINKS = {
 };
 
 export const GOOGLE_MAPS_EMBED_URL =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d111246.3312959666!2d78.36839352726756!3d29.15545248882069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390bbfcb2c510a7f%3A0xe67597bc5b2c7e1d!2sDharmtara%20Complex%2C%20near%20State%20Bank%2C%20Noorpur%2C%20Uttar%20Pradesh%20246734!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin";
+  "https://maps.google.com/maps?q=Hayat+Eye+Care,+Dharmtara+Complex,+Noorpur,+Uttar+Pradesh&t=&z=15&ie=UTF8&iwloc=&output=embed";
+
+// Uses Google Maps Search API which perfectly drops a pin on the exact address every time
+export const GOOGLE_MAPS_SHARE_URL = "https://www.google.com/maps/search/?api=1&query=Hayat+Eye+Care,+Dharmtara+Complex,+near+State+Bank,+Noorpur,+Uttar+Pradesh";
 
 export const NAV_LINKS = [
   { label: "About", href: "/#about" },
@@ -60,3 +63,4 @@ export const SITE_PHONE = CONTACT.phone;
 export const SITE_ADDRESS = ADDRESS.full;
 export const SITE_WHATSAPP = WHATSAPP_NUMBER;
 export const SITE_MAPS_URL = GOOGLE_MAPS_EMBED_URL;
+export const SITE_MAPS_SHARE_URL = GOOGLE_MAPS_SHARE_URL;

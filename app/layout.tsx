@@ -56,6 +56,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { GoogleAnalytics } from '@next/third-parties/google';
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -84,6 +86,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="overflow-x-hidden">{children}</main>
         <Footer />
         <FloatingWhatsApp />
+        <GoogleAnalytics gaId="G-T9M4P3CH5F" />
       </body>
     </html>
   );
