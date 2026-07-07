@@ -12,6 +12,7 @@
  */
 
 import cloudinary from "@/lib/cloudinaryConfig";
+import { unstable_cache } from "next/cache";
 
 export interface CloudinaryImageDirect {
   public_id: string;
@@ -107,9 +108,8 @@ async function fetchByFilenamePrefixes(prefixes: string[]): Promise<CloudinaryIm
  * Fetch all images from a Cloudinary folder (or matching root prefix).
  * Safe to call from any Server Component — no HTTP round-trip.
  */
-export async function fetchCloudinaryImages(
-  folder: string
-): Promise<CloudinaryImageDirect[]> {
+export const fetchCloudinaryImages = unstable_cache(
+  async (folder: string): Promise<CloudinaryImageDirect[]> => {
   const normalizedKey = folder.trim().toUpperCase();
 
   // 1. Return from cache if fresh
@@ -147,7 +147,7 @@ export async function fetchCloudinaryImages(
   // Cache the result
   folderCache.set(normalizedKey, { data: results, timestamp: Date.now() });
   return results;
-}
+}, ['cloudinary-images'], { revalidate: 3600 });
 
 /**
  * Convert a Cloudinary public_id into a human-readable display name.

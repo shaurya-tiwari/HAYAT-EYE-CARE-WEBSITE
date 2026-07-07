@@ -51,6 +51,8 @@ export default function Glass() {
           fill: transparent;
           stroke-dasharray: 100;
           stroke-dashoffset: 100;
+          will-change: stroke-dashoffset;
+          transform: translateZ(0);
         }
         .glass-path-dark.animate {
           animation: sketchOutline 9s cubic-bezier(0.3, 0.1, 0.3, 1) forwards;

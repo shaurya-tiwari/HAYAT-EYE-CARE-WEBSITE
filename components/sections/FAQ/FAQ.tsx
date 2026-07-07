@@ -33,7 +33,10 @@ const FAQS = [
   },
 ];
 
-function FaqItem({ q, a, isOpen, onClick }: { q: string; a: string; isOpen: boolean; onClick: () => void }) {
+function FaqItem({ q, a, isOpen, onClick, id }: { q: string; a: string; isOpen: boolean; onClick: () => void; id: string }) {
+  const buttonId = `faq-button-${id}`;
+  const contentId = `faq-content-${id}`;
+
   return (
     <div
       className={cn(
@@ -42,6 +45,9 @@ function FaqItem({ q, a, isOpen, onClick }: { q: string; a: string; isOpen: bool
       )}
     >
       <button
+        id={buttonId}
+        aria-expanded={isOpen}
+        aria-controls={contentId}
         onClick={onClick}
         className="w-full flex items-center justify-between gap-4 p-3.5 md:p-5 text-left"
       >
@@ -53,7 +59,12 @@ function FaqItem({ q, a, isOpen, onClick }: { q: string; a: string; isOpen: bool
           {isOpen ? <Minus size={14} /> : <Plus size={14} />}
         </span>
       </button>
-      <div className={cn("faq-answer", isOpen && "open")}>
+      <div 
+        id={contentId} 
+        role="region" 
+        aria-labelledby={buttonId} 
+        className={cn("faq-answer", isOpen && "open")}
+      >
         <p className="px-3.5 pb-3.5 md:px-5 md:pb-5 text-[--text-secondary] leading-relaxed text-xs md:text-sm">{a}</p>
       </div>
     </div>
@@ -74,6 +85,7 @@ export default function FAQ() {
         {FAQS.map((faq, i) => (
           <FaqItem
             key={i}
+            id={`faq-${i}`}
             q={faq.q}
             a={faq.a}
             isOpen={openIndex === i}

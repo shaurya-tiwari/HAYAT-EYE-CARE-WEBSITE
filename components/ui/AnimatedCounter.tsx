@@ -42,16 +42,24 @@ export default function AnimatedCounter({
   useEffect(() => {
     if (!hasStarted) return;
 
-    const step = Math.ceil(target / (duration / 16));
-    let current = 0;
+    let startTimestamp: number | null = null;
+    let animationFrameId: number;
 
-    const timer = setInterval(() => {
-      current = Math.min(current + step, target);
+    const step = (timestamp: number) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      const current = Math.floor(progress * target);
+      
       setCount(current);
-      if (current >= target) clearInterval(timer);
-    }, 16);
 
-    return () => clearInterval(timer);
+      if (progress < 1) {
+        animationFrameId = window.requestAnimationFrame(step);
+      }
+    };
+
+    animationFrameId = window.requestAnimationFrame(step);
+
+    return () => window.cancelAnimationFrame(animationFrameId);
   }, [hasStarted, target, duration]);
 
   return (
