@@ -23,7 +23,7 @@ function FacebookIcon({ size = 18 }: { size?: number }) {
 export default function FooterSocialIcons() {
   return (
     <div>
-      <h4 className="font-bold text-white text-sm mb-5 tracking-tight uppercase">Socials</h4>
+      <h4 className="font-bold text-white text-[11px] md:text-sm mb-3 md:mb-5 tracking-tight uppercase">Socials</h4>
       <div className="flex gap-3">
         <a
           href={SOCIAL_LINKS.instagram}
@@ -44,7 +44,7 @@ export default function FooterSocialIcons() {
           <FacebookIcon size={18} />
         </a>
       </div>
-      <p className="text-white/30 text-xs mt-5 leading-relaxed">
+      <p className="text-white/30 text-[9px] md:text-xs mt-3 md:mt-5 leading-relaxed">
         Share your new look with us!<br />Tag us on Instagram.
       </p>
     </div>
