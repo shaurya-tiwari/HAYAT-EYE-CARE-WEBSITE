@@ -37,10 +37,9 @@ function FaqItem({ q, a, isOpen, onClick }: { q: string; a: string; isOpen: bool
   return (
     <div
       className={cn(
-        "glass rounded-xl overflow-hidden transition-all duration-300",
-        isOpen && "border-[--primary]/20 shadow-md shadow-[--primary]/5"
+        "bg-white rounded-xl overflow-hidden transition-all duration-300 border border-slate-200/60 shadow-sm",
+        isOpen && "border-[--primary]/30 shadow-md shadow-[--primary]/5"
       )}
-      style={{ borderColor: isOpen ? "rgba(0,113,227,0.18)" : undefined }}
     >
       <button
         onClick={onClick}

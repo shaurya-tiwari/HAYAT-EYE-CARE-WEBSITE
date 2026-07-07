@@ -20,11 +20,11 @@ export default function Logo({ scrolled = true }: LogoProps) {
           priority
         />
       </div>
-      <div className={`flex flex-col justify-center ${scrolled ? 'whitespace-normal max-w-[80px] sm:max-w-none' : 'whitespace-nowrap'}`}>
-        <span className={`block font-extrabold text-[8px] sm:text-xs md:text-[17px] leading-tight tracking-tight transition-colors duration-300 ${scrolled ? "text-[--text-primary]" : "text-white"}`}>
+      <div className={`flex-col justify-center ${scrolled ? 'hidden' : 'hidden md:flex'}`}>
+        <span className="block font-extrabold text-[17px] leading-tight tracking-tight transition-colors duration-300 text-white">
           {SITE_NAME}
         </span>
-        <span className={`block text-[5px] sm:text-[6px] md:text-[9px] uppercase font-semibold tracking-[0.18em] mt-[2px] transition-colors duration-300 ${scrolled ? "text-[--text-muted]" : "text-white/60"}`}>
+        <span className="block text-[9px] uppercase font-semibold tracking-[0.18em] mt-[2px] transition-colors duration-300 text-white/60">
           {SITE_TAGLINE}
         </span>
       </div>
