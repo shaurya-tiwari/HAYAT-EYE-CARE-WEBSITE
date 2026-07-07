@@ -8,7 +8,7 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ title, description, icon: Icon }: ServiceCardProps) {
   return (
-    <div className="glass group p-2 md:p-7 flex flex-col items-start gap-1.5 md:gap-4 hover:-translate-y-1 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] relative overflow-hidden">
+    <div className="group p-2 md:p-7 flex flex-col items-start gap-1.5 md:gap-4 hover:-translate-y-1 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] relative overflow-hidden rounded-xl md:rounded-2xl bg-gradient-to-br from-slate-100/80 to-slate-200/50 backdrop-blur-md border border-slate-200/60 shadow-sm hover:shadow-md hover:border-slate-300/60">
       {/* Background decoration */}
       <div className="absolute -right-10 -top-10 w-32 h-32 bg-[--primary-muted] rounded-full blur-3xl opacity-0 group-hover:opacity-50 transition-opacity duration-700" />
       
