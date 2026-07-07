@@ -21,11 +21,12 @@ export default function TrustStrip() {
           <div className="flex items-center gap-6 md:gap-16 justify-center md:justify-start opacity-40 grayscale hover:grayscale-0 hover:opacity-80 transition-all duration-500">
             {TRUST_LOGOS.map((logo, i) => (
               <div key={i} className="relative h-5 w-14 md:h-7 md:w-20">
-                <Image
+                {/* next/image blocks remote SVGs by default. Standard img tag is safer and doesn't need optimization for SVGs */}
+                <img
                   src={logo.src}
                   alt={logo.name}
-                  fill
-                  className="object-contain"
+                  className="w-full h-full object-contain"
+                  loading="lazy"
                 />
               </div>
             ))}
