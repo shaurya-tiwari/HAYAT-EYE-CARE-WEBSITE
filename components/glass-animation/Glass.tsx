@@ -40,11 +40,6 @@ export default function Glass() {
           width: 100%;
           height: auto;
           max-width: 1901px;
-          /* Force GPU layer to isolate repaints */
-          transform: translate3d(0, 0, 0);
-          backface-visibility: hidden;
-          perspective: 1000px;
-          will-change: transform;
         }
 
         .glass-path-dark {
@@ -56,9 +51,6 @@ export default function Glass() {
           stroke-dasharray: 100;
           stroke-dashoffset: 100;
           will-change: stroke-dashoffset;
-          /* Isolate path rendering */
-          transform: translate3d(0, 0, 0);
-          backface-visibility: hidden;
         }
         .glass-path-dark.animate {
           animation: sketchOutline 9s cubic-bezier(0.3, 0.1, 0.3, 1) forwards;
