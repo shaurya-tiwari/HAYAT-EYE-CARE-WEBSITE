@@ -10,11 +10,10 @@ export default async function Doctors() {
   const doctorImages = await fetchCloudinaryImages("DOCTORS");
 
   return (
-    <SectionWrapper id="doctors" bgVariant="dark">
+    <SectionWrapper id="doctors" bgVariant="default">
       <SectionHeading
         title="Meet Our Specialists"
         subtitle="Highly experienced optometrists dedicated to providing world-class eye care."
-        light
       />
 
       <DoctorsGrid initialImages={doctorImages} />

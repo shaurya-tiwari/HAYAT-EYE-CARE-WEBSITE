@@ -35,7 +35,7 @@ export default function NavLinks({ className, onLinkClick, dark }: NavLinksProps
   }
 
   const linkClass = cn(
-    "px-3.5 py-2 rounded-full text-[13px] font-medium tracking-tight transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer inline-flex items-center justify-center",
+    "px-1.5 md:px-3.5 py-1.5 md:py-2 rounded-full text-[8px] sm:text-[10px] md:text-[13px] font-medium tracking-tight transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer inline-flex items-center justify-center",
     dark
       ? "text-white/75 hover:text-white hover:bg-white/10"
       : "text-slate-500 hover:text-[--text-primary] hover:bg-slate-100/80"
@@ -45,10 +45,12 @@ export default function NavLinks({ className, onLinkClick, dark }: NavLinksProps
     <ul className={cn("items-center gap-0.5 list-none", className)}>
       {NAV_LINKS.map((link) => {
         const isPageRoute = !link.href.startsWith("#");
+        const isAbout = link.label === "About";
+        const liClass = isAbout ? "hidden md:block" : "";
 
         if (isPageRoute) {
           return (
-            <li key={link.href}>
+            <li key={link.href} className={liClass}>
               <Link
                 href={link.href}
                 onClick={onLinkClick}
@@ -61,7 +63,7 @@ export default function NavLinks({ className, onLinkClick, dark }: NavLinksProps
         }
 
         return (
-          <li key={link.href}>
+          <li key={link.href} className={liClass}>
             <a
               href={link.href}
               onClick={(e) => handleHashClick(e, link.href)}

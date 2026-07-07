@@ -33,9 +33,9 @@ export default async function HomePage() {
       <Hero initialImages={heroImages} />
       <About />
       <Doctors />
+      <Glass />
       <Services />
       <VisionMission />
-      <Glass />
       <Gallery initialImages={galleryImages} />
       <Achievements />
       <Products />
