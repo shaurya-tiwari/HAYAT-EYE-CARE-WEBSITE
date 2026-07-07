@@ -184,16 +184,53 @@
 
   /* MOBILE TEXT SIZE SCALING (Increases all text across the site EXCEPT Hero, Navbar, and Footer) */
   @media (max-width: 767px) {
-    main section:not(#home):not(footer) .text-\[6px\] { font-size: 8px !important; }
-    main section:not(#home):not(footer) .text-\[7px\] { font-size: 9px !important; }
-    main section:not(#home):not(footer) .text-\[8px\] { font-size: 11px !important; line-height: 1.4 !important; }
-    main section:not(#home):not(footer) .text-\[9px\] { font-size: 12px !important; line-height: 1.4 !important; }
-    main section:not(#home):not(footer) .text-\[10px\] { font-size: 13.5px !important; line-height: 1.5 !important; }
-    main section:not(#home):not(footer) .text-\[11px\] { font-size: 14.5px !important; line-height: 1.5 !important; }
-    main section:not(#home):not(footer) .text-\[12px\] { font-size: 15.5px !important; line-height: 1.5 !important; }
-    main section:not(#home):not(footer) .text-xs { font-size: 15px !important; line-height: 1.5 !important; }
-    main section:not(#home):not(footer) .text-sm { font-size: 17px !important; line-height: 1.6 !important; }
-    main section:not(#home):not(footer) .text-base { font-size: 19px !important; line-height: 1.6 !important; }
+    main section:not(#home):not(footer) .text-\[6px\] {
+      font-size: 8px !important;
+    }
+
+    main section:not(#home):not(footer) .text-\[7px\] {
+      font-size: 9px !important;
+    }
+
+    main section:not(#home):not(footer) .text-\[8px\] {
+      font-size: 11px !important;
+      line-height: 1.4 !important;
+    }
+
+    main section:not(#home):not(footer) .text-\[9px\] {
+      font-size: 12px !important;
+      line-height: 1.4 !important;
+    }
+
+    main section:not(#home):not(footer) .text-\[10px\] {
+      font-size: 13.5px !important;
+      line-height: 1.5 !important;
+    }
+
+    main section:not(#home):not(footer) .text-\[11px\] {
+      font-size: 14.5px !important;
+      line-height: 1.5 !important;
+    }
+
+    main section:not(#home):not(footer) .text-\[12px\] {
+      font-size: 15.5px !important;
+      line-height: 1.5 !important;
+    }
+
+    main section:not(#home):not(footer) .text-xs {
+      font-size: 15px !important;
+      line-height: 1.5 !important;
+    }
+
+    main section:not(#home):not(footer) .text-sm {
+      font-size: 17px !important;
+      line-height: 1.6 !important;
+    }
+
+    main section:not(#home):not(footer) .text-base {
+      font-size: 19px !important;
+      line-height: 1.6 !important;
+    }
   }
 
   /* Layout */
