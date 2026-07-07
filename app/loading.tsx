@@ -1,30 +1,30 @@
-import { SITE_NAME } from "@/constants/site";
+import Image from "next/image";
 
 /**
  * Global loading screen — shown automatically by Next.js on initial page load.
- * Lightweight: logo + CSS spinner only, no JS animation library.
+ * Lightweight: Uses a white background with the main Hayat Logo and a soft pulse.
  */
 export default function Loading() {
   return (
     <div
-      className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-5"
-      style={{
-        background: "linear-gradient(160deg, #0f172a 0%, #020617 100%)",
-      }}
+      className="fixed inset-0 z-[9999] flex flex-col items-center justify-center gap-6 bg-white"
       role="status"
       aria-label="Loading Hayat Eye Care"
     >
-      {/* Lens-inspired logo */}
-      <div className="relative w-14 h-14 rounded-full bg-white/10 flex items-center justify-center">
-        <div className="absolute inset-[4px] rounded-full border-2 border-white/20" />
-        <div className="w-4 h-4 rounded-full bg-[--primary]" />
+      {/* Main Logo with subtle pulse animation to indicate loading */}
+      <div className="relative w-48 h-20 animate-pulse">
+        <Image 
+          src="/HAYAT LOGO.svg" 
+          alt="Hayat Eye Care" 
+          fill 
+          className="object-contain"
+          priority
+        />
       </div>
 
-      <p className="text-white/80 font-semibold text-base tracking-wide">{SITE_NAME}</p>
-
-      {/* CSS spinner */}
+      {/* Modern, subtle CSS spinner */}
       <div
-        className="w-7 h-7 rounded-full border-2 border-white/10 border-t-[--primary] animate-spin-slow"
+        className="w-8 h-8 rounded-full border-4 border-gray-100 border-t-[--primary] animate-spin"
         aria-hidden="true"
       />
     </div>

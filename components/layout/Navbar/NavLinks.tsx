@@ -35,7 +35,7 @@ export default function NavLinks({ className, onLinkClick, dark }: NavLinksProps
   }
 
   const linkClass = cn(
-    "px-1.5 md:px-3.5 py-1.5 md:py-2 rounded-full text-[8px] sm:text-[10px] md:text-[13px] font-medium tracking-tight transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer inline-flex items-center justify-center",
+    "px-1.5 md:px-2 lg:px-3.5 py-1.5 md:py-1.5 lg:py-2 rounded-full text-[8px] sm:text-[10px] md:text-[11px] lg:text-[13px] font-medium tracking-tight transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer inline-flex items-center justify-center",
     dark
       ? "text-white/75 hover:text-white hover:bg-white/10"
       : "text-slate-500 hover:text-[--text-primary] hover:bg-slate-100/80"

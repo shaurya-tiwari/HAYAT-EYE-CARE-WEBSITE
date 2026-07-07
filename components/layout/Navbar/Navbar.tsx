@@ -32,15 +32,15 @@ export default function Navbar() {
       <nav
         className={cn(
           "fixed left-0 right-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex justify-center",
-          scrolled ? "top-2 px-2 md:top-4 md:px-6" : "top-0 px-0"
+          scrolled ? "top-2 px-2 md:top-3 lg:top-4 md:px-4 lg:px-6" : "top-0 px-0"
         )}
       >
         <div
           className={cn(
             "flex items-center justify-between transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
             scrolled
-              ? "navbar-scrolled rounded-2xl py-2 px-3 md:py-3 md:px-6 w-full max-w-7xl"
-              : "bg-transparent py-3 px-3 md:py-5 md:px-8 w-full max-w-7xl"
+              ? "navbar-scrolled rounded-2xl py-2 px-3 md:py-2.5 lg:py-3 md:px-4 lg:px-6 w-full max-w-7xl"
+              : "bg-transparent py-3 px-3 md:py-4 lg:py-5 md:px-5 lg:px-8 w-full max-w-7xl"
           )}
         >
           {/* Logo receives scrolled=true when it should use dark text */}
