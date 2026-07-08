@@ -77,41 +77,53 @@ async function fetchByFilenamePrefixes(prefixes: string[]): Promise<CloudinaryIm
  * Fetch all images from a Cloudinary folder (or matching root prefix).
  * Safe to call from any Server Component — no HTTP round-trip on cache hit.
  */
-export const fetchCloudinaryImages = unstable_cache(
-  async (folder: string): Promise<CloudinaryImageDirect[]> => {
-    const normalizedKey = folder.trim().toUpperCase();
-    let results: CloudinaryImageDirect[] = [];
+async function fetchCloudinaryImagesLogic(folder: string): Promise<CloudinaryImageDirect[]> {
+  const normalizedKey = folder.trim().toUpperCase();
+  let results: CloudinaryImageDirect[] = [];
 
-    try {
-      // 1. Discover available folders
-      const rootFoldersResult = await cloudinary.api.root_folders();
-      const availableFolders = (rootFoldersResult.folders ?? []).map((f: { name: string }) => f.name);
-      
-      const exactFolder = availableFolders.find(
-        (f: string) => f.toUpperCase() === normalizedKey
-      );
+  try {
+    // 1. Discover available folders
+    const rootFoldersResult = await cloudinary.api.root_folders();
+    const availableFolders = (rootFoldersResult.folders ?? []).map((f: { name: string }) => f.name);
+    
+    const exactFolder = availableFolders.find(
+      (f: string) => f.toUpperCase() === normalizedKey
+    );
 
-      if (exactFolder) {
-        // Found the exact folder — fetch directly with one API call
-        results = await fetchFromFolder(exactFolder);
-      }
-
-      // 2. Fallback: match by filename prefix (images dumped in root)
-      // Run this if folder wasn't found OR if folder was empty (Cloudinary UI move bug)
-      if (results.length === 0) {
-        const fallbackPrefixes =
-          FILENAME_PREFIX_MAP[normalizedKey] ??
-          [folder.toLowerCase() + "_", folder.toLowerCase() + "-"];
-        results = await fetchByFilenamePrefixes(fallbackPrefixes);
-      }
-    } catch (error) {
-      console.error(`[Cloudinary] Critical failure fetching images for folder "${folder}":`, error);
-      results = [];
+    if (exactFolder) {
+      // Found the exact folder — fetch directly with one API call
+      results = await fetchFromFolder(exactFolder);
     }
 
-    return results;
-  }, ['cloudinary-images'], { tags: ['cloudinary'] } // Permanent cache, invalidated on-demand via Webhook
+    // 2. Fallback: match by filename prefix (images dumped in root)
+    if (results.length === 0) {
+      const fallbackPrefixes =
+        FILENAME_PREFIX_MAP[normalizedKey] ??
+        [folder.toLowerCase() + "_", folder.toLowerCase() + "-"];
+      results = await fetchByFilenamePrefixes(fallbackPrefixes);
+    }
+  } catch (error) {
+    console.error(`[Cloudinary] Critical failure fetching images for folder "${folder}":`, error);
+    results = [];
+  }
+
+  return results;
+}
+
+const fetchCloudinaryImagesCached = unstable_cache(
+  fetchCloudinaryImagesLogic,
+  ['cloudinary-images'],
+  { tags: ['cloudinary'] } // Permanent cache, invalidated on-demand via Webhook
 );
+
+export const fetchCloudinaryImages = async (folder: string): Promise<CloudinaryImageDirect[]> => {
+  // Bypass cache completely when running locally (npm run dev) so you don't have to trigger webhooks
+  if (process.env.NODE_ENV === 'development') {
+    return fetchCloudinaryImagesLogic(folder);
+  }
+  // Use permanent cache in production
+  return fetchCloudinaryImagesCached(folder);
+};
 
 /**
  * Convert a Cloudinary public_id into a human-readable display name.

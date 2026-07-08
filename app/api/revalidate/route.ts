@@ -11,6 +11,7 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function POST(req: NextRequest) {
   try {
     // We revalidate the "cloudinary" tag which is attached to our fetchCloudinaryImages function
+    // @ts-ignore - Some Next.js versions have a glitch in their type definition for this function
     revalidateTag('cloudinary');
 
     return NextResponse.json(
