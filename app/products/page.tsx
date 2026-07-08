@@ -28,7 +28,7 @@ export default function ProductsIndexPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Frames Card */}
             <Link href="/products/frames" className="group block h-full">
               <div className="relative h-full rounded-[2rem] flex flex-col items-center text-center
@@ -61,8 +61,8 @@ export default function ProductsIndexPage() {
               </div>
             </Link>
 
-            {/* Lenses Card */}
-            <Link href="/products/lenses" className="group block h-full">
+            {/* Contact Lenses Card */}
+            <Link href="/products/contact-lenses" className="group block h-full">
               <div className="relative h-full rounded-[2rem] flex flex-col items-center text-center
                               bg-white/40 backdrop-blur-xl border border-white/60 shadow-[0_8px_32px_0_rgba(0,0,0,0.05)]
                               overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)]
@@ -87,6 +87,38 @@ export default function ProductsIndexPage() {
                   
                   <span className="mt-auto pt-6 inline-flex items-center gap-2 text-sm font-bold text-[--text-muted] uppercase tracking-wider
                                    group-hover:text-[--accent] group-hover:gap-4 transition-all duration-500">
+                    Browse Lenses <ArrowRight size={18} />
+                  </span>
+                </div>
+              </div>
+            </Link>
+
+            {/* Spectacle Lenses Card */}
+            <Link href="/products/spectacle-lenses" className="group block h-full">
+              <div className="relative h-full rounded-[2rem] flex flex-col items-center text-center
+                              bg-white/40 backdrop-blur-xl border border-white/60 shadow-[0_8px_32px_0_rgba(0,0,0,0.05)]
+                              overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)]
+                              hover:border-white hover:bg-white/60">
+                
+                {/* Product Image Section */}
+                <div className="relative w-full h-64 overflow-hidden bg-[--primary-muted]">
+                  <Image 
+                    src="/spectacle lense .jpg" 
+                    alt="Spectacle Lenses" 
+                    fill 
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  {/* Subtle gradient overlay to blend image with card */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent" />
+                </div>
+
+                {/* Content Section */}
+                <div className="relative z-10 p-8 pt-2 flex flex-col items-center gap-3 w-full flex-1">
+                  <h2 className="font-extrabold text-3xl text-[--text-primary] tracking-tight group-hover:text-[--primary] transition-colors">Spectacle Lenses</h2>
+                  <p className="text-[--text-muted] text-base leading-relaxed">High quality lenses for every prescription</p>
+                  
+                  <span className="mt-auto pt-6 inline-flex items-center gap-2 text-sm font-bold text-[--text-muted] uppercase tracking-wider
+                                   group-hover:text-[--primary] group-hover:gap-4 transition-all duration-500">
                     Browse Lenses <ArrowRight size={18} />
                   </span>
                 </div>

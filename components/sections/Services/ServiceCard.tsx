@@ -1,31 +1,20 @@
-import { type LucideIcon, ArrowRight } from "lucide-react";
+import { type LucideIcon } from "lucide-react";
 
 interface ServiceCardProps {
   title: string;
-  description: string;
-  icon: LucideIcon;
+  description?: string;
+  icon?: LucideIcon;
 }
 
-export default function ServiceCard({ title, description, icon: Icon }: ServiceCardProps) {
+export default function ServiceCard({ title, icon: Icon }: ServiceCardProps) {
   return (
-    <div className="group p-2 md:p-7 flex flex-col items-start gap-1.5 md:gap-4 relative overflow-hidden rounded-xl md:rounded-2xl bg-slate-50 border border-slate-200">
-      {/* Background decoration */}
-      <div className="absolute -right-10 -top-10 w-32 h-32 bg-[--primary-muted] rounded-full opacity-50" />
-      
-      <div className="w-5 h-5 md:w-12 md:h-12 rounded-[6px] md:rounded-xl bg-white flex items-center justify-center text-[--primary] border border-slate-200 relative z-10 shrink-0">
-        <Icon strokeWidth={1.5} className="w-3 h-3 md:w-5 md:h-5" />
+    <div className="group p-2.5 md:p-5 flex flex-col items-center justify-center text-center gap-2 md:gap-3 relative overflow-hidden rounded-xl md:rounded-2xl bg-white/60 backdrop-blur-md border border-slate-200/50 hover:bg-white hover:border-[--primary]/20 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+      <div className="w-8 h-8 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-slate-50 flex items-center justify-center text-[--primary] border border-slate-100 group-hover:bg-[--primary] group-hover:text-white group-hover:border-[--primary] transition-all duration-300 shadow-sm shrink-0">
+        {Icon && <Icon strokeWidth={1.5} className="w-4 h-4 md:w-5 md:h-5" />}
       </div>
-      
-      <div className="relative z-10">
-        <h3 className="text-[10px] sm:text-xs md:text-lg font-bold text-[--text-primary] mb-0.5 md:mb-1.5 tracking-tight leading-tight">{title}</h3>
-        <p className="text-[--text-muted] leading-relaxed text-[8px] sm:text-[10px] md:text-sm line-clamp-2 md:line-clamp-3">
-          {description}
-        </p>
-      </div>
-
-      <div className="mt-auto pt-1 md:pt-2 relative z-10 flex items-center gap-0.5 md:gap-1.5 text-[7px] sm:text-[9px] md:text-xs font-semibold text-[--primary] opacity-0 -translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-        Learn more <ArrowRight className="w-2 h-2 md:w-3.5 md:h-3.5" />
-      </div>
+      <h3 className="text-[10px] sm:text-[11px] md:text-[15px] lg:text-base font-medium text-[--text-primary] group-hover:text-[--primary] transition-colors leading-tight line-clamp-3">
+        {title}
+      </h3>
     </div>
   );
 }

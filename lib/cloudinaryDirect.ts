@@ -110,7 +110,7 @@ export const fetchCloudinaryImages = unstable_cache(
     }
 
     return results;
-  }, ['cloudinary-images'], { revalidate: 3600 }
+  }, ['cloudinary-images'], { tags: ['cloudinary'] } // Permanent cache, invalidated on-demand via Webhook
 );
 
 /**

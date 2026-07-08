@@ -22,8 +22,11 @@ export default function FrameMarquee({ images }: FrameMarqueeProps) {
   // Nothing to show
   if (images.length === 0) return null;
 
+  // Limit to exactly 7 images for the marquee
+  const slicedImages = images.slice(0, 7);
+
   // Duplicate for seamless loop
-  const doubled = [...images, ...images];
+  const doubled = [...slicedImages, ...slicedImages];
 
   return (
     <div
@@ -39,7 +42,7 @@ export default function FrameMarquee({ images }: FrameMarqueeProps) {
 
       <div
         ref={trackRef}
-        className="flex gap-3 will-change-transform"
+        className="flex gap-2 md:gap-3 will-change-transform"
         style={{
           animation: `marquee 35s linear infinite`,
           animationPlayState: paused ? "paused" : "running",
@@ -49,8 +52,8 @@ export default function FrameMarquee({ images }: FrameMarqueeProps) {
         {doubled.map((img, i) => (
           <div
             key={`${img.public_id}-${i}`}
-            className="relative flex-shrink-0 w-36 h-24 sm:w-40 sm:h-28 md:w-56 md:h-40 rounded-xl md:rounded-2xl overflow-hidden
-                       glass p-1 hover:shadow-lg
+            className="relative flex-shrink-0 w-28 h-20 sm:w-32 sm:h-24 md:w-56 md:h-40 rounded-xl md:rounded-2xl overflow-hidden
+                       glass p-0.5 md:p-1 hover:shadow-lg
                        hover:scale-[1.02] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] bg-white/50"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
