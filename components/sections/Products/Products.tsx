@@ -1,6 +1,6 @@
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import SectionHeading from "@/components/ui/SectionHeading";
-import FrameMarquee from "./FrameMarquee";
+import FrameFan from "./FrameFan";
 import { fetchCloudinaryImages } from "@/lib/cloudinaryDirect";
 
 import Image from "next/image";
@@ -14,13 +14,13 @@ export default async function Products() {
 
   return (
     <section>
-      <SectionWrapper id="products" bgVariant="teal" className="pt-6 md:pt-12">
+      <SectionWrapper id="products" bgVariant="default" className="pt-6 md:pt-12 !pb-0 md:!pb-0">
         <SectionHeading
           title="Premium Eyewear Collection"
           className="!mb-4 md:!mb-6"
         />
 
-        <div className="flex flex-wrap justify-center gap-1 sm:gap-1.5 md:gap-3 max-w-4xl mx-auto px-2 md:px-4 mb-6 md:mb-8">
+        <div className="flex flex-wrap justify-center gap-1 sm:gap-1.5 md:gap-3 max-w-4xl mx-auto px-2 md:px-4 mb-0 md:mb-0">
           {[
             "Blue Cut Lens",
             "Anti Reflection (AR) Lens",
@@ -37,16 +37,14 @@ export default async function Products() {
           ))}
         </div>
 
-        {/* Scrolling frame images */}
-        {frames.length > 0 && (
-          <div className="mt-6">
-            <p className="text-center text-[10px] font-bold tracking-[0.2em] uppercase text-[--primary] mb-4">
-              Premium Frames
-            </p>
-            <FrameMarquee images={frames} />
-          </div>
-        )}
       </SectionWrapper>
+
+      {/* Scrolling frame images (Full Bleed - No margins so it doesn't clip) */}
+      {frames.length > 0 && (
+        <div className="w-full relative bg-teal-50/10">
+          <FrameFan images={frames} />
+        </div>
+      )}
     </section>
   );
 }
