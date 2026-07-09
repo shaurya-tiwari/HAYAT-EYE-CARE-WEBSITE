@@ -4,7 +4,7 @@
  */
 
 export const SITE_NAME = "HAYAT EYE CARE";
-export const SITE_TAGLINE = "Better Vision Better Life";
+export const SITE_TAGLINE = "Best Eye Care Clinic in Noorpur & Moradabad";
 export const SITE_DESCRIPTION =
   "HAYAT EYE CARE — a premium optical center offering eye testing, frame fitting, contact lens fitting, and more. Serving happy customers for over 10 years.";
 
