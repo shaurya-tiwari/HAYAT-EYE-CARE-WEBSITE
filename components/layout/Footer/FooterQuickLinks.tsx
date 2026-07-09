@@ -9,7 +9,7 @@ export default function FooterQuickLinks() {
           <li key={link.href}>
             <a
               href={link.href}
-              className="text-white/50 hover:text-white transition-colors duration-200"
+              className="text-gray-400 hover:text-white transition-colors duration-200"
             >
               {link.label}
             </a>

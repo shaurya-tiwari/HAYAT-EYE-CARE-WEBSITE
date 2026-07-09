@@ -60,7 +60,6 @@ export default function Glass() {
         @keyframes sketchOutline {
           0%   { stroke-dashoffset: 100; }
           15%  { stroke-dashoffset: 82; }
-          17%  { stroke-dashoffset: 82; } /* Artist pauses */
           40%  { stroke-dashoffset: 55; }
           43%  { stroke-dashoffset: 55; } /* Adjusts grip */
           65%  { stroke-dashoffset: 30; }

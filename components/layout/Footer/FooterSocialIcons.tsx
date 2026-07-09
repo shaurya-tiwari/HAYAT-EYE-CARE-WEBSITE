@@ -30,7 +30,7 @@ export default function FooterSocialIcons() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
-          className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white/50 hover:bg-white hover:text-[--dark-section-from] hover:scale-105 transition-all duration-300"
+          className="w-10 h-10 rounded-xl bg-white/10 border border-white/5 flex items-center justify-center text-gray-400 hover:bg-white hover:text-black hover:scale-105 transition-all duration-300"
         >
           <InstagramIcon size={18} />
         </a>
@@ -39,12 +39,12 @@ export default function FooterSocialIcons() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Facebook"
-          className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white/50 hover:bg-white hover:text-[--dark-section-from] hover:scale-105 transition-all duration-300"
+          className="w-10 h-10 rounded-xl bg-white/10 border border-white/5 flex items-center justify-center text-gray-400 hover:bg-white hover:text-black hover:scale-105 transition-all duration-300"
         >
           <FacebookIcon size={18} />
         </a>
       </div>
-      <p className="text-white/30 text-[9px] md:text-xs mt-3 md:mt-5 leading-relaxed">
+      <p className="text-gray-500 text-[9px] md:text-xs mt-3 md:mt-5 leading-relaxed">
         Share your new look with us!<br />Tag us on Instagram.
       </p>
     </div>

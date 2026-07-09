@@ -41,7 +41,7 @@ export default function TrustStrip() {
         </div>
 
         <div className="flex-1 overflow-hidden">
-          <div className="flex items-center gap-6 md:gap-16 justify-center md:justify-start opacity-40 grayscale hover:grayscale-0 hover:opacity-80 transition-all duration-500">
+          <div className="flex items-center gap-6 md:gap-16 justify-center md:justify-start opacity-50 grayscale">
             {TRUST_LOGOS.map((logo, i) => {
               const LogoIcon = logo.component;
               return (

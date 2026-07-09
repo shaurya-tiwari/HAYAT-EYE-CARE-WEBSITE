@@ -139,12 +139,7 @@
     transition: var(--transition-base);
   }
 
-  .glass:hover {
-    background: var(--glass-bg-hover);
-    border-color: var(--glass-border-hover);
-    box-shadow: var(--glass-shadow-hover);
-    transform: translateY(-3px);
-  }
+
 
   /* Non-hoverable flat glass */
   .glass-flat {
@@ -475,10 +470,7 @@
 /* ============================================================
    DOCTOR CARD HOVER
    ============================================================ */
-.doctor-card:hover {
-  transform: translateY(-4px) scale(1.01);
-  box-shadow: 0 24px 64px rgba(0, 113, 227, 0.15), 0 0 0 1px rgba(0, 113, 227, 0.20) !important;
-}
+
 
 /* ============================================================
    NAVBAR GLASS (scrolled state)

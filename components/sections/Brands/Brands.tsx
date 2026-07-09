@@ -19,7 +19,7 @@ export default function Brands() {
           {BRANDS.map((brand, i) => (
             <div
               key={`first-${brand.id}-${i}`}
-              className="flex items-center justify-center h-14 md:h-16 px-8 md:px-10 rounded-2xl glass grayscale opacity-40 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] bg-white whitespace-nowrap"
+              className="flex items-center justify-center h-14 md:h-16 px-8 md:px-10 rounded-2xl glass-flat grayscale opacity-40 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] bg-white whitespace-nowrap"
             >
               <span className="font-extrabold text-xl md:text-2xl text-[--text-primary] tracking-tighter">
                 {brand.name}
@@ -33,7 +33,7 @@ export default function Brands() {
           {BRANDS.map((brand, i) => (
             <div
               key={`second-${brand.id}-${i}`}
-              className="flex items-center justify-center h-14 md:h-16 px-8 md:px-10 rounded-2xl glass grayscale opacity-40 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] bg-white whitespace-nowrap"
+              className="flex items-center justify-center h-14 md:h-16 px-8 md:px-10 rounded-2xl glass-flat grayscale opacity-40 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] bg-white whitespace-nowrap"
             >
               <span className="font-extrabold text-xl md:text-2xl text-[--text-primary] tracking-tighter">
                 {brand.name}

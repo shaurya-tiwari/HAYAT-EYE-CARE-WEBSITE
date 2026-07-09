@@ -102,8 +102,10 @@ async function fetchCloudinaryImagesLogic(folder: string): Promise<CloudinaryIma
         [folder.toLowerCase() + "_", folder.toLowerCase() + "-"];
       results = await fetchByFilenamePrefixes(fallbackPrefixes);
     }
-  } catch (error) {
-    console.error(`[Cloudinary] Critical failure fetching images for folder "${folder}":`, error);
+  } catch (error: any) {
+    console.error(`[Cloudinary] Critical failure fetching images for folder "${folder}":`, 
+      error?.message || error?.error?.message || JSON.stringify(error) || error
+    );
     results = [];
   }
 
@@ -116,12 +118,57 @@ const fetchCloudinaryImagesCached = unstable_cache(
   { tags: ['cloudinary'] } // Permanent cache, invalidated on-demand via Webhook
 );
 
+import fs from "fs";
+import path from "path";
+
 export const fetchCloudinaryImages = async (folder: string): Promise<CloudinaryImageDirect[]> => {
-  // Bypass cache completely when running locally (npm run dev) so you don't have to trigger webhooks
   if (process.env.NODE_ENV === 'development') {
-    return fetchCloudinaryImagesLogic(folder);
+    // Smart Local Cache: Prevents hitting the 500 API limit during hot-reloads
+    // Automatically refreshes every 5 minutes so you never have to manually delete the file.
+    const CACHE_FILE = path.join(process.cwd(), '.cloudinary-cache.json');
+    const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
+    
+    // Structure: { "FOLDER_NAME": { timestamp: number, data: [] } }
+    let devCache: Record<string, { timestamp: number; data: CloudinaryImageDirect[] }> = {};
+    
+    try {
+      if (fs.existsSync(CACHE_FILE)) {
+        devCache = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf-8'));
+      }
+    } catch (e) {
+      console.warn("Could not read local Cloudinary cache, resetting.");
+    }
+
+    const cachedEntry = devCache[folder];
+    const now = Date.now();
+
+    // If cache exists and is less than 5 minutes old, return it instantly!
+    if (cachedEntry && cachedEntry.data.length > 0 && (now - cachedEntry.timestamp < CACHE_TTL_MS)) {
+      return cachedEntry.data;
+    }
+
+    // Otherwise, fetch fresh data from Cloudinary
+    const results = await fetchCloudinaryImagesLogic(folder);
+    
+    // Only save to cache if we actually got results (prevents caching rate-limit errors)
+    if (results.length > 0) {
+      devCache[folder] = { timestamp: now, data: results };
+      try {
+        fs.writeFileSync(CACHE_FILE, JSON.stringify(devCache, null, 2));
+      } catch (e) {
+        console.error("Failed to write to local Cloudinary cache", e);
+      }
+    }
+    
+    // If we got rate-limited but have an old cache, serve the stale cache as a fallback!
+    if (results.length === 0 && cachedEntry?.data) {
+      return cachedEntry.data;
+    }
+    
+    return results;
   }
-  // Use permanent cache in production
+  
+  // Use permanent cache in production (revalidated via Webhooks)
   return fetchCloudinaryImagesCached(folder);
 };
 

@@ -24,7 +24,7 @@ export default function Achievements() {
         <div className="grid grid-cols-4 gap-1.5 md:gap-5 max-w-4xl mx-auto">
           {ACHIEVEMENTS.map((item, i) => (
             <div key={item.label}
-              className="glass p-1.5 md:p-7 text-center flex flex-col items-center gap-1 md:gap-1.5"
+              className="glass-flat p-1.5 md:p-7 text-center flex flex-col items-center gap-1 md:gap-1.5"
               style={{ transitionDelay: `${i * 50}ms` }}>
               <span className="text-[12px] sm:text-[16px] md:text-5xl font-extrabold gradient-text-blue leading-none">
                 <AnimatedCounter target={item.value} suffix={item.suffix} />
