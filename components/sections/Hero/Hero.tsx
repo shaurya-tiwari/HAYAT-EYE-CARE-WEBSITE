@@ -132,17 +132,21 @@ export default function Hero({ initialImages = [] }: { initialImages?: Cloudinar
           </button>
 
           {/* Dot Indicators (Bottom Center) */}
-          <div className="absolute bottom-3 md:bottom-8 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5">
+          <div className="absolute bottom-3 md:bottom-8 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1">
             {images.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
-                className={cn(
-                  "h-1 rounded-full transition-all duration-500",
-                  idx === currentIndex ? "w-7 bg-white" : "w-2.5 bg-white/30 hover:bg-white/50"
-                )}
+                className="p-3" // Invisible touch target wrapper (at least 24px)
                 aria-label={`Go to slide ${idx + 1}`}
-              />
+              >
+                <div
+                  className={cn(
+                    "h-1.5 rounded-full transition-all duration-500",
+                    idx === currentIndex ? "w-8 bg-white" : "w-3 bg-white/40 hover:bg-white/70"
+                  )}
+                />
+              </button>
             ))}
           </div>
         </>
