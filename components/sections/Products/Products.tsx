@@ -27,7 +27,6 @@ export default async function Products() {
             "Photochromic (Auto Dark) Lens",
             "High Index Thin Lens",
             "Polycarbonate Lens",
-            "Kids Lens",
             "Driving Lens",
             "Tinted Lens"
           ].map((lensType, idx) => (
