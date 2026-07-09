@@ -17,7 +17,7 @@ export function buildGeneralWhatsAppLink(): string {
  * NEVER use this for general buttons.
  */
 export function buildFrameWhatsAppLink(frame: Frame): string {
-  const message = `Hi, I'm interested in this frame: ${frame.name}\nPhoto: ${frame.imageUrl}`;
+  const message = `Hi, I'm interested in this frame: ${frame.name}\n\n${frame.imageUrl}`;
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
@@ -25,6 +25,6 @@ export function buildFrameWhatsAppLink(frame: Frame): string {
  * Builds a WhatsApp link pre-filled with a specific product's name + image URL.
  */
 export function buildProductWhatsAppLink(name: string, url: string): string {
-  const message = `Hi, I'm interested in this product: ${name}\nPhoto: ${url}`;
+  const message = `Hi, I'm interested in this product: ${name}\n\n${url}`;
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
