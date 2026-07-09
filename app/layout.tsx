@@ -36,6 +36,7 @@ export const metadata: Metadata = {
     // Brand & Local Variations
     "Hayat Eye Care", "hayat eye care & opticals", "hayat noorpur", "hyatt eyes", "neafe eye",
     "hayat eye care & opticals, near state bank, noorpur, uttar pradesh",
+    "jishan ahmad hayat eye care", "jishan ahmad noorpur",
     
     // Core Services & Doctors
     "eyes", "eye", "eyes doctor", "eye doctor near me", "eye doctor chanpur bijnor",

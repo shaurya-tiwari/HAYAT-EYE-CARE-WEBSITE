@@ -26,7 +26,7 @@ const TRUST_LOGOS = [
 
 export default function TrustStrip() {
   return (
-    <section className="border-y border-[--glass-border] bg-white py-6 md:py-8">
+    <section className="border-y border-[--glass-border] py-6 md:py-8">
       <div className="container-custom px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex-shrink-0">
           <p className="text-xs font-semibold text-[--text-muted] uppercase tracking-wider">

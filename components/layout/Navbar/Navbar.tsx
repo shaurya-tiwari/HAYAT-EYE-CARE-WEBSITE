@@ -39,8 +39,8 @@ export default function Navbar() {
           className={cn(
             "flex items-center justify-between transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
             scrolled
-              ? "navbar-scrolled rounded-2xl py-2 px-3 md:py-2.5 lg:py-3 md:px-4 lg:px-6 w-full max-w-7xl"
-              : "backdrop-blur-md bg-white/5 py-3 px-3 md:py-4 lg:py-5 md:px-5 lg:px-8 w-full max-w-7xl border-b border-white/10"
+              ? "bg-transparent backdrop-blur-md border border-white/20 shadow-lg rounded-2xl py-2 px-3 md:py-2.5 lg:py-3 md:px-4 lg:px-6 w-full max-w-7xl"
+              : "bg-transparent py-3 px-3 md:py-4 lg:py-5 md:px-5 lg:px-8 w-full max-w-7xl"
           )}
         >
           {/* Logo receives scrolled=true when it should use dark text */}

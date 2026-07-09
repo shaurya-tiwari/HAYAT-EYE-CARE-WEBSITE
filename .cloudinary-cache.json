@@ -1,6 +1,6 @@
 {
   "HERO SECTION": {
-    "timestamp": 1783588452882,
+    "timestamp": 1783617565586,
     "data": [
       {
         "asset_id": "f1d040808b611a49a758f5de0c8dc49b",
@@ -226,7 +226,7 @@
     ]
   },
   "GALLERY": {
-    "timestamp": 1783588454364,
+    "timestamp": 1783617567575,
     "data": [
       {
         "asset_id": "58fadd6f0557b801739aaa8efe928217",
@@ -1145,7 +1145,7 @@
     ]
   },
   "FRAMES": {
-    "timestamp": 1783588443193,
+    "timestamp": 1783617569650,
     "data": [
       {
         "asset_id": "ed4d44746f75da72c68af758c84fad3c",
@@ -1701,7 +1701,7 @@
     ]
   },
   "MAIN HOSPITAL": {
-    "timestamp": 1783580718965,
+    "timestamp": 1783617339684,
     "data": [
       {
         "asset_id": "cbe1738fd73d08a2d71ac6fea3852e4f",
@@ -1737,6 +1737,196 @@
           "access_key": "156832533184183",
           "custom_id": "hayateyecarewebsite@gmail.com",
           "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
+        }
+      }
+    ]
+  },
+  "CONTACT_LENSES": {
+    "timestamp": 1783617584353,
+    "data": [
+      {
+        "asset_id": "5762740bbffe3dc443f31f2b4e33c49a",
+        "public_id": "product-contactlenses_z3cn5x",
+        "asset_folder": "CONTACT_LENSES",
+        "filename": "product-contactlenses_z3cn5x",
+        "display_name": "product-contactlenses_z3cn5x",
+        "format": "jpg",
+        "version": 1783421535,
+        "resource_type": "image",
+        "type": "upload",
+        "created_at": "2026-07-07T10:52:15+00:00",
+        "uploaded_at": "2026-07-07T10:52:15+00:00",
+        "bytes": 312522,
+        "backup_bytes": 0,
+        "width": 1200,
+        "height": 1600,
+        "aspect_ratio": 0.75,
+        "pixels": 1920000,
+        "url": "http://res.cloudinary.com/mzffg47y/image/upload/v1783421535/product-contactlenses_z3cn5x.jpg",
+        "secure_url": "https://res.cloudinary.com/mzffg47y/image/upload/v1783421535/product-contactlenses_z3cn5x.jpg",
+        "status": "active",
+        "access_mode": "public",
+        "access_control": null,
+        "etag": "a962840131a9ea30197cc5d8ac97037d",
+        "created_by": {
+          "access_key": "156832533184183",
+          "custom_id": "hayateyecarewebsite@gmail.com",
+          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
+        },
+        "uploaded_by": {
+          "access_key": "156832533184183",
+          "custom_id": "hayateyecarewebsite@gmail.com",
+          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
+        }
+      },
+      {
+        "asset_id": "9a54c655689fee30869c77961672d973",
+        "public_id": "productglasses_i7oomh",
+        "asset_folder": "CONTACT_LENSES",
+        "filename": "productglasses_i7oomh",
+        "display_name": "productglasses_i7oomh",
+        "format": "jpg",
+        "version": 1783421534,
+        "resource_type": "image",
+        "type": "upload",
+        "created_at": "2026-07-07T10:52:14+00:00",
+        "uploaded_at": "2026-07-07T10:52:14+00:00",
+        "bytes": 35665,
+        "backup_bytes": 0,
+        "width": 736,
+        "height": 1308,
+        "aspect_ratio": 0.56269,
+        "pixels": 962688,
+        "url": "http://res.cloudinary.com/mzffg47y/image/upload/v1783421534/productglasses_i7oomh.jpg",
+        "secure_url": "https://res.cloudinary.com/mzffg47y/image/upload/v1783421534/productglasses_i7oomh.jpg",
+        "status": "active",
+        "access_mode": "public",
+        "access_control": null,
+        "etag": "f03b530041cb5e955699cb0cad4a401b",
+        "created_by": {
+          "access_key": "156832533184183",
+          "custom_id": "hayateyecarewebsite@gmail.com",
+          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
+        },
+        "uploaded_by": {
+          "access_key": "156832533184183",
+          "custom_id": "hayateyecarewebsite@gmail.com",
+          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
+        }
+      },
+      {
+        "asset_id": "545a8c33760d43d521f2faf28f1848ae",
+        "public_id": "maccccc_fmdtql",
+        "asset_folder": "CONTACT_LENSES",
+        "filename": "maccccc_fmdtql",
+        "display_name": "lense",
+        "format": "jpg",
+        "version": 1783282896,
+        "resource_type": "image",
+        "type": "upload",
+        "created_at": "2026-07-05T20:21:36+00:00",
+        "uploaded_at": "2026-07-05T20:21:36+00:00",
+        "bytes": 91336,
+        "backup_bytes": 0,
+        "width": 864,
+        "height": 1184,
+        "aspect_ratio": 0.72973,
+        "pixels": 1022976,
+        "url": "http://res.cloudinary.com/mzffg47y/image/upload/v1783282896/maccccc_fmdtql.jpg",
+        "secure_url": "https://res.cloudinary.com/mzffg47y/image/upload/v1783282896/maccccc_fmdtql.jpg",
+        "status": "active",
+        "access_mode": "public",
+        "access_control": null,
+        "etag": "bf9821cfe07d78cf6e0acae63786180e",
+        "created_by": {
+          "access_key": "156832533184183",
+          "custom_id": "hayateyecarewebsite@gmail.com",
+          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
+        },
+        "uploaded_by": {
+          "access_key": "156832533184183",
+          "custom_id": "hayateyecarewebsite@gmail.com",
+          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
+        }
+      },
+      {
+        "asset_id": "084a78074a561aaf2a1d283db6ba5ffb",
+        "public_id": "LENSES/lens_1",
+        "asset_folder": "CONTACT_LENSES",
+        "filename": "lens_1",
+        "display_name": "lesne_vjj73w",
+        "format": "webp",
+        "version": 1783277199,
+        "resource_type": "image",
+        "type": "upload",
+        "created_at": "2026-07-05T18:46:39+00:00",
+        "uploaded_at": "2026-07-05T18:46:39+00:00",
+        "bytes": 13358,
+        "backup_bytes": 0,
+        "width": 612,
+        "height": 419,
+        "aspect_ratio": 1.46062,
+        "pixels": 256428,
+        "pages": 1,
+        "url": "http://res.cloudinary.com/mzffg47y/image/upload/v1783277199/LENSES/lens_1.webp",
+        "secure_url": "https://res.cloudinary.com/mzffg47y/image/upload/v1783277199/LENSES/lens_1.webp",
+        "status": "active",
+        "access_mode": "public",
+        "access_control": null,
+        "etag": "0eb636bd951253dec486d1c4e588eb05",
+        "created_by": {
+          "access_key": "156832533184183",
+          "custom_id": "hayateyecarewebsite@gmail.com",
+          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
+        },
+        "uploaded_by": {
+          "access_key": "156832533184183",
+          "custom_id": "hayateyecarewebsite@gmail.com",
+          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
+        },
+        "last_updated": {
+          "updated_at": "2026-07-05T19:03:00+00:00",
+          "public_id_updated_at": "2026-07-05T19:03:00+00:00"
+        }
+      },
+      {
+        "asset_id": "58d29fd4457bcb141e0d75d7018ac85e",
+        "public_id": "LENSES/lens_2",
+        "asset_folder": "CONTACT_LENSES",
+        "filename": "lens_2",
+        "display_name": "lese_zbcavd",
+        "format": "webp",
+        "version": 1783277198,
+        "resource_type": "image",
+        "type": "upload",
+        "created_at": "2026-07-05T18:46:38+00:00",
+        "uploaded_at": "2026-07-05T18:46:38+00:00",
+        "bytes": 5166,
+        "backup_bytes": 0,
+        "width": 540,
+        "height": 360,
+        "aspect_ratio": 1.5,
+        "pixels": 194400,
+        "pages": 1,
+        "url": "http://res.cloudinary.com/mzffg47y/image/upload/v1783277198/LENSES/lens_2.webp",
+        "secure_url": "https://res.cloudinary.com/mzffg47y/image/upload/v1783277198/LENSES/lens_2.webp",
+        "status": "active",
+        "access_mode": "public",
+        "access_control": null,
+        "etag": "e4d8197f52a72be75f4b22cf77445920",
+        "created_by": {
+          "access_key": "156832533184183",
+          "custom_id": "hayateyecarewebsite@gmail.com",
+          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
+        },
+        "uploaded_by": {
+          "access_key": "156832533184183",
+          "custom_id": "hayateyecarewebsite@gmail.com",
+          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
+        },
+        "last_updated": {
+          "updated_at": "2026-07-05T19:03:01+00:00",
+          "public_id_updated_at": "2026-07-05T19:03:01+00:00"
         }
       }
     ]
