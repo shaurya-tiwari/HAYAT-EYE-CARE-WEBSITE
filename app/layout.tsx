@@ -33,9 +33,24 @@ export const metadata: Metadata = {
   },
   description: SITE_DESCRIPTION,
   keywords: [
-    "eye care", "optical center", "eye test", "eyeglasses",
-    "contact lenses", "optometrist", "spectacles", "frames",
-    "Hayat Eye Care", "eye specialist", "vision test",
+    // Brand & Local Variations
+    "Hayat Eye Care", "hayat eye care & opticals", "hayat noorpur", "hyatt eyes", "neafe eye",
+    "hayat eye care & opticals, near state bank, noorpur, uttar pradesh",
+    
+    // Core Services & Doctors
+    "eyes", "eye", "eyes doctor", "eye doctor near me", "eye doctor chanpur bijnor",
+    "eye specialist", "eye specialist near me", "eyes special doctor near me",
+    "ophthalmologist", "optometrist", "optometry",
+    
+    // Clinics & Centers
+    "eye care center", "eye center near me", "eye hospital near me", "optical center",
+    
+    // Specific Treatments & Products
+    "cataract surgery", "phaco surgery eye hospital filakshi", "eye test", "vision test",
+    "eyeglasses", "contact lenses", "spectacles", "frames",
+    
+    // Local Conversational Search
+    "apna noorpur ma khe eyes ka liya chasma kha banta h"
   ],
   openGraph: {
     title: SITE_NAME,
