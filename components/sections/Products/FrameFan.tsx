@@ -52,9 +52,16 @@ export default function FrameFan({ images }: FrameFanProps) {
 
             {/* Name & Premium Label (Beige Area) */}
             <div className="flex-1 flex flex-col items-center justify-end pb-1 md:pb-2">
-              <div className="w-full flex flex-col items-center justify-center h-full">
-                <div className="w-full text-center border-dashed border-slate-200">
-                  <span className="text-[8px] md:text-[10px] tracking-widest uppercase text-slate-500 font-bold opacity-80">
+              <div className="w-full flex flex-col items-center justify-end h-full">
+                <span className="text-[10px] md:text-xs lg:text-sm font-bold text-slate-800 text-center px-1 w-full truncate mb-0.5 md:mb-1.5">
+                  {(img.public_id.split('/').pop() || "")
+                    .replace(/_[a-z0-9]{6}$/i, "") 
+                    .replace(/[-_]/g, " ")
+                    .replace(/\b\w/g, c => c.toUpperCase()) || "Premium Frame"}
+                </span>
+                
+                <div className="w-full text-center border-t border-dashed border-slate-200 pt-1 md:pt-1.5">
+                  <span className="text-[5.5px] sm:text-[7px] md:text-[8px] tracking-widest uppercase text-slate-400 font-bold opacity-80">
                     Premium Collection
                   </span>
                 </div>

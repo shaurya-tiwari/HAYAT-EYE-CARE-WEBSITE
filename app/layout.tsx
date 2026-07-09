@@ -83,7 +83,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@type": ["MedicalClinic", "Optician"],
     "name": SITE_NAME,
     "description": SITE_DESCRIPTION,
-    "url": "https://hayateyecare.in",
+    "url": "https://www.hayateyecare.in",
     "telephone": "+917037930930",
     "openingHours": "Mo,Tu,We,Th,Fr,Sa 10:00-20:00 Su 11:00-17:00",
     "address": {
