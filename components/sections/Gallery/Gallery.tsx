@@ -36,12 +36,12 @@ export default function Gallery({ initialImages = [] }: { initialImages?: Galler
           </div>
         ) : (
           <div className="relative w-full">
-            <div className="max-h-[500px] md:max-h-[650px] overflow-y-auto custom-scrollbar pr-1.5 md:pr-3 pb-6">
+            <div className="h-[400px] md:h-[650px] overflow-y-auto custom-scrollbar pr-1.5 md:pr-3 pb-6">
               <div className="columns-3 sm:columns-4 md:columns-4 lg:columns-5 gap-2 md:gap-4 space-y-2 md:space-y-4">
                 {images.map((item, idx) => {
                   const base = item.public_id.split("/").pop() ?? item.public_id;
                   const alt = base.replace(/_[a-z0-9]{6}$/, "").replace(/[-_]/g, " ");
-                  const optimizedUrl = item.secure_url.replace("/upload/", "/upload/f_auto,q_auto,w_600/");
+                  const optimizedUrl = item.secure_url.replace("/upload/", "/upload/f_auto,q_auto,w_400/");
                   
                   // Staggered animation delay for waterfall effect
                   const animDelay = (idx % 12) * 0.04;

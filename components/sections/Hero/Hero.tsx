@@ -72,6 +72,8 @@ export default function Hero({ initialImages = [] }: { initialImages?: Cloudinar
               alt={img.public_id.split("/").pop()?.replace(/[-_]/g, " ") || "Premium Optical View"}
               fill
               priority={idx === 0}
+              fetchPriority={idx === 0 ? "high" : "auto"}
+              loading={idx === 0 ? "eager" : "lazy"}
               placeholder="blur"
               blurDataURL={img.secure_url.replace("/upload/", "/upload/w_10,e_blur:1000,f_auto,q_1/")}
               className="object-cover"

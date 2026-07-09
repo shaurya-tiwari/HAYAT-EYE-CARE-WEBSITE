@@ -1,11 +1,30 @@
+"use client";
+
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { Phone, MapPin, Clock, MessageCircle } from "lucide-react";
 import { SITE_PHONE, SITE_ADDRESS, SITE_MAPS_URL, SITE_MAPS_SHARE_URL } from "@/constants/site";
 import Button from "@/components/ui/Button";
 import { buildGeneralWhatsAppLink } from "@/lib/whatsapp";
+import { useState, useRef, useEffect } from "react";
 
 export default function Contact() {
+  const [isMapVisible, setIsMapVisible] = useState(false);
+  const mapRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsMapVisible(true);
+          if (mapRef.current) observer.unobserve(mapRef.current);
+        }
+      },
+      { rootMargin: "200px" } // Load map when it's 200px near viewport
+    );
+    if (mapRef.current) observer.observe(mapRef.current);
+    return () => observer.disconnect();
+  }, []);
   return (
     <SectionWrapper id="contact" bgVariant="soft">
       <SectionHeading
@@ -80,17 +99,21 @@ export default function Contact() {
         </div>
 
         {/* Google Map Embed */}
-        <div className="glass p-1.5 rounded-2xl overflow-hidden h-64 md:h-full min-h-[250px] md:min-h-[320px]">
-          <iframe
-            src={SITE_MAPS_URL}
-            width="100%"
-            height="100%"
-            style={{ border: 0, borderRadius: "14px", minHeight: "240px" }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Hayat Eye Care Location"
-          />
+        <div ref={mapRef} className="glass p-1.5 rounded-2xl overflow-hidden h-64 md:h-full min-h-[250px] md:min-h-[320px]">
+          {isMapVisible ? (
+            <iframe
+              src={SITE_MAPS_URL}
+              width="100%"
+              height="100%"
+              style={{ border: 0, borderRadius: "14px", minHeight: "240px" }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Hayat Eye Care Location"
+            />
+          ) : (
+            <div className="w-full h-full min-h-[240px] rounded-[14px] bg-slate-200 animate-pulse" />
+          )}
         </div>
       </div>
     </SectionWrapper>

@@ -40,7 +40,7 @@ export default function DoctorCard({ doctor, imageUrl }: DoctorCardProps) {
           alt={`Professional photo of ${doctor.name}`}
           fill
           className={`object-cover object-top transition-transform duration-700 ${isExpanded ? "scale-105" : "scale-100"}`}
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
           loading="lazy"
         />
       ) : (
