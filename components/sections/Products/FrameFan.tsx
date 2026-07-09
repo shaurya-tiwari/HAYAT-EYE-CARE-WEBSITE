@@ -31,10 +31,6 @@ export default function FrameFan({ images }: FrameFanProps) {
           /* Decreased from 40s to 20s to make it significantly faster */
           animation: runway-scroll 20s linear infinite;
         }
-        /* Pause the runway when the user hovers over a glass to look at it closely */
-        .runway-track:hover {
-          animation-play-state: paused;
-        }
       `}</style>
 
       <div className="runway-track gap-4 md:gap-8 px-4">
