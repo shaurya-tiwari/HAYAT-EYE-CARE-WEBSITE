@@ -75,13 +75,18 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "MedicalClinic",
+    "@type": ["MedicalClinic", "Optician"],
     "name": SITE_NAME,
     "description": SITE_DESCRIPTION,
+    "url": "https://hayateyecare.in",
+    "telephone": "+917037930930",
+    "openingHours": "Mo,Tu,We,Th,Fr,Sa 10:00-20:00 Su 11:00-17:00",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Kanpur",
-      "addressRegion": "UP",
+      "streetAddress": "Dharmtara Complex, Near State Bank",
+      "addressLocality": "Noorpur",
+      "addressRegion": "Uttar Pradesh",
+      "postalCode": "246734",
       "addressCountry": "IN"
     }
   };

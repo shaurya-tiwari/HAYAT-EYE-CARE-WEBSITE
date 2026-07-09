@@ -11,12 +11,7 @@ const GoogleLogo = () => (
   </svg>
 );
 
-const PractoLogo = () => (
-  <svg viewBox="0 0 300 100" className="h-full w-auto fill-current">
-    <text x="0" y="70" fontFamily="sans-serif" fontWeight="800" fontSize="70" letterSpacing="-2">practo</text>
-    <circle cx="245" cy="70" r="8" fill="currentColor" />
-  </svg>
-);
+
 
 const JustdialLogo = () => (
   <svg viewBox="0 0 300 100" className="h-full w-auto fill-current">
@@ -26,7 +21,6 @@ const JustdialLogo = () => (
 
 const TRUST_LOGOS = [
   { name: "Google Reviews", component: GoogleLogo },
-  { name: "Practo", component: PractoLogo },
   { name: "JustDial", component: JustdialLogo },
 ];
 
