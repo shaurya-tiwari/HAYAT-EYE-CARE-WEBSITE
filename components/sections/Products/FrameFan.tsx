@@ -52,14 +52,9 @@ export default function FrameFan({ images }: FrameFanProps) {
 
             {/* Name & Premium Label (Beige Area) */}
             <div className="flex-1 flex flex-col items-center justify-end pb-1 md:pb-2">
-              <div className="w-full flex flex-col items-center justify-end h-full">
-                {/* Dynamically extracted name from image file */}
-                <span className="text-[9px] sm:text-[11px] md:text-[13px] font-semibold text-slate-700 text-center px-1 w-full truncate mb-1">
-                  {img.public_id.split('/').pop()?.split(/[-_]/).map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') || "Premium Frame"}
-                </span>
-                
-                <div className="w-full text-center border-t border-dashed border-slate-200 pt-1 md:pt-2">
-                  <span className="text-[7px] md:text-[9px] tracking-widest uppercase text-slate-400 font-bold opacity-70">
+              <div className="w-full flex flex-col items-center justify-center h-full">
+                <div className="w-full text-center border-dashed border-slate-200">
+                  <span className="text-[8px] md:text-[10px] tracking-widest uppercase text-slate-500 font-bold opacity-80">
                     Premium Collection
                   </span>
                 </div>

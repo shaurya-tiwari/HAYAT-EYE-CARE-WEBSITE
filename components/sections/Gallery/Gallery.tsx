@@ -58,6 +58,8 @@ export default function Gallery({ initialImages = [] }: { initialImages?: Galler
                         <img
                           src={optimizedUrl}
                           alt={alt}
+                          width={400}
+                          height={400}
                           className="w-full h-auto object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
                           loading="lazy"
                         />
