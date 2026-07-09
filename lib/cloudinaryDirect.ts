@@ -26,11 +26,11 @@ export interface CloudinaryImageDirect {
 
 const FILENAME_PREFIX_MAP: Record<string, string[]> = {
   "HERO SECTION": ["hero_", "hero-"],
-  FRAMES:         ["frame_", "frame-", "frames_"],
-  LENSES:         ["lens_", "lens-", "lense_", "contact_"],
-  DOCTORS:        ["dr_", "dr-", "doctor_", "mr_shakeel", "abdul_mannan", "abdul_manan", "jishan_ahmad", "tabinda_akhtar", "owais_hayat", "shakeel_ahmad", "mr_"],
-  GALLERY:        ["gallery_", "gallery-", "gallry_", "gallry-"],
-  "MAIN HOSPITAL":["hospital_", "hospital-", "main_"],
+  FRAMES: ["frame_", "frame-", "frames_"],
+  LENSES: ["lens_", "lens-", "lense_", "contact_"],
+  DOCTORS: ["dr_", "dr-", "doctor_", "mr_shakeel", "abdul_mannan", "abdul_manan", "jishan_ahmad", "tabinda_akhtar", "owais_hayat", "shakeel_ahmad", "mr_"],
+  GALLERY: ["gallery_", "gallery-", "gallry_", "gallry-"],
+  "MAIN HOSPITAL": ["hospital_", "hospital-", "main_"],
 };
 
 // ── CORE FETCH ─────────────────────────────────────────────────────────────
@@ -85,7 +85,7 @@ async function fetchCloudinaryImagesLogic(folder: string): Promise<CloudinaryIma
     // 1. Discover available folders
     const rootFoldersResult = await cloudinary.api.root_folders();
     const availableFolders = (rootFoldersResult.folders ?? []).map((f: { name: string }) => f.name);
-    
+
     const exactFolder = availableFolders.find(
       (f: string) => f.toUpperCase() === normalizedKey
     );
@@ -103,7 +103,7 @@ async function fetchCloudinaryImagesLogic(folder: string): Promise<CloudinaryIma
       results = await fetchByFilenamePrefixes(fallbackPrefixes);
     }
   } catch (error: any) {
-    console.error(`[Cloudinary] Critical failure fetching images for folder "${folder}":`, 
+    console.error(`[Cloudinary] Critical failure fetching images for folder "${folder}":`,
       error?.message || error?.error?.message || JSON.stringify(error) || error
     );
     results = [];
@@ -127,10 +127,10 @@ export const fetchCloudinaryImages = async (folder: string): Promise<CloudinaryI
     // Automatically refreshes every 5 minutes so you never have to manually delete the file.
     const CACHE_FILE = path.join(process.cwd(), '.cloudinary-cache.json');
     const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
-    
+
     // Structure: { "FOLDER_NAME": { timestamp: number, data: [] } }
     let devCache: Record<string, { timestamp: number; data: CloudinaryImageDirect[] }> = {};
-    
+
     try {
       if (fs.existsSync(CACHE_FILE)) {
         devCache = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf-8'));
@@ -149,7 +149,7 @@ export const fetchCloudinaryImages = async (folder: string): Promise<CloudinaryI
 
     // Otherwise, fetch fresh data from Cloudinary
     const results = await fetchCloudinaryImagesLogic(folder);
-    
+
     // Only save to cache if we actually got results (prevents caching rate-limit errors)
     if (results.length > 0) {
       devCache[folder] = { timestamp: now, data: results };
@@ -159,15 +159,15 @@ export const fetchCloudinaryImages = async (folder: string): Promise<CloudinaryI
         console.error("Failed to write to local Cloudinary cache", e);
       }
     }
-    
+
     // If we got rate-limited but have an old cache, serve the stale cache as a fallback!
     if (results.length === 0 && cachedEntry?.data) {
       return cachedEntry.data;
     }
-    
+
     return results;
   }
-  
+
   // Use permanent cache in production (revalidated via Webhooks)
   return fetchCloudinaryImagesCached(folder);
 };

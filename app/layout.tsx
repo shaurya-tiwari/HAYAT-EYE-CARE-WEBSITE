@@ -27,6 +27,10 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.hayateyecare.in"),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: `${SITE_NAME} — ${SITE_TAGLINE}`,
     template: `%s | ${SITE_NAME}`,
@@ -93,7 +97,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   };
 
   return (
-    <html lang="en" className={`${inter.variable} ${plusJakarta.variable} ${sora.variable}`}>
+    <html lang="en" data-scroll-behavior="smooth" className={`${inter.variable} ${plusJakarta.variable} ${sora.variable}`}>
       <head>
         <script
           type="application/ld+json"

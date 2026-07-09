@@ -41,6 +41,11 @@ function LensCard({ image }: { image: CloudinaryImageDirect }) {
   );
 }
 
+export const metadata = {
+  title: "Contact Lenses",
+  description: "High-quality contact lenses for clear vision and comfort. Explore our wide range of daily, monthly, and colored contact lenses at Hayat Eye Care.",
+};
+
 export default async function ContactLensesPage() {
   // Fetch data directly on the server
   const frames = await fetchCloudinaryImages("CONTACT_LENSES");

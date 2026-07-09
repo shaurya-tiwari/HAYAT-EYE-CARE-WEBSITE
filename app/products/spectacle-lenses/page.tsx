@@ -41,6 +41,11 @@ function LensCard({ image }: { image: CloudinaryImageDirect }) {
   );
 }
 
+export const metadata = {
+  title: "Spectacle Lenses & Glasses",
+  description: "Advanced spectacle lenses for clear and comfortable vision. Anti-glare, blue-cut, and progressive lenses available at Hayat Eye Care.",
+};
+
 export default async function SpectacleLensesPage() {
   // Fetch data directly on the server
   const frames = await fetchCloudinaryImages("SPECTACLE_LENSES");

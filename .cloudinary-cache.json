@@ -1,6 +1,6 @@
 {
   "HERO SECTION": {
-    "timestamp": 1783617565586,
+    "timestamp": 1783619552427,
     "data": [
       {
         "asset_id": "f1d040808b611a49a758f5de0c8dc49b",
@@ -226,7 +226,7 @@
     ]
   },
   "GALLERY": {
-    "timestamp": 1783617567575,
+    "timestamp": 1783619566420,
     "data": [
       {
         "asset_id": "58fadd6f0557b801739aaa8efe928217",
@@ -961,191 +961,8 @@
       }
     ]
   },
-  "DOCTORS": {
-    "timestamp": 1783588455504,
-    "data": [
-      {
-        "asset_id": "2a9cc7634b710dc8143b56e3f2daa9ea",
-        "public_id": "Abdul_manan_mirkye",
-        "asset_folder": "DOCTORS",
-        "filename": "Abdul_manan_mirkye",
-        "display_name": "Abdul_manan_mirkye",
-        "format": "avif",
-        "version": 1783453053,
-        "resource_type": "image",
-        "type": "upload",
-        "created_at": "2026-07-07T19:37:33+00:00",
-        "uploaded_at": "2026-07-07T19:37:33+00:00",
-        "bytes": 227674,
-        "backup_bytes": 0,
-        "width": 1064,
-        "height": 1330,
-        "aspect_ratio": 0.8,
-        "pixels": 1415120,
-        "pages": 1,
-        "url": "http://res.cloudinary.com/mzffg47y/image/upload/v1783453053/Abdul_manan_mirkye.avif",
-        "secure_url": "https://res.cloudinary.com/mzffg47y/image/upload/v1783453053/Abdul_manan_mirkye.avif",
-        "status": "active",
-        "access_mode": "public",
-        "access_control": null,
-        "etag": "49997aeee316089f5271f29018c37933",
-        "created_by": {
-          "access_key": "156832533184183",
-          "custom_id": "hayateyecarewebsite@gmail.com",
-          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
-        },
-        "uploaded_by": {
-          "access_key": "156832533184183",
-          "custom_id": "hayateyecarewebsite@gmail.com",
-          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
-        }
-      },
-      {
-        "asset_id": "b7e0243badb2e924f2f6fe32f41b2705",
-        "public_id": "Jishan_ahmad_g3fiyu",
-        "asset_folder": "DOCTORS",
-        "filename": "Jishan_ahmad_g3fiyu",
-        "display_name": "Jishan_ahmad_g3fiyu",
-        "format": "jpg",
-        "version": 1783453027,
-        "resource_type": "image",
-        "type": "upload",
-        "created_at": "2026-07-07T19:37:07+00:00",
-        "uploaded_at": "2026-07-07T19:37:07+00:00",
-        "bytes": 61581,
-        "backup_bytes": 0,
-        "width": 438,
-        "height": 800,
-        "aspect_ratio": 0.5475,
-        "pixels": 350400,
-        "url": "http://res.cloudinary.com/mzffg47y/image/upload/v1783453027/Jishan_ahmad_g3fiyu.jpg",
-        "secure_url": "https://res.cloudinary.com/mzffg47y/image/upload/v1783453027/Jishan_ahmad_g3fiyu.jpg",
-        "status": "active",
-        "access_mode": "public",
-        "access_control": null,
-        "etag": "181925076b702cd6e740d02f11502e29",
-        "created_by": {
-          "access_key": "156832533184183",
-          "custom_id": "hayateyecarewebsite@gmail.com",
-          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
-        },
-        "uploaded_by": {
-          "access_key": "156832533184183",
-          "custom_id": "hayateyecarewebsite@gmail.com",
-          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
-        }
-      },
-      {
-        "asset_id": "aa8ca8ea68316c55552b0d9d1ccf8b29",
-        "public_id": "Tabinda_Akhtar_mrpsoc",
-        "asset_folder": "DOCTORS",
-        "filename": "Tabinda_Akhtar_mrpsoc",
-        "display_name": "Tabinda_Akhtar_mrpsoc",
-        "format": "webp",
-        "version": 1783452876,
-        "resource_type": "image",
-        "type": "upload",
-        "created_at": "2026-07-07T19:34:36+00:00",
-        "uploaded_at": "2026-07-07T19:34:36+00:00",
-        "bytes": 12490,
-        "backup_bytes": 0,
-        "width": 408,
-        "height": 612,
-        "aspect_ratio": 0.66667,
-        "pixels": 249696,
-        "pages": 1,
-        "url": "http://res.cloudinary.com/mzffg47y/image/upload/v1783452876/Tabinda_Akhtar_mrpsoc.webp",
-        "secure_url": "https://res.cloudinary.com/mzffg47y/image/upload/v1783452876/Tabinda_Akhtar_mrpsoc.webp",
-        "status": "active",
-        "access_mode": "public",
-        "access_control": null,
-        "etag": "85ec7f58f1f2c12c47bdc80005b6022b",
-        "created_by": {
-          "access_key": "156832533184183",
-          "custom_id": "hayateyecarewebsite@gmail.com",
-          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
-        },
-        "uploaded_by": {
-          "access_key": "156832533184183",
-          "custom_id": "hayateyecarewebsite@gmail.com",
-          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
-        }
-      },
-      {
-        "asset_id": "94ab81ecb6623393158089954385bb02",
-        "public_id": "Owais_Hayat_y7777d",
-        "asset_folder": "DOCTORS",
-        "filename": "Owais_Hayat_y7777d",
-        "display_name": "Owais_Hayat_y7777d",
-        "format": "webp",
-        "version": 1783452850,
-        "resource_type": "image",
-        "type": "upload",
-        "created_at": "2026-07-07T19:34:10+00:00",
-        "uploaded_at": "2026-07-07T19:34:10+00:00",
-        "bytes": 16296,
-        "backup_bytes": 0,
-        "width": 479,
-        "height": 740,
-        "aspect_ratio": 0.6473,
-        "pixels": 354460,
-        "pages": 1,
-        "url": "http://res.cloudinary.com/mzffg47y/image/upload/v1783452850/Owais_Hayat_y7777d.webp",
-        "secure_url": "https://res.cloudinary.com/mzffg47y/image/upload/v1783452850/Owais_Hayat_y7777d.webp",
-        "status": "active",
-        "access_mode": "public",
-        "access_control": null,
-        "etag": "c3084cc0bc4b3089e2cff86821bb2084",
-        "created_by": {
-          "access_key": "156832533184183",
-          "custom_id": "hayateyecarewebsite@gmail.com",
-          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
-        },
-        "uploaded_by": {
-          "access_key": "156832533184183",
-          "custom_id": "hayateyecarewebsite@gmail.com",
-          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
-        }
-      },
-      {
-        "asset_id": "3444f2a85c321dc533aa37a1f15605b1",
-        "public_id": "Mr_Shakeel_Ahmad_vlsy2j",
-        "asset_folder": "DOCTORS",
-        "filename": "Mr_Shakeel_Ahmad_vlsy2j",
-        "display_name": "Mr_Shakeel_Ahmad_vlsy2j",
-        "format": "jpg",
-        "version": 1783452635,
-        "resource_type": "image",
-        "type": "upload",
-        "created_at": "2026-07-07T19:30:35+00:00",
-        "uploaded_at": "2026-07-07T19:30:35+00:00",
-        "bytes": 49631,
-        "backup_bytes": 0,
-        "width": 720,
-        "height": 899,
-        "aspect_ratio": 0.80089,
-        "pixels": 647280,
-        "url": "http://res.cloudinary.com/mzffg47y/image/upload/v1783452635/Mr_Shakeel_Ahmad_vlsy2j.jpg",
-        "secure_url": "https://res.cloudinary.com/mzffg47y/image/upload/v1783452635/Mr_Shakeel_Ahmad_vlsy2j.jpg",
-        "status": "active",
-        "access_mode": "public",
-        "access_control": null,
-        "etag": "ecf8ce936874540a65ea1e1e4ccaf26d",
-        "created_by": {
-          "access_key": "156832533184183",
-          "custom_id": "hayateyecarewebsite@gmail.com",
-          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
-        },
-        "uploaded_by": {
-          "access_key": "156832533184183",
-          "custom_id": "hayateyecarewebsite@gmail.com",
-          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
-        }
-      }
-    ]
-  },
   "FRAMES": {
-    "timestamp": 1783617569650,
+    "timestamp": 1783619570083,
     "data": [
       {
         "asset_id": "ed4d44746f75da72c68af758c84fad3c",
@@ -1700,8 +1517,191 @@
       }
     ]
   },
+  "DOCTORS": {
+    "timestamp": 1783619617724,
+    "data": [
+      {
+        "asset_id": "2a9cc7634b710dc8143b56e3f2daa9ea",
+        "public_id": "Abdul_manan_mirkye",
+        "asset_folder": "DOCTORS",
+        "filename": "Abdul_manan_mirkye",
+        "display_name": "Abdul_manan_mirkye",
+        "format": "avif",
+        "version": 1783453053,
+        "resource_type": "image",
+        "type": "upload",
+        "created_at": "2026-07-07T19:37:33+00:00",
+        "uploaded_at": "2026-07-07T19:37:33+00:00",
+        "bytes": 227674,
+        "backup_bytes": 0,
+        "width": 1064,
+        "height": 1330,
+        "aspect_ratio": 0.8,
+        "pixels": 1415120,
+        "pages": 1,
+        "url": "http://res.cloudinary.com/mzffg47y/image/upload/v1783453053/Abdul_manan_mirkye.avif",
+        "secure_url": "https://res.cloudinary.com/mzffg47y/image/upload/v1783453053/Abdul_manan_mirkye.avif",
+        "status": "active",
+        "access_mode": "public",
+        "access_control": null,
+        "etag": "49997aeee316089f5271f29018c37933",
+        "created_by": {
+          "access_key": "156832533184183",
+          "custom_id": "hayateyecarewebsite@gmail.com",
+          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
+        },
+        "uploaded_by": {
+          "access_key": "156832533184183",
+          "custom_id": "hayateyecarewebsite@gmail.com",
+          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
+        }
+      },
+      {
+        "asset_id": "b7e0243badb2e924f2f6fe32f41b2705",
+        "public_id": "Jishan_ahmad_g3fiyu",
+        "asset_folder": "DOCTORS",
+        "filename": "Jishan_ahmad_g3fiyu",
+        "display_name": "Jishan_ahmad_g3fiyu",
+        "format": "jpg",
+        "version": 1783453027,
+        "resource_type": "image",
+        "type": "upload",
+        "created_at": "2026-07-07T19:37:07+00:00",
+        "uploaded_at": "2026-07-07T19:37:07+00:00",
+        "bytes": 61581,
+        "backup_bytes": 0,
+        "width": 438,
+        "height": 800,
+        "aspect_ratio": 0.5475,
+        "pixels": 350400,
+        "url": "http://res.cloudinary.com/mzffg47y/image/upload/v1783453027/Jishan_ahmad_g3fiyu.jpg",
+        "secure_url": "https://res.cloudinary.com/mzffg47y/image/upload/v1783453027/Jishan_ahmad_g3fiyu.jpg",
+        "status": "active",
+        "access_mode": "public",
+        "access_control": null,
+        "etag": "181925076b702cd6e740d02f11502e29",
+        "created_by": {
+          "access_key": "156832533184183",
+          "custom_id": "hayateyecarewebsite@gmail.com",
+          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
+        },
+        "uploaded_by": {
+          "access_key": "156832533184183",
+          "custom_id": "hayateyecarewebsite@gmail.com",
+          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
+        }
+      },
+      {
+        "asset_id": "aa8ca8ea68316c55552b0d9d1ccf8b29",
+        "public_id": "Tabinda_Akhtar_mrpsoc",
+        "asset_folder": "DOCTORS",
+        "filename": "Tabinda_Akhtar_mrpsoc",
+        "display_name": "Tabinda_Akhtar_mrpsoc",
+        "format": "webp",
+        "version": 1783452876,
+        "resource_type": "image",
+        "type": "upload",
+        "created_at": "2026-07-07T19:34:36+00:00",
+        "uploaded_at": "2026-07-07T19:34:36+00:00",
+        "bytes": 12490,
+        "backup_bytes": 0,
+        "width": 408,
+        "height": 612,
+        "aspect_ratio": 0.66667,
+        "pixels": 249696,
+        "pages": 1,
+        "url": "http://res.cloudinary.com/mzffg47y/image/upload/v1783452876/Tabinda_Akhtar_mrpsoc.webp",
+        "secure_url": "https://res.cloudinary.com/mzffg47y/image/upload/v1783452876/Tabinda_Akhtar_mrpsoc.webp",
+        "status": "active",
+        "access_mode": "public",
+        "access_control": null,
+        "etag": "85ec7f58f1f2c12c47bdc80005b6022b",
+        "created_by": {
+          "access_key": "156832533184183",
+          "custom_id": "hayateyecarewebsite@gmail.com",
+          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
+        },
+        "uploaded_by": {
+          "access_key": "156832533184183",
+          "custom_id": "hayateyecarewebsite@gmail.com",
+          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
+        }
+      },
+      {
+        "asset_id": "94ab81ecb6623393158089954385bb02",
+        "public_id": "Owais_Hayat_y7777d",
+        "asset_folder": "DOCTORS",
+        "filename": "Owais_Hayat_y7777d",
+        "display_name": "Owais_Hayat_y7777d",
+        "format": "webp",
+        "version": 1783452850,
+        "resource_type": "image",
+        "type": "upload",
+        "created_at": "2026-07-07T19:34:10+00:00",
+        "uploaded_at": "2026-07-07T19:34:10+00:00",
+        "bytes": 16296,
+        "backup_bytes": 0,
+        "width": 479,
+        "height": 740,
+        "aspect_ratio": 0.6473,
+        "pixels": 354460,
+        "pages": 1,
+        "url": "http://res.cloudinary.com/mzffg47y/image/upload/v1783452850/Owais_Hayat_y7777d.webp",
+        "secure_url": "https://res.cloudinary.com/mzffg47y/image/upload/v1783452850/Owais_Hayat_y7777d.webp",
+        "status": "active",
+        "access_mode": "public",
+        "access_control": null,
+        "etag": "c3084cc0bc4b3089e2cff86821bb2084",
+        "created_by": {
+          "access_key": "156832533184183",
+          "custom_id": "hayateyecarewebsite@gmail.com",
+          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
+        },
+        "uploaded_by": {
+          "access_key": "156832533184183",
+          "custom_id": "hayateyecarewebsite@gmail.com",
+          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
+        }
+      },
+      {
+        "asset_id": "3444f2a85c321dc533aa37a1f15605b1",
+        "public_id": "Mr_Shakeel_Ahmad_vlsy2j",
+        "asset_folder": "DOCTORS",
+        "filename": "Mr_Shakeel_Ahmad_vlsy2j",
+        "display_name": "Mr_Shakeel_Ahmad_vlsy2j",
+        "format": "jpg",
+        "version": 1783452635,
+        "resource_type": "image",
+        "type": "upload",
+        "created_at": "2026-07-07T19:30:35+00:00",
+        "uploaded_at": "2026-07-07T19:30:35+00:00",
+        "bytes": 49631,
+        "backup_bytes": 0,
+        "width": 720,
+        "height": 899,
+        "aspect_ratio": 0.80089,
+        "pixels": 647280,
+        "url": "http://res.cloudinary.com/mzffg47y/image/upload/v1783452635/Mr_Shakeel_Ahmad_vlsy2j.jpg",
+        "secure_url": "https://res.cloudinary.com/mzffg47y/image/upload/v1783452635/Mr_Shakeel_Ahmad_vlsy2j.jpg",
+        "status": "active",
+        "access_mode": "public",
+        "access_control": null,
+        "etag": "ecf8ce936874540a65ea1e1e4ccaf26d",
+        "created_by": {
+          "access_key": "156832533184183",
+          "custom_id": "hayateyecarewebsite@gmail.com",
+          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
+        },
+        "uploaded_by": {
+          "access_key": "156832533184183",
+          "custom_id": "hayateyecarewebsite@gmail.com",
+          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
+        }
+      }
+    ]
+  },
   "MAIN HOSPITAL": {
-    "timestamp": 1783617339684,
+    "timestamp": 1783619723925,
     "data": [
       {
         "asset_id": "cbe1738fd73d08a2d71ac6fea3852e4f",
@@ -1737,196 +1737,6 @@
           "access_key": "156832533184183",
           "custom_id": "hayateyecarewebsite@gmail.com",
           "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
-        }
-      }
-    ]
-  },
-  "CONTACT_LENSES": {
-    "timestamp": 1783617584353,
-    "data": [
-      {
-        "asset_id": "5762740bbffe3dc443f31f2b4e33c49a",
-        "public_id": "product-contactlenses_z3cn5x",
-        "asset_folder": "CONTACT_LENSES",
-        "filename": "product-contactlenses_z3cn5x",
-        "display_name": "product-contactlenses_z3cn5x",
-        "format": "jpg",
-        "version": 1783421535,
-        "resource_type": "image",
-        "type": "upload",
-        "created_at": "2026-07-07T10:52:15+00:00",
-        "uploaded_at": "2026-07-07T10:52:15+00:00",
-        "bytes": 312522,
-        "backup_bytes": 0,
-        "width": 1200,
-        "height": 1600,
-        "aspect_ratio": 0.75,
-        "pixels": 1920000,
-        "url": "http://res.cloudinary.com/mzffg47y/image/upload/v1783421535/product-contactlenses_z3cn5x.jpg",
-        "secure_url": "https://res.cloudinary.com/mzffg47y/image/upload/v1783421535/product-contactlenses_z3cn5x.jpg",
-        "status": "active",
-        "access_mode": "public",
-        "access_control": null,
-        "etag": "a962840131a9ea30197cc5d8ac97037d",
-        "created_by": {
-          "access_key": "156832533184183",
-          "custom_id": "hayateyecarewebsite@gmail.com",
-          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
-        },
-        "uploaded_by": {
-          "access_key": "156832533184183",
-          "custom_id": "hayateyecarewebsite@gmail.com",
-          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
-        }
-      },
-      {
-        "asset_id": "9a54c655689fee30869c77961672d973",
-        "public_id": "productglasses_i7oomh",
-        "asset_folder": "CONTACT_LENSES",
-        "filename": "productglasses_i7oomh",
-        "display_name": "productglasses_i7oomh",
-        "format": "jpg",
-        "version": 1783421534,
-        "resource_type": "image",
-        "type": "upload",
-        "created_at": "2026-07-07T10:52:14+00:00",
-        "uploaded_at": "2026-07-07T10:52:14+00:00",
-        "bytes": 35665,
-        "backup_bytes": 0,
-        "width": 736,
-        "height": 1308,
-        "aspect_ratio": 0.56269,
-        "pixels": 962688,
-        "url": "http://res.cloudinary.com/mzffg47y/image/upload/v1783421534/productglasses_i7oomh.jpg",
-        "secure_url": "https://res.cloudinary.com/mzffg47y/image/upload/v1783421534/productglasses_i7oomh.jpg",
-        "status": "active",
-        "access_mode": "public",
-        "access_control": null,
-        "etag": "f03b530041cb5e955699cb0cad4a401b",
-        "created_by": {
-          "access_key": "156832533184183",
-          "custom_id": "hayateyecarewebsite@gmail.com",
-          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
-        },
-        "uploaded_by": {
-          "access_key": "156832533184183",
-          "custom_id": "hayateyecarewebsite@gmail.com",
-          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
-        }
-      },
-      {
-        "asset_id": "545a8c33760d43d521f2faf28f1848ae",
-        "public_id": "maccccc_fmdtql",
-        "asset_folder": "CONTACT_LENSES",
-        "filename": "maccccc_fmdtql",
-        "display_name": "lense",
-        "format": "jpg",
-        "version": 1783282896,
-        "resource_type": "image",
-        "type": "upload",
-        "created_at": "2026-07-05T20:21:36+00:00",
-        "uploaded_at": "2026-07-05T20:21:36+00:00",
-        "bytes": 91336,
-        "backup_bytes": 0,
-        "width": 864,
-        "height": 1184,
-        "aspect_ratio": 0.72973,
-        "pixels": 1022976,
-        "url": "http://res.cloudinary.com/mzffg47y/image/upload/v1783282896/maccccc_fmdtql.jpg",
-        "secure_url": "https://res.cloudinary.com/mzffg47y/image/upload/v1783282896/maccccc_fmdtql.jpg",
-        "status": "active",
-        "access_mode": "public",
-        "access_control": null,
-        "etag": "bf9821cfe07d78cf6e0acae63786180e",
-        "created_by": {
-          "access_key": "156832533184183",
-          "custom_id": "hayateyecarewebsite@gmail.com",
-          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
-        },
-        "uploaded_by": {
-          "access_key": "156832533184183",
-          "custom_id": "hayateyecarewebsite@gmail.com",
-          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
-        }
-      },
-      {
-        "asset_id": "084a78074a561aaf2a1d283db6ba5ffb",
-        "public_id": "LENSES/lens_1",
-        "asset_folder": "CONTACT_LENSES",
-        "filename": "lens_1",
-        "display_name": "lesne_vjj73w",
-        "format": "webp",
-        "version": 1783277199,
-        "resource_type": "image",
-        "type": "upload",
-        "created_at": "2026-07-05T18:46:39+00:00",
-        "uploaded_at": "2026-07-05T18:46:39+00:00",
-        "bytes": 13358,
-        "backup_bytes": 0,
-        "width": 612,
-        "height": 419,
-        "aspect_ratio": 1.46062,
-        "pixels": 256428,
-        "pages": 1,
-        "url": "http://res.cloudinary.com/mzffg47y/image/upload/v1783277199/LENSES/lens_1.webp",
-        "secure_url": "https://res.cloudinary.com/mzffg47y/image/upload/v1783277199/LENSES/lens_1.webp",
-        "status": "active",
-        "access_mode": "public",
-        "access_control": null,
-        "etag": "0eb636bd951253dec486d1c4e588eb05",
-        "created_by": {
-          "access_key": "156832533184183",
-          "custom_id": "hayateyecarewebsite@gmail.com",
-          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
-        },
-        "uploaded_by": {
-          "access_key": "156832533184183",
-          "custom_id": "hayateyecarewebsite@gmail.com",
-          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
-        },
-        "last_updated": {
-          "updated_at": "2026-07-05T19:03:00+00:00",
-          "public_id_updated_at": "2026-07-05T19:03:00+00:00"
-        }
-      },
-      {
-        "asset_id": "58d29fd4457bcb141e0d75d7018ac85e",
-        "public_id": "LENSES/lens_2",
-        "asset_folder": "CONTACT_LENSES",
-        "filename": "lens_2",
-        "display_name": "lese_zbcavd",
-        "format": "webp",
-        "version": 1783277198,
-        "resource_type": "image",
-        "type": "upload",
-        "created_at": "2026-07-05T18:46:38+00:00",
-        "uploaded_at": "2026-07-05T18:46:38+00:00",
-        "bytes": 5166,
-        "backup_bytes": 0,
-        "width": 540,
-        "height": 360,
-        "aspect_ratio": 1.5,
-        "pixels": 194400,
-        "pages": 1,
-        "url": "http://res.cloudinary.com/mzffg47y/image/upload/v1783277198/LENSES/lens_2.webp",
-        "secure_url": "https://res.cloudinary.com/mzffg47y/image/upload/v1783277198/LENSES/lens_2.webp",
-        "status": "active",
-        "access_mode": "public",
-        "access_control": null,
-        "etag": "e4d8197f52a72be75f4b22cf77445920",
-        "created_by": {
-          "access_key": "156832533184183",
-          "custom_id": "hayateyecarewebsite@gmail.com",
-          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
-        },
-        "uploaded_by": {
-          "access_key": "156832533184183",
-          "custom_id": "hayateyecarewebsite@gmail.com",
-          "external_id": "f3d176bcf8ac0a17c1faa3991e1a4c"
-        },
-        "last_updated": {
-          "updated_at": "2026-07-05T19:03:01+00:00",
-          "public_id_updated_at": "2026-07-05T19:03:01+00:00"
         }
       }
     ]
