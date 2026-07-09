@@ -10,24 +10,17 @@ export default function Preloader() {
   useEffect(() => {
     let innerTimer: NodeJS.Timeout;
     
-    const hideLoader = () => {
+    // Waiting for the full 'load' event kills LCP on slow networks because it waits for all images.
+    // Instead, we just show the loader briefly while React hydrates, then fade it out.
+    const timer = setTimeout(() => {
       setIsFading(true);
       innerTimer = setTimeout(() => setIsLoading(false), 500);
-    };
+    }, 250);
 
-    if (document.readyState === "complete") {
-      const timer = setTimeout(hideLoader, 300);
-      return () => {
-        clearTimeout(timer);
-        if (innerTimer) clearTimeout(innerTimer);
-      };
-    } else {
-      window.addEventListener("load", hideLoader);
-      return () => {
-        window.removeEventListener("load", hideLoader);
-        if (innerTimer) clearTimeout(innerTimer);
-      };
-    }
+    return () => {
+      clearTimeout(timer);
+      if (innerTimer) clearTimeout(innerTimer);
+    };
   }, []);
 
   if (!isLoading) return null;

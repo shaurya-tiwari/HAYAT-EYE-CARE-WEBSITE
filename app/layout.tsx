@@ -38,14 +38,16 @@ export const metadata: Metadata = {
   description: SITE_DESCRIPTION,
   keywords: [
     // Brand & Local Variations
-    "Hayat Eye Care", "hayat eye care & opticals", "hayat noorpur", "hyatt eyes", "neafe eye",
+    "Hayat Eye Care", "hayat eye care", "hayat eye care and optical", "hayat eye care & opticals", "hayat noorpur", "hyatt eyes", "neafe eye",
     "hayat eye care & opticals, near state bank, noorpur, uttar pradesh",
     "jishan ahmad hayat eye care", "jishan ahmad noorpur",
+    "hayat eye care moradabad", "hayat eye care noorpur",
     
     // Core Services & Doctors
     "eyes", "eye", "eyes doctor", "eye doctor near me", "eye doctor chanpur bijnor",
     "eye specialist", "eye specialist near me", "eyes special doctor near me",
-    "ophthalmologist", "optometrist", "optometry",
+    "ophthalmologist", "optometrist", "optometry", "best eye optometrist", "best eye optometrist near me",
+    "best eye clinic in noorpur", "best eye hospital in moradabad",
     
     // Clinics & Centers
     "eye care center", "eye center near me", "eye hospital near me", "optical center",
