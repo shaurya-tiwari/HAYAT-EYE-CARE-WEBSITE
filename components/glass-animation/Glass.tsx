@@ -6,7 +6,6 @@ import React, { useEffect, useRef, useState } from "react";
  * Premium Eyewear Display / Glass Animation component.
  * Renders the custom spectacles SVG directly inline and animates the drawing
  * outline on page load with a transparent background.
- * NO FILL COLORS - ONLY LINES as requested.
  */
 export default function Glass() {
   const [isVisible, setIsVisible] = useState(false);
@@ -43,7 +42,7 @@ export default function Glass() {
         }
 
         .glass-path-dark {
-          stroke: var(--text-primary, #0c0c0c);
+          stroke: var(--text-primary, #000000ff);
           stroke-width: 1.5;
           stroke-linecap: round;
           stroke-linejoin: round;
@@ -73,7 +72,7 @@ export default function Glass() {
       <div className="glass-svg-container w-full px-2 sm:px-6 md:px-8 scale-[1.05] sm:scale-100 origin-top">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1901 492" preserveAspectRatio="xMidYMid meet">
           <g>
-            {/* Path 1: Dark lines (originally fill="rgb(12,12,12)") */}
+            {/* Path 1: Dark lines (originally fill="rgba(102, 23, 23, 1)") */}
             <path
               className={`glass-path-dark ${isVisible ? "animate" : ""}`}
               pathLength="100"

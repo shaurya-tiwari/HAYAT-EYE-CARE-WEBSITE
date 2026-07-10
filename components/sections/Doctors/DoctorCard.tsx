@@ -29,8 +29,12 @@ export default function DoctorCard({ doctor, imageUrl }: DoctorCardProps) {
         boxShadow: isExpanded ? "0 20px 40px -10px rgba(0,0,0,0.3)" : "0 4px 12px rgba(0,0,0,0.1)",
         transform: isExpanded ? "translateY(-8px)" : "translateY(0)",
       }}
-      onMouseEnter={() => setIsExpanded(true)}
-      onMouseLeave={() => setIsExpanded(false)}
+      onPointerEnter={(e) => {
+        if (e.pointerType === "mouse") setIsExpanded(true);
+      }}
+      onPointerLeave={(e) => {
+        if (e.pointerType === "mouse") setIsExpanded(false);
+      }}
       onClick={() => setIsExpanded(!isExpanded)}
     >
       {/* Background Image */}
