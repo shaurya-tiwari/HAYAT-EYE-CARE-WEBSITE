@@ -108,6 +108,12 @@ export default function Gallery({ initialImages = [] }: { initialImages?: Galler
                 })}
               </div>
             </div>
+            {/* ✅ Bottom gradient — inside gallery container so it sticks to gallery bottom on all screens */}
+            <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 md:h-48 z-10 bg-gradient-to-t from-black/47 to-transparent flex flex-col items-center justify-end pb-4 md:pb-6">
+              <p className="text-[9px] md:text-[11px] font-semibold text-black uppercase tracking-[0.2em] flex items-center gap-1.5 bg-[#8A9A5B] px-3 md:px-4 py-1.5 rounded-full border border-[#72804A] shadow-md">
+                Scroll for more <ChevronDown size={14} className="opacity-70" />
+              </p>
+            </div>
 
           </div>
         )}
@@ -123,14 +129,7 @@ export default function Gallery({ initialImages = [] }: { initialImages?: Galler
       )}
       </SectionWrapper>
 
-      {/* ✅ Full-width Bottom fade */}
-      {images.length > 0 && (
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 md:h-48 z-10 bg-gradient-to-t from-[--bg-base] via-[--bg-base]/60 to-transparent flex flex-col items-center justify-end pb-4 md:pb-6">
-          <p className="text-[9px] md:text-[11px] font-semibold text-black uppercase tracking-[0.2em] flex items-center gap-1.5 bg-[#8A9A5B] px-3 md:px-4 py-1.5 rounded-full border border-[#72804A] shadow-md">
-            Scroll for more <ChevronDown size={14} className="opacity-70" />
-          </p>
-        </div>
-      )}
+
     </div>
   );
 }
