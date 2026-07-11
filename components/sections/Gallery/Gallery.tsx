@@ -15,7 +15,6 @@ export default function Gallery({ initialImages = [] }: { initialImages?: Galler
   const [images, setImages] = useState<GalleryImage[]>(initialImages);
   const [activeImage, setActiveImage] = useState<{ src: string; alt: string } | null>(null);
 
-  // Sync images if prop changes
   useEffect(() => {
     setImages(initialImages);
   }, [initialImages]);
@@ -36,22 +35,37 @@ export default function Gallery({ initialImages = [] }: { initialImages?: Galler
           </div>
         ) : (
           <div className="relative w-full">
-            <div className="h-[400px] md:h-[650px] overflow-y-auto custom-scrollbar pr-1.5 md:pr-3 pb-6">
+            {/* contain:strict isolates layout+paint to this box — browser skips global reflow on scroll */}
+            <div
+              className="h-[400px] md:h-[650px] overflow-y-auto custom-scrollbar pr-1.5 md:pr-3 pb-6"
+              style={{ contain: "strict" }}
+            >
               <div className="columns-3 sm:columns-4 md:columns-4 lg:columns-5 gap-2 md:gap-4 space-y-2 md:space-y-4">
                 {images.map((item, idx) => {
                   const base = item.public_id.split("/").pop() ?? item.public_id;
                   const alt = base.replace(/_[a-z0-9]{6}$/, "").replace(/[-_]/g, " ");
                   const optimizedUrl = item.secure_url.replace("/upload/", "/upload/f_auto,q_auto,w_400/");
-                  
-                  // Staggered animation delay for waterfall effect
-                  const animDelay = (idx % 12) * 0.04;
+
+                  // Only animate first 8 cards (above fold) — rest appear instantly, no jank
+                  const shouldAnimate = idx < 8;
 
                   return (
                     <div
                       key={item.public_id}
-                      className="break-inside-avoid relative rounded-xl overflow-hidden group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 ease-out transform hover:-translate-y-1 animate-fade-in-up bg-slate-100"
-                      style={{ animationDelay: `${animDelay}s` }}
-                      onClick={() => setActiveImage({ src: item.secure_url.replace("/upload/", "/upload/f_auto,q_auto,w_1200/"), alt })}
+                      // ✅ transition-[transform,opacity] = GPU-only, no layout paint
+                      // ✅ shadow-sm → shadow-md (lighter shadow = less paint cost on hover)
+                      // ✅ will-change: transform hints GPU to promote card to its own layer
+                      className={`break-inside-avoid relative rounded-xl overflow-hidden group cursor-pointer shadow-sm hover:shadow-md transition-[transform,opacity] duration-300 hover:-translate-y-1 bg-slate-100${shouldAnimate ? " animate-fade-in-up" : ""}`}
+                      style={{
+                        willChange: "transform",
+                        ...(shouldAnimate && { animationDelay: `${idx * 0.04}s` }),
+                      }}
+                      onClick={() =>
+                        setActiveImage({
+                          src: item.secure_url.replace("/upload/", "/upload/f_auto,q_auto,w_1200/"),
+                          alt,
+                        })
+                      }
                     >
                       <div className="relative aspect-auto">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -60,20 +74,30 @@ export default function Gallery({ initialImages = [] }: { initialImages?: Galler
                           alt={alt}
                           width={400}
                           height={400}
-                          className="w-full h-auto object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                          // ✅ transition-transform only (GPU) — duration trimmed 700→500ms
+                          // ✅ decoding=async frees main thread during image decode
+                          className="w-full h-auto object-cover group-hover:scale-[1.03] transition-transform duration-500 ease-out"
                           loading="lazy"
+                          decoding="async"
                         />
-                        
-                        {/* Hover Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-[--dark-section-from]/85 via-[--dark-section-from]/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400">
-                          <div className="absolute bottom-0 left-0 right-0 p-2.5 md:p-5 flex flex-col md:flex-row md:items-end justify-between translate-y-3 group-hover:translate-y-0 transition-transform duration-400 ease-out gap-1">
+
+                        {/* Hover Overlay — opacity transition is GPU-only ✅ */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-[--dark-section-from]/85 via-[--dark-section-from]/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <div className="absolute bottom-0 left-0 right-0 p-2.5 md:p-5 flex flex-col md:flex-row md:items-end justify-between translate-y-3 group-hover:translate-y-0 transition-transform duration-300 ease-out gap-1">
                             <div className="pr-1 md:pr-3">
-                              <p className="text-[--accent-light] font-bold text-[8px] md:text-[10px] uppercase tracking-[0.2em] mb-0.5 md:mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-400 delay-75">Gallery</p>
-                              <h3 className="text-white font-bold text-[10px] md:text-sm lg:text-base tracking-tight leading-tight opacity-0 group-hover:opacity-100 transition-opacity duration-400 delay-100 capitalize line-clamp-1 md:line-clamp-2">{alt}</h3>
+                              <p className="text-[--accent-light] font-bold text-[8px] md:text-[10px] uppercase tracking-[0.2em] mb-0.5 md:mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                                Gallery
+                              </p>
+                              <h3 className="text-white font-bold text-[10px] md:text-sm lg:text-base tracking-tight leading-tight opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100 capitalize line-clamp-1 md:line-clamp-2">
+                                {alt}
+                              </h3>
                             </div>
-                            
-                            <div className="hidden md:flex w-9 h-9 shrink-0 rounded-full bg-white/15 backdrop-blur-md items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-400 delay-150 border border-white/20 group-hover:hover:bg-white group-hover:hover:text-[--dark-section-from]">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 3h6v6"/><path d="M9 21H3v-6"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/></svg>
+
+                            {/* ✅ Removed backdrop-blur-md from expand button — not worth the paint cost */}
+                            <div className="hidden md:flex w-9 h-9 shrink-0 rounded-full bg-white/20 items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-[opacity,background-color] duration-300 delay-150 border border-white/20 hover:bg-white hover:text-[--dark-section-from]">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M15 3h6v6"/><path d="M9 21H3v-6"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/>
+                              </svg>
                             </div>
                           </div>
                         </div>
@@ -83,15 +107,9 @@ export default function Gallery({ initialImages = [] }: { initialImages?: Galler
                 })}
               </div>
             </div>
-            
-            {/* Bottom Fade/Blur Overlay */}
-            <div 
-              className="pointer-events-none absolute bottom-0 left-0 right-0 h-20 z-10 rounded-b-xl backdrop-blur-md bg-gradient-to-t from-[--bg-base] via-[--bg-base]/80 to-transparent"
-              style={{
-                WebkitMaskImage: 'linear-gradient(to top, black 40%, transparent 100%)',
-                maskImage: 'linear-gradient(to top, black 40%, transparent 100%)'
-              }}
-            />
+
+            {/* ✅ Bottom fade — plain gradient only, NO backdrop-blur (was the main scroll jitter cause) */}
+            <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-20 z-10 rounded-b-xl bg-gradient-to-t from-[--bg-base] via-[--bg-base]/70 to-transparent" />
           </div>
         )}
       </div>

@@ -36,6 +36,20 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/android-chrome-512x512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+  },
+  manifest: "/site.webmanifest",
   keywords: [
     // Brand & Local Variations
     "Hayat Eye Care", "hayat eye care", "hayat eye care and optical", "hayat eye care & opticals", "hayat noorpur", "hyatt eyes", "neafe eye",
@@ -84,10 +98,32 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@context": "https://schema.org",
     "@type": ["MedicalClinic", "Optician"],
     "name": SITE_NAME,
+    "alternateName": [
+      "Hayat Eye Care",
+      "Hayat Eye Care Noorpur",
+      "Hayat Eye Care & Opticals Noorpur",
+      "hayat eye care",
+      "hayat eye care noorpur",
+      "hayat eye care & opticals",
+      "hayat eye care moradabad",
+      "hayat eye care bijnor",
+      "HAYAT EYE CARE"
+    ],
     "description": SITE_DESCRIPTION,
     "url": "https://www.hayateyecare.in",
     "telephone": "+917037930930",
+    "email": "info@hayateyecare.com",
+    "priceRange": "₹₹",
+    "currenciesAccepted": "INR",
+    "paymentAccepted": "Cash, UPI, Card",
     "openingHours": "Mo,Tu,We,Th,Fr,Sa 10:00-20:00 Su 11:00-17:00",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.hayateyecare.in/android-chrome-512x512.png",
+      "width": 512,
+      "height": 512
+    },
+    "image": "https://www.hayateyecare.in/android-chrome-512x512.png",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Dharmtara Complex, Near State Bank",
@@ -95,7 +131,33 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       "addressRegion": "Uttar Pradesh",
       "postalCode": "246734",
       "addressCountry": "IN"
-    }
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "29.1394",
+      "longitude": "78.4327"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Noorpur" },
+      { "@type": "City", "name": "Bijnor" },
+      { "@type": "City", "name": "Moradabad" },
+      { "@type": "City", "name": "Chanpur" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Eye Care Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Eye Test & Vision Check" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Spectacles & Frames" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contact Lens Fitting" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cataract Surgery Referral" } }
+      ]
+    },
+    "sameAs": [
+      "https://instagram.com/hayateyecare",
+      "https://facebook.com/hayateyecare",
+      "https://www.google.com/maps/search/?api=1&query=Hayat+Eye+Care,+Dharmtara+Complex,+near+State+Bank,+Noorpur,+Uttar+Pradesh"
+    ]
   };
 
   return (

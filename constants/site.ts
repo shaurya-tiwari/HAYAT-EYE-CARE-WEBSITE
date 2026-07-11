@@ -3,10 +3,10 @@
  * WhatsApp number, address, social links across the entire site.
  */
 
-export const SITE_NAME = "HAYAT EYE CARE";
-export const SITE_TAGLINE = "Best Eye Care Clinic in Noorpur & Moradabad";
+export const SITE_NAME = "Hayat Eye Care & Opticals";
+export const SITE_TAGLINE = "Best Eye Clinic & Optical Store in Noorpur, Bijnor, Moradabad";
 export const SITE_DESCRIPTION =
-  "HAYAT EYE CARE — a premium optical center offering eye testing, frame fitting, contact lens fitting, and more. Serving happy customers for over 10 years.";
+  "Hayat Eye Care & Opticals — Noorpur's trusted eye clinic for eye testing, spectacles, frames, contact lenses & cataract care. Serving Bijnor, Moradabad & nearby areas for 10+ years. Visit us near State Bank, Noorpur, UP.";
 
 /** WhatsApp Business number — include country code, no + or spaces */
 export const BASE_PHONE_NUMBER = "7037930930";

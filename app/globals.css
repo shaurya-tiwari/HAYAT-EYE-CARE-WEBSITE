@@ -31,18 +31,18 @@
     --text-muted: #94a3b8;
     --text-on-dark: #ffffff;
 
-    /* --- Glass Effect Tokens — Refined subtle --- */
-    --glass-bg: rgba(255, 255, 255, 0.72);
-    --glass-bg-hover: rgba(255, 255, 255, 0.92);
-    --glass-border: rgba(0, 0, 0, 0.04);
-    --glass-border-hover: rgba(0, 113, 227, 0.20);
-    --glass-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.02);
-    --glass-shadow-hover: 0 20px 48px -12px rgba(0, 113, 227, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04);
-    --glass-blur: blur(20px);
+    /* --- Glass Effect Tokens — Line Art Style (no blur, no shadow) --- */
+    --glass-bg: transparent;
+    --glass-bg-hover: rgba(255, 255, 255, 0.6);
+    --glass-border: rgba(0, 0, 0, 0.09);
+    --glass-border-hover: var(--primary);
+    --glass-shadow: none;
+    --glass-shadow-hover: none;
+    --glass-blur: none;
 
     /* --- Dark section glass --- */
-    --dark-glass-bg: rgba(15, 23, 42, 0.85);
-    --dark-glass-border: rgba(255, 255, 255, 0.08);
+    --dark-glass-bg: transparent;
+    --dark-glass-border: rgba(255, 255, 255, 0.12);
     --dark-section-from: #0f172a;
     --dark-section-to: #020617;
 
@@ -128,38 +128,32 @@
    ============================================================ */
 @layer utilities {
 
-  /* Light frosted glass card */
+  /* Line-art card — transparent bg, clean 1px border, zero blur, zero shadow */
   .glass {
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
+    background: transparent;
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-card);
-    box-shadow: var(--glass-shadow);
-    transition: var(--transition-base);
+    transition: border-color 0.2s ease;
   }
 
+  .glass:hover {
+    border-color: var(--glass-border-hover);
+    background: var(--glass-bg-hover);
+  }
 
-
-  /* Non-hoverable flat glass */
+  /* Static line-art card — no hover state */
   .glass-flat {
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
+    background: transparent;
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-card);
-    box-shadow: var(--glass-shadow);
   }
 
-  /* Dark glass */
+  /* Dark-section line-art card */
   .glass-dark {
-    background: var(--dark-glass-bg);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
+    background: transparent;
     border: 1px solid var(--dark-glass-border);
     border-radius: var(--radius-card);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    transition: var(--transition-base);
+    transition: border-color 0.2s ease;
   }
 
   /* Gradient text */
@@ -431,6 +425,7 @@
 
 .animate-marquee {
   animation: marquee 20s linear infinite;
+  will-change: transform; /* GPU layer — smooth marquee with zero jank */
 }
 
 .animate-glow {
@@ -456,15 +451,17 @@
   background: linear-gradient(180deg, var(--primary-muted) 0%, var(--bg-base) 100%);
 }
 
-/* Ambient glow blobs */
+/* Ambient glow blobs — promoted to GPU layer so opacity animation doesn't trigger paint */
 .hero-glow-1 {
   background: radial-gradient(circle, rgba(0, 113, 227, 0.12) 0%, transparent 70%);
   animation: glow-pulse 5s ease-in-out infinite;
+  will-change: opacity;
 }
 
 .hero-glow-2 {
   background: radial-gradient(circle, rgba(5, 150, 105, 0.10) 0%, transparent 70%);
   animation: glow-pulse 5s ease-in-out 2.5s infinite;
+  will-change: opacity;
 }
 
 /* ============================================================
