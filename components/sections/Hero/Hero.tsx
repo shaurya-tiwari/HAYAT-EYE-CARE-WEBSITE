@@ -74,11 +74,13 @@ export default function Hero({ initialImages = [] }: { initialImages?: Cloudinar
               priority={idx === 0}
               fetchPriority={idx === 0 ? "high" : "auto"}
               loading={idx === 0 ? "eager" : "lazy"}
-              placeholder="blur"
-              blurDataURL={img.secure_url.replace("/upload/", "/upload/w_10,e_blur:1000,f_auto,q_1/")}
               className="object-cover"
-              style={{ transform: idx === currentIndex ? "scale(1.03)" : "scale(1)", transition: "transform 8s ease-out" }}
-              sizes="100vw"
+              style={{
+                transform: idx === currentIndex ? "scale(1.03)" : "scale(1)",
+                transition: "transform 8s ease-out",
+                willChange: "transform",   /* GPU compositor layer — fixes non-composited animation */
+              }}
+              sizes="(max-width: 768px) 100vw, 100vw"
             />
           </div>
         ))
@@ -116,7 +118,7 @@ export default function Hero({ initialImages = [] }: { initialImages?: Cloudinar
           {/* Previous Button (Left) */}
           <button
             onClick={prevSlide}
-            className="hidden md:flex absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/15 items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300"
+            className="hidden md:flex absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/30 border border-white/20 items-center justify-center text-white hover:bg-white hover:text-black transition-[background-color,color] duration-300"
             aria-label="Previous Slide"
           >
             <ChevronLeft size={18} />
@@ -125,7 +127,7 @@ export default function Hero({ initialImages = [] }: { initialImages?: Cloudinar
           {/* Next Button (Right) */}
           <button
             onClick={nextSlide}
-            className="hidden md:flex absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/15 items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300"
+            className="hidden md:flex absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/30 border border-white/20 items-center justify-center text-white hover:bg-white hover:text-black transition-[background-color,color] duration-300"
             aria-label="Next Slide"
           >
             <ChevronRight size={18} />

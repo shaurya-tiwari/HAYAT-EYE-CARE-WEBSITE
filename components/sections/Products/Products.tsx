@@ -30,7 +30,7 @@ export default async function Products() {
             "Driving Lens",
             "Tinted Lens"
           ].map((lensType, idx) => (
-            <div key={idx} className="px-2.5 py-1 md:px-4 md:py-2 rounded-full bg-white/60 backdrop-blur-md border border-slate-200/60 shadow-sm text-[9px] sm:text-[10px] md:text-sm font-medium text-[--text-primary]">
+            <div key={idx} className="px-2.5 py-1 md:px-4 md:py-2 rounded-full bg-white border border-slate-200/80 text-[9px] sm:text-[10px] md:text-sm font-medium text-[--text-primary]">
               {lensType}
             </div>
           ))}

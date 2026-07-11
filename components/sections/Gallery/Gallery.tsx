@@ -44,7 +44,7 @@ export default function Gallery({ initialImages = [] }: { initialImages?: Galler
                 {images.map((item, idx) => {
                   const base = item.public_id.split("/").pop() ?? item.public_id;
                   const alt = base.replace(/_[a-z0-9]{6}$/, "").replace(/[-_]/g, " ");
-                  const optimizedUrl = item.secure_url.replace("/upload/", "/upload/f_auto,q_auto,w_400/");
+                  const optimizedUrl = item.secure_url.replace("/upload/", "/upload/f_auto,q_auto,w_200/");
 
                   // Only animate first 8 cards (above fold) — rest appear instantly, no jank
                   const shouldAnimate = idx < 8;
