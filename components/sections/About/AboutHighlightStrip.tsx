@@ -2,9 +2,9 @@ import { Award, ShieldCheck, Clock3, Users } from "lucide-react";
 
 const ITEMS = [
   { icon: Award, label: "Award-Winning", sub: "Regional eye care awards 2022–2024" },
-  { icon: ShieldCheck, label: "NABL Certified", sub: "Highest quality standards" },
+  { icon: ShieldCheck, label: "Certified Optometrists", sub: "Expert Team" },
   { icon: Clock3, label: "10+ Years", sub: "Serving families since 2014" },
-  { icon: Users, label: "Expert Team", sub: "3 certified optometrists" },
+  { icon: Users, label: "Expert Team", sub: "5 Team Members" },
 ];
 
 export default function AboutHighlightStrip() {

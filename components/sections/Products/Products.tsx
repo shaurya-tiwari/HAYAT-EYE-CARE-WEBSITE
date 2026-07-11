@@ -2,6 +2,8 @@ import SectionWrapper from "@/components/ui/SectionWrapper";
 import SectionHeading from "@/components/ui/SectionHeading";
 import FrameFan from "./FrameFan";
 import { fetchCloudinaryImages } from "@/lib/cloudinaryDirect";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 import Image from "next/image";
 
@@ -42,6 +44,15 @@ export default async function Products() {
       {frames.length > 0 && (
         <div className="w-full relative bg-teal-50/10">
           <FrameFan images={frames} />
+          
+          <div className="flex justify-center pb-10 md:pb-16 pt-4 relative z-10">
+            <Link
+              href="/products"
+              className="inline-flex items-center gap-2 px-6 py-2.5 sm:px-8 sm:py-3 rounded-full bg-[#8A9A5B] text-black font-semibold text-xs sm:text-sm hover:bg-[#72804A] transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+            >
+              Explore More <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
       )}
     </section>

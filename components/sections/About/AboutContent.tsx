@@ -19,7 +19,7 @@ export default async function AboutContent() {
       {/* Text */}
       <div className="space-y-3 md:space-y-5 flex flex-col justify-start pt-2 md:pt-4">
         <p className="text-[--text-secondary] leading-relaxed text-[8px] sm:text-[11px] md:text-[13px] lg:text-[15px] font-medium">
-          For over a decade, Hayat Eye Care has been Noorpur's most trusted optical center. We combine advanced technology with expert doctors to bring premium, comprehensive vision care to your entire family.
+          For over a decade, Hayat Eye Care has been Noorpur's most trusted optical center. We combine advanced technology with expert optometrists to bring premium, comprehensive vision care to your entire family.
         </p>
         <ul className="grid grid-cols-1 gap-1.5 md:gap-3 pt-1 md:pt-3">
           {HIGHLIGHTS.map((h) => (
