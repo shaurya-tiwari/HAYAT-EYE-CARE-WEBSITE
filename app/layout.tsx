@@ -67,8 +67,7 @@ export const metadata: Metadata = {
     "eye care center", "eye center near me", "eye hospital near me", "optical center",
     
     // Specific Treatments & Products
-    "cataract surgery", "phaco surgery eye hospital filakshi", "eye test", "vision test",
-    "eyeglasses", "contact lenses", "spectacles", "frames",
+  
     
     // Local Conversational Search
     "apna noorpur ma khe eyes ka liya chasma kha banta h"
