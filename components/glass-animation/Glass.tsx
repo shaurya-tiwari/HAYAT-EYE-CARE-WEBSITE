@@ -3,56 +3,118 @@
 import React, { useEffect, useRef } from "react";
 
 /**
+ * Keyframe stops for the sketch-drawing animation.
+ * [timeProgress 0–1, strokeDashoffset value]
+ * Pauses at identical adjacent values mimic an artist stopping and resuming.
+ */
+const STOPS: [number, number][] = [
+  [0.00, 100],
+  [0.15,  82],
+  [0.40,  55],
+  [0.43,  55],   // pause — adjusts grip
+  [0.65,  30],
+  [0.67,  30],   // pause — looks at reference
+  [0.85,  10],
+  [0.87,  10],   // pause — final touches
+  [1.00,   0.5], // leaves stroke slightly open
+];
+
+/** Simple ease-out curve for smooth deceleration */
+function easeOut(t: number): number {
+  return 1 - Math.pow(1 - t, 3);
+}
+
+/** Interpolate dashoffset from keyframe stops at a given time progress (0–1) */
+function getOffset(progress: number): number {
+  const p = Math.max(0, Math.min(1, progress));
+  for (let i = 1; i < STOPS.length; i++) {
+    const [t0, v0] = STOPS[i - 1];
+    const [t1, v1] = STOPS[i];
+    if (p <= t1) {
+      const seg = t1 === t0 ? 1 : (p - t0) / (t1 - t0);
+      return v0 + (v1 - v0) * easeOut(seg);
+    }
+  }
+  return 0.5;
+}
+
+const DURATION = 9000; // ms — total animation time
+
+/**
  * Premium Eyewear Display / Glass Animation component.
- * Renders the custom spectacles SVG directly inline and animates the drawing
- * outline on page load with a transparent background.
+ *
+ * Uses requestAnimationFrame to animate stroke-dashoffset directly.
+ * rAF is never throttled during scroll — no freeze, no glitch,
+ * works reliably across PC, tablet, and mobile.
  */
 export default function Glass() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const pathRef = useRef<SVGPathElement>(null);
+  const pathRef      = useRef<SVGPathElement>(null);
+  const rafId   = useRef(0);
+  const started = useRef(false);
 
-  // Web Animations API — runs through browser's animation engine,
-  // more scroll-resilient than CSS @keyframes on non-compositable properties
   useEffect(() => {
-    const path = pathRef.current;
     const container = containerRef.current;
-    if (!path || !container) return;
+    const path = pathRef.current;
+    if (!container || !path) return;
 
-    let animation: Animation | null = null;
+    // Ensure initial state
+    path.style.strokeDashoffset = "100";
+
+    // Track accumulated ms separately so scroll time is never counted.
+    // Each rAF frame adds its delta ONLY when not scrolling.
+    let accumulatedMs = 0;
+    let lastTickTime: number | null = null;
+    let isScrolling = false;
+    let scrollEndTimer: ReturnType<typeof setTimeout> | null = null;
+
+    const onScroll = () => {
+      isScrolling = true;
+      // Reset the delta anchor so we don't count scroll duration
+      lastTickTime = null;
+      if (scrollEndTimer) clearTimeout(scrollEndTimer);
+      scrollEndTimer = setTimeout(() => {
+        isScrolling = false;
+      }, 150); // 150ms after last scroll event = scrolling stopped
+    };
+
+    const tick = (now: number) => {
+      if (!isScrolling) {
+        if (lastTickTime !== null) {
+          accumulatedMs += now - lastTickTime;
+        }
+        const progress = Math.min(accumulatedMs / DURATION, 1);
+        path.style.strokeDashoffset = String(getOffset(progress));
+        if (progress >= 1) {
+          // Animation complete — clean up scroll listener
+          window.removeEventListener('scroll', onScroll);
+          return;
+        }
+      }
+      // Always update lastTickTime so next non-scroll frame gets correct delta
+      lastTickTime = now;
+      rafId.current = requestAnimationFrame(tick);
+    };
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          // Same keyframes as original CSS, driven via WAAPI
-          animation = path.animate(
-            [
-              { strokeDashoffset: "100", offset: 0 },
-              { strokeDashoffset: "82",  offset: 0.15 },
-              { strokeDashoffset: "55",  offset: 0.40 },
-              { strokeDashoffset: "55",  offset: 0.43 },  /* Adjusts grip */
-              { strokeDashoffset: "30",  offset: 0.65 },
-              { strokeDashoffset: "30",  offset: 0.67 },  /* Looks at reference */
-              { strokeDashoffset: "10",  offset: 0.85 },
-              { strokeDashoffset: "10",  offset: 0.87 },  /* Final touches */
-              { strokeDashoffset: "0.5", offset: 1.0 },
-            ],
-            {
-              duration: 9000,
-              easing: "cubic-bezier(0.3, 0.1, 0.3, 1)",
-              fill: "forwards",
-            }
-          );
+        if (entry.isIntersecting && !started.current) {
+          started.current = true;
+          window.addEventListener('scroll', onScroll, { passive: true });
+          rafId.current = requestAnimationFrame(tick);
           observer.unobserve(container);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.15 }
     );
 
     observer.observe(container);
 
     return () => {
       observer.disconnect();
-      if (animation) animation.cancel();
+      cancelAnimationFrame(rafId.current);
+      window.removeEventListener('scroll', onScroll);
+      if (scrollEndTimer) clearTimeout(scrollEndTimer);
     };
   }, []);
 
@@ -80,7 +142,7 @@ export default function Glass() {
       <div className="glass-svg-container w-full px-2 sm:px-6 md:px-8 scale-[1.05] sm:scale-100 origin-top">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1901 492" preserveAspectRatio="xMidYMid meet">
           <g>
-            {/* Path 1: Dark lines — animated via Web Animations API */}
+            {/* Path: Dark lines — animated via rAF, scroll-proof */}
             <path
               ref={pathRef}
               className="glass-path-dark"
@@ -93,3 +155,4 @@ export default function Glass() {
     </div>
   );
 }
+
