@@ -13,13 +13,28 @@ interface CloudinaryImage {
   secure_url: string;
 }
 
+/** Fisher-Yates shuffle — returns a new shuffled array, original untouched */
+function shuffleArray<T>(arr: T[]): T[] {
+  const shuffled = [...arr];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
 export default function Hero({ initialImages = [] }: { initialImages?: CloudinaryImage[] }) {
-  const [images, setImages] = useState<CloudinaryImage[]>(initialImages);
+  const [images, setImages] = useState<CloudinaryImage[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Sync images if prop changes (mostly for dev hot-reloads)
+  // Shuffle images on first load so each visitor sees a different random order
+  // No repeats within a full cycle — just the order is randomised
   useEffect(() => {
-    setImages(initialImages.slice(0, 6)); // Limited to 6 for performance
+    if (initialImages.length === 0) return;
+    const limited = initialImages.slice(0, 6); // Limited to 6 for performance
+    const shuffled = shuffleArray(limited);
+    setImages(shuffled);
+    setCurrentIndex(0); // Start from beginning of the shuffled order
   }, [initialImages]);
 
   const nextSlide = useCallback(() => {
