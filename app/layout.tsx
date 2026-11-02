@@ -79,9 +79,9 @@ export const metadata: Metadata = {
     locale: "en_IN",
     images: [
       {
-        url: "/android-chrome-512x512.png",
-        width: 512,
-        height: 512,
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
         alt: `${SITE_NAME} — Eye Clinic & Optical Store in Noorpur`,
       },
     ],
@@ -90,7 +90,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: SITE_NAME,
     description: SITE_DESCRIPTION,
-    images: ["/android-chrome-512x512.png"],
+    images: ["/og-image.jpg"],
   },
   appleWebApp: {
     title: SITE_NAME,
