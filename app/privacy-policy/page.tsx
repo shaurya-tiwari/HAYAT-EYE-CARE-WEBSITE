@@ -4,6 +4,9 @@ import { SITE_NAME, CONTACT, ADDRESS } from "@/constants/site";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: `Privacy Policy for ${SITE_NAME}.`,
+  alternates: {
+    canonical: "https://www.hayateyecare.in/privacy-policy",
+  },
 };
 
 export default function PrivacyPolicyPage() {

@@ -1,8 +1,16 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Sparkles } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Products — Eyewear Collection",
+  description:
+    "Explore Hayat Eye Care's full eyewear collection — premium spectacle frames, contact lenses, and high-quality spectacle lenses.",
+  alternates: {
+    canonical: "https://www.hayateyecare.in/products",
+  },
+};
 
 export default function ProductsIndexPage() {
   return (

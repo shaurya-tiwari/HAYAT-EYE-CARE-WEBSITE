@@ -4,6 +4,9 @@ import { SITE_NAME, CONTACT, ADDRESS } from "@/constants/site";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description: `Terms of Service for ${SITE_NAME}.`,
+  alternates: {
+    canonical: "https://www.hayateyecare.in/terms",
+  },
 };
 
 export default function TermsPage() {

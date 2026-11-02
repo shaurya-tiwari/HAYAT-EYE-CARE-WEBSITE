@@ -28,9 +28,8 @@ const sora = Sora({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.hayateyecare.in"),
-  alternates: {
-    canonical: "/",
-  },
+  // NOTE: No canonical here — each page sets its own via alternates.canonical
+  // Setting canonical in layout.tsx would make ALL pages inherit the homepage canonical.
   title: {
     default: `${SITE_NAME} — ${SITE_TAGLINE}`,
     template: `%s | ${SITE_NAME}`,
@@ -78,11 +77,20 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     type: "website",
     locale: "en_IN",
+    images: [
+      {
+        url: "/android-chrome-512x512.png",
+        width: 512,
+        height: 512,
+        alt: `${SITE_NAME} — Eye Clinic & Optical Store in Noorpur`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: SITE_NAME,
     description: SITE_DESCRIPTION,
+    images: ["/android-chrome-512x512.png"],
   },
   appleWebApp: {
     title: SITE_NAME,

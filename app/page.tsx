@@ -12,9 +12,17 @@ import { Contact } from "@/components/sections/Contact";
 import { Products } from "@/components/sections/Products";
 import Image from "next/image";
 import Glass from "@/components/glass-animation/Glass";
+import type { Metadata } from "next";
 // force reload
 
 import { fetchCloudinaryImages } from "@/lib/cloudinaryDirect";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://www.hayateyecare.in",
+  },
+};
+
 
 /**
  * Homepage — Full site composition.

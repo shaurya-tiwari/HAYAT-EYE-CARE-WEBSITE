@@ -44,6 +44,9 @@ function FrameCard({ image }: { image: CloudinaryImageDirect }) {
 export const metadata = {
   title: "Premium Eyewear Frames",
   description: "Browse our collection of premium and stylish eyewear frames at Hayat Eye Care. Find the perfect glasses for your face shape and style.",
+  alternates: {
+    canonical: "https://www.hayateyecare.in/products/frames",
+  },
 };
 
 export default async function FramesPage() {
