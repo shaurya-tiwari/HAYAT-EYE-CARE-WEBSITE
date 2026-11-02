@@ -31,10 +31,12 @@ export const metadata: Metadata = {
   // NOTE: No canonical here — each page sets its own via alternates.canonical
   // Setting canonical in layout.tsx would make ALL pages inherit the homepage canonical.
   title: {
-    default: `${SITE_NAME} — ${SITE_TAGLINE}`,
+    // Kept under 60 chars for Google — was 97 chars before
+    default: `${SITE_NAME} | Eye Clinic & Optical Store, Noorpur`,
     template: `%s | ${SITE_NAME}`,
   },
-  description: SITE_DESCRIPTION,
+  // Kept under 155 chars for Google snippets
+  description: "Noorpur's trusted eye clinic — eye testing, spectacles, frames & contact lenses. Serving Bijnor, Moradabad & nearby areas for 10+ years. Near State Bank, Noorpur UP.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -52,7 +54,7 @@ export const metadata: Metadata = {
   keywords: [
     // Brand & Local Variations
     "Hayat Eye Care", "hayat eye care", "hayat eye care and optical", "hayat eye care & opticals", "hayat noorpur", "hyatt eyes", "neafe eye",
-    "hayat eye care & opticals, near state bank, noorpur, uttar pradesh",
+    "hayat eye care & opticals review, near state bank, noorpur, uttar pradesh",
     "jishan ahmad hayat eye care", "jishan ahmad noorpur",
     "hayat eye care moradabad", "hayat eye care noorpur",
     
@@ -65,23 +67,21 @@ export const metadata: Metadata = {
     // Clinics & Centers
     "eye care center", "eye center near me", "eye hospital near me", "optical center",
     
-    // Specific Treatments & Products
-  
-    
     // Local Conversational Search
     "apna noorpur ma khe eyes ka liya chasma kha banta h"
   ],
   openGraph: {
     title: SITE_NAME,
-    description: SITE_DESCRIPTION,
+    // Shorter OG description — kept under 125 chars for social previews
+    description: "Eye testing, spectacles, frames & contact lenses in Noorpur. Trusted by 5000+ patients. Visit us near State Bank, Noorpur UP.",
     siteName: SITE_NAME,
     type: "website",
     locale: "en_IN",
     images: [
       {
         url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
+        width: 1376,  // actual generated image size
+        height: 768,
         alt: `${SITE_NAME} — Eye Clinic & Optical Store in Noorpur`,
       },
     ],
@@ -89,7 +89,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: SITE_NAME,
-    description: SITE_DESCRIPTION,
+    // Kept under 200 chars for X/Twitter
+    description: "Eye testing, spectacles, frames & contact lenses in Noorpur. Trusted by 5000+ patients. Visit us near State Bank, Noorpur UP.",
     images: ["/og-image.jpg"],
   },
   appleWebApp: {
